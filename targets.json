@@ -10,8 +10,10 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "MATEK_2400_RX_R24D"
             },
             "dual-radio": {
                 "product_name": "Anyleaf 2.4GHz dual radio RX",
@@ -21,6 +23,7 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -29,8 +32,10 @@
                 "lua_name": "AL FC RX",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
     },
@@ -41,7 +46,9 @@
                 "product_name": "AXIS Thor 2.4GHz TX",
                 "lua_name": "AXIS THOR 2400TX",
                 "layout_file": "AXIS Thor 2400.json",
+                "logo_file": "axis_tft.bin",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "AXIS_THOR_2400_TX"
@@ -53,6 +60,7 @@
                 "lua_name": "AXIS THOR 2400RX",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "AXIS_THOR_2400_RX"
@@ -67,6 +75,7 @@
                 "lua_name": "BETAFPV 900Nano",
                 "layout_file": "BETAFPV 900 Nano.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "BETAFPV_900_TX"
@@ -75,8 +84,10 @@
                 "product_name": "BETAFPV 900MHz Micro TX",
                 "lua_name": "BETAFPV 900Micro",
                 "layout_file": "BETAFPV 900 Micro.json",
+                "logo_file": "betafpv.bin",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "BETAFPV_900_TX_MICRO"
@@ -88,6 +99,7 @@
                 "lua_name": "BETAFPV 900RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "BETAFPV_900_RX"
@@ -97,6 +109,7 @@
                 "lua_name": "BFPV SuperD 900",
                 "layout_file": "Generic 900 True Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_RX"
             },
@@ -106,11 +119,12 @@
                 "layout_file": "Generic 900 True Diversity PWM 16.json",
                 "overlay": {
                     "pwm_outputs":[13,15,2,0,4,9,10,5,18,23,19,22,3,1],
-                    "vbat_offset": 4,
-                    "vbat_scale": 285,
-                    "vbat_atten": 4
+                    "vbat_offset": 18,
+                    "vbat_scale": 1284,
+                    "vbat_atten": 7
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_RX"
             }
@@ -121,6 +135,7 @@
                 "lua_name": "BETAFPV 2G4Nano",
                 "layout_file": "BETAFPV 2400 Nano.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "BETAFPV_2400_TX"
@@ -129,8 +144,10 @@
                 "product_name": "BETAFPV 2.4GHz Micro TX",
                 "lua_name": "BETAFPV2G4Micro",
                 "layout_file": "BETAFPV 2400 Micro.json",
+                "logo_file": "betafpv.bin",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "BETAFPV_2400_TX_MICRO"
@@ -139,8 +156,10 @@
                 "product_name": "BETAFPV 2.4GHz 1W Micro TX",
                 "lua_name": "BFPV 2G4Micro1W",
                 "layout_file": "BETAFPV 2400 Micro 1W.json",
+                "logo_file": "betafpv.bin",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "BETAFPV_2400_TX_MICRO_1000mw"
@@ -150,6 +169,7 @@
                 "lua_name": "BETAFPV LR3 Pro",
                 "layout_file": "BETAFPV 2400 LiteRadio 3.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "BETAFPV_2400_TX_LITERADIO3"
@@ -161,6 +181,7 @@
                 "lua_name": "BFPV AIO 2G4RX",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -170,6 +191,7 @@
                 "lua_name": "BFPV Lite 2G4RX",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -182,15 +204,17 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
-                "prior_target_name": "BETAFPV_2400_RX"
+                "prior_target_name": "BETAFPV_Nano_2400_RX"
             },
             "pwmp": {
                 "product_name": "BETAFPV PWM 2.4GHz RX",
                 "lua_name": "BFPV PWM 2G4RX",
                 "layout_file": "Generic 2400 PWMP5.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMP"
@@ -203,8 +227,10 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_RX"
+                "firmware": "Unified_ESP32_2400_RX",
+                "prior_target_name": "BETAFPV_SuperD_2400_RX"
             },
             "superp": {
                 "product_name": "BETAFPV SuperP 14Ch 2.4GHz RX",
@@ -212,11 +238,12 @@
                 "layout_file": "Generic 2400 True Diversity PA PWM 14.json",
                 "overlay": {
                     "radio_dcdc": true,
-                    "vbat_offset": 4,
-                    "vbat_scale": 285,
-                    "vbat_atten": 4
+                    "vbat_offset": 18,
+                    "vbat_scale": 1284,
+                    "vbat_atten": 7
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             }
@@ -229,7 +256,9 @@
                 "product_name": "DIY TTGO V1 900MHz TX",
                 "lua_name": "DIY900 TTGO V1",
                 "layout_file": "DIY 900 TTGO V1.json",
+                "logo_file": "elrs64.bin",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "DIY_900_TX_TTGO_V1_SX127x"
@@ -238,7 +267,9 @@
                 "product_name": "DIY TTGO V2 900MHz TX",
                 "lua_name": "DIY900 TTGO V2",
                 "layout_file": "DIY 900 TTGO V2.json",
+                "logo_file": "elrs64.bin",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "DIY_900_TX_TTGO_V2_SX127x"
@@ -248,6 +279,7 @@
                 "lua_name": "DIY900 E19",
                 "layout_file": "DIY 900 E19.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "DIY_900_TX_ESP32_SX127x_E19"
@@ -257,6 +289,7 @@
                 "lua_name": "DIY900 RFM95",
                 "layout_file": "DIY 900 RFM95.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "DIY_900_TX_ESP32_SX127x_RFM95"
@@ -264,6 +297,7 @@
             "stm32-sx1272": {
                 "product_name": "DIY STM32 SX1272 TX",
                 "upload_methods": ["stlink"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "DIY_900_TX_STM32_SX1272",
                 "stlink": {
@@ -279,22 +313,27 @@
                 "lua_name": "DIY900 TTGO V1RX",
                 "layout_file": "DIY 900 TTGO V1.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_900_RX"
+                "firmware": "Unified_ESP32_900_RX",
+                "prior_target_name": "DIY_900_RX_TTGO_V1_SX127x"
             },
             "ttgov2": {
                 "product_name": "DIY TTGO V2 900MHz RX",
                 "lua_name": "DIY900 TTGO V2RX",
                 "layout_file": "DIY 900 TTGO V2.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_900_RX"
+                "firmware": "Unified_ESP32_900_RX",
+                "prior_target_name": "DIY_900_RX_TTGO_V2_SX127x"
             },
             "huzzah": {
                 "product_name": "DIY Huzzah RFM95 900MHz TX",
                 "lua_name": "ELRS RFM95 900RX",
                 "layout_file": "DIY Huzzah RFM95.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "DIY_900_RX_HUZZAH_RFM95W"
@@ -302,6 +341,7 @@
             "stm32-sx1272": {
                 "product_name": "DIY STM32 SX1272 RX",
                 "upload_methods": ["stlink"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "DIY_900_RX_STM32_SX1272",
                 "stlink": {
@@ -317,6 +357,7 @@
                 "lua_name": "DIY2400 Mini",
                 "layout_file": "DIY 2400 Mini.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "DIY_2400_TX_ESP32_SX1280_Mini"
@@ -327,6 +368,7 @@
                 "layout_file": "DIY 2400 E28.json",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "DIY_2400_TX_ESP32_SX1280_E28"
@@ -337,6 +379,7 @@
                 "layout_file": "DIY 2400 F27.json",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "DIY_2400_TX_ESP32_SX1280_LORA1280F27"
@@ -346,6 +389,7 @@
                 "lua_name": "DIY BLE Joystick",
                 "layout_file": "DIY 2400 BLE Joystick.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "DIY_BLE_JOYSTICK"
@@ -359,10 +403,13 @@
                 "product_name": "EMAX OLED 900MHz TX",
                 "lua_name": "EMAX 900TX",
                 "layout_file": "EMAX 900 OLED.json",
+                "logo_file": "emax.bin",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_900_TX"
+                "firmware": "Unified_ESP32_900_TX",
+                "prior_target_name": "EMAX_900_TX"
             },
             "nano": {
                 "product_name": "EMAX Nano 900MHz TX",
@@ -370,8 +417,10 @@
                 "layout_file": "EMAX 900 Nano.json",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_900_TX"
+                "firmware": "Unified_ESP32_900_TX",
+                "prior_target_name": "EMAX_NANO_900_TX"
             }
         },
         "rx_900": {
@@ -380,8 +429,10 @@
                 "lua_name": "EMAX 900RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_900_RX"
+                "firmware": "Unified_ESP8285_900_RX",
+                "prior_target_name": "DIY_900_RX_ESP8285_SX127x"
             }
         },
         "tx_2400": {
@@ -389,10 +440,13 @@
                 "product_name": "EMAX OLED 2.4GHz TX",
                 "lua_name": "EMAX 2400TX",
                 "layout_file": "EMAX 2400 OLED.json",
+                "logo_file": "emax.bin",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_TX"
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "EMAX_2400_TX"
             },
             "nano": {
                 "product_name": "EMAX Nano 2.4GHz TX",
@@ -400,8 +454,10 @@
                 "layout_file": "EMAX 2400 Nano.json",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_TX"
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "EMAX_NANO_2400_TX"
             }
         },
         "rx_2400": {
@@ -413,8 +469,10 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             },
             "pa": {
                 "product_name": "EMAX 2.4GHz PA RX",
@@ -424,8 +482,10 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "BETAFPV_Nano_2400_RX"
             }
         }
     },
@@ -437,6 +497,7 @@
                 "lua_name": "Flywoo EL24E",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -446,6 +507,7 @@
                 "lua_name": "Flywoo EL24P",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -463,14 +525,17 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "Foxeer_2400_RX"
             },
             "lite": {
                 "product_name": "Foxeer Lite 2.4GHz RX",
                 "lua_name": "Foxeer Lite 2G4",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -482,6 +547,7 @@
                 "lua_name": "Foxeer 900 RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "BETAFPV_900_RX"
@@ -493,7 +559,8 @@
         "tx_900": {
             "r9m": {
                 "product_name": "FrSky R9M 900MHz TX",
-                "upload_methods": ["stlink", "stock"],
+                "upload_methods": ["stlink", "stock", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_TX_R9M",
                 "features": ["buzzer", "unlock-higher-power", "fan"],
@@ -506,6 +573,7 @@
             "r9m-lite": {
                 "product_name": "FrSky R9M Lite 900MHz TX",
                 "upload_methods": ["stlink", "stock"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_TX_R9M_LITE",
                 "stlink": {
@@ -517,6 +585,7 @@
             "r9m-lite-pro": {
                 "product_name": "FrSky R9M Lite Pro 900MHz TX",
                 "upload_methods": ["stlink"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_TX_R9M_LITE_PRO",
                 "stlink": {
@@ -530,6 +599,7 @@
             "r9mm": {
                 "product_name": "FrSky R9MM/Mini 900MHz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_RX_R9MM_R9MINI",
                 "features": ["sbus-uart"],
@@ -542,6 +612,7 @@
             "r9slim": {
                 "product_name": "FrSky R9 Slim 900MHz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_RX_R9SLIM",
                 "stlink": {
@@ -553,6 +624,7 @@
             "r9slim-plus": {
                 "product_name": "FrSky R9 Slim Plus 900MHz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_RX_R9SLIMPLUS",
                 "stlink": {
@@ -564,6 +636,7 @@
             "r9slim-plus-ota": {
                 "product_name": "FrSky R9 Slim Plus OTA 900MHz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_RX_R9SLIMPLUS_OTA",
                 "stlink": {
@@ -575,6 +648,7 @@
             "r9mx": {
                 "product_name": "FrSky R9MX 900MHz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_RX_R9MX",
                 "stlink": {
@@ -593,6 +667,7 @@
                 "lua_name": "Gemini 900TX",
                 "layout_file": "Generic 900 Gemini.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "Unified_ESP32_900_TX"
@@ -604,6 +679,7 @@
                 "lua_name": "ELRS 900RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "DIY_900_RX_ESP8285_SX127x"
@@ -613,6 +689,7 @@
                 "lua_name": "ELRS PWMP 900RX",
                 "layout_file": "Generic 900 PWMP.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "DIY_900_RX_PWMP"
@@ -622,6 +699,7 @@
                 "lua_name": "Diversity 900RX",
                 "layout_file": "Generic 900 True Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_RX"
             },
@@ -630,6 +708,7 @@
                 "lua_name": "16PWM TD 900RX",
                 "layout_file": "Generic 900 True Diversity PWM 16.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_RX"
             }
@@ -640,6 +719,7 @@
                 "lua_name": "DupleTX",
                 "layout_file": "DIY 2400 DupleTX.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "DIY_2400_TX_DUPLETX"
@@ -649,6 +729,7 @@
                 "lua_name": "DupleTX ESP",
                 "layout_file": "DIY 2400 DupleTX ESP.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_TX",
                 "prior_target_name": "DIY_2400_TX_DUPLETX_ESP"
@@ -658,15 +739,17 @@
                 "lua_name": "Gemini 2.4TX",
                 "layout_file": "Generic 2400 Gemini.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
-                "prior_target_name": "Unified_ESP32_2400_TX"
+                "prior_target_name": "DIY_2400_TX_GEMINI"
             }
         },
         "rx_2400": {
             "pp": {
                 "product_name": "Generic STM32 PP 2.4Ghz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "DIY_2400_RX_STM32_CCG_Nano_v0_5",
                 "stlink": {
@@ -680,6 +763,7 @@
                 "lua_name": "ELRS 2400RX",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -689,6 +773,7 @@
                 "lua_name": "ELRS+PWM 2400RX",
                 "layout_file": "Generic 2400 PWMP5.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMP"
@@ -698,6 +783,7 @@
                 "lua_name": "ELRS+PWM 2400RX",
                 "layout_file": "Generic 2400 PWMP6.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMPEX"
@@ -707,14 +793,17 @@
                 "lua_name": "Vario 2400RX",
                 "layout_file": "Vario 2400.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_RX"
+                "firmware": "Unified_ESP32_2400_RX",
+                "prior_target_name": "DIY_2400_RX_PWM_VARIO"
             },
             "pwm7": {
                 "product_name": "Generic ESP8285 7xPWM 2.4Ghz RX",
                 "lua_name": "ELRS+PWM 2400RX",
                 "layout_file": "Generic 2400 PWMP7.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX"
             },
@@ -723,6 +812,7 @@
                 "lua_name": "ELRS+PA 2400RX",
                 "layout_file": "Generic 2400 PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX"
             },
@@ -731,14 +821,17 @@
                 "lua_name": "ELRS+RGB 2400RX",
                 "layout_file": "Generic 2400 PA RGB.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "DIY_2400_PA_RGB_RX"
             },
             "diversity": {
                 "product_name": "Generic ESP8285 Diversity PA 2.4Ghz RX",
                 "lua_name": "ELRS+D 2400RX",
                 "layout_file": "Generic 2400 Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX"
             },
@@ -747,6 +840,7 @@
                 "lua_name": "Frank 2400RX",
                 "layout_file": "Frank 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -755,6 +849,7 @@
                 "lua_name": "Rx+VTx 2400RX",
                 "layout_file": "Generic 2400 Whoop Rx and VTx.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -763,6 +858,7 @@
                 "lua_name": "Diversity 2.4RX",
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -771,6 +867,7 @@
                 "lua_name": "Div+VTx 2.4RX",
                 "layout_file": "Generic 2400 True Diversity PA and VTx.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -779,6 +876,7 @@
                 "lua_name": "Div+VTx 2.4RX",
                 "layout_file": "Generic 2400 True Diversity and VTx.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -787,6 +885,7 @@
                 "lua_name": "16PWM TD 2.4RX",
                 "layout_file": "Generic 2400 True Diversity PWM 16.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -795,6 +894,7 @@
                 "lua_name": "14PWM TD 2.4RX",
                 "layout_file": "Generic 2400 True Diversity PA PWM 14.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             }
@@ -808,8 +908,10 @@
                 "lua_name": "GEPRC Nano RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_900_RX"
+                "firmware": "Unified_ESP8285_900_RX",
+                "prior_target_name": "DIY_900_RX_ESP8285_SX127x"
             }
         },
         "rx_2400": {
@@ -818,6 +920,7 @@
                 "lua_name": "GEPRC Nano RX",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -830,8 +933,24 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
+            }
+        }
+    },
+    "sub250": {
+        "name": "Sub250",
+        "rx_2400": {
+            "nano": {
+                "product_name": "Sub250 2400 RX",
+                "lua_name": "Sub250 2400 RX",
+                "layout_file": "Generic 2400.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
     },
@@ -841,6 +960,7 @@
             "es915": {
                 "product_name": "HappyModel ES915 TX",
                 "upload_methods": ["stlink", "stock"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "HappyModel_TX_ES915TX",
                 "has_buzzer": true,
@@ -855,6 +975,7 @@
                 "lua_name": "HM ES900TX",
                 "layout_file": "HappyModel ES900.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "HappyModel_TX_ES900TX"
@@ -864,6 +985,7 @@
             "es915": {
                 "product_name": "HappyModel ES915 RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "HappyModel_RX_ES915RX",
                 "stlink": {
@@ -877,10 +999,20 @@
                 "lua_name": "HM ES900RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "features": ["fan"],
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "HappyModel_RX_ES900RX"
+            },
+            "es900_dual": {
+                "product_name": "HappyModel ES900 Dual RX",
+                "lua_name": "HM ES900 Dual",
+                "layout_file": "Generic 900 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
             }
         },
         "tx_2400": {
@@ -890,6 +1022,7 @@
                 "layout_file": "HappyModel ES24.json",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "HappyModel_ES24TX_2400_TX"
@@ -900,6 +1033,7 @@
                 "layout_file": "HappyModel ES24 Pro.json",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "HappyModel_ES24TX_Pro_Series_2400_TX"
@@ -910,6 +1044,7 @@
                 "layout_file": "HappyModel ES24 Pro.json",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "HappyModel_ES24TX_Pro_Series_2400_TX"
@@ -919,6 +1054,7 @@
             "pp": {
                 "product_name": "HappyModel PP 2.4GHz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "HappyModel_PP_2400_RX",
                 "stlink": {
@@ -933,6 +1069,7 @@
                 "lua_name": "HM EP 2400",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "HappyModel_EP_2400_RX"
@@ -942,14 +1079,17 @@
                 "lua_name": "HM EP Dual 2400",
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_RX"
+                "firmware": "Unified_ESP32_2400_RX",
+                "prior_target_name": "HappyModel_EP_Dual_2400_RX"
             },
             "epw5": {
                 "product_name": "HappyModel EPW5 2.4GHz PWM RX",
                 "lua_name": "HM EPW5 2400",
                 "layout_file": "Generic 2400 PWMP5.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMP"
@@ -959,6 +1099,7 @@
                 "lua_name": "HM EPW6 2400",
                 "layout_file": "Generic 2400 PWMP6.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMPEX"
@@ -973,6 +1114,7 @@
                 "lua_name": "HGLRC Hermes 900",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "HGLRC_Hermes_900_RX"
@@ -984,6 +1126,7 @@
                 "lua_name": "HGLRC Hermes",
                 "layout_file": "HGLRC Hermes 2400.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "HGLRC_Hermes_2400_TX"
@@ -995,6 +1138,7 @@
                 "lua_name": "HGLRC Hermes 2G4",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "HGLRC_Hermes_2400_RX"
@@ -1009,6 +1153,7 @@
                 "lua_name": "HiYOUNGER TX2G4",
                 "layout_file": "BETAFPV 2400 Nano.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "BETAFPV_2400_TX"
@@ -1020,6 +1165,7 @@
                 "lua_name": "HiYOUNGER RX24T",
                 "layout_file": "Generic 2400 PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "BETAFPV_Nano_2400_RX"
@@ -1029,6 +1175,7 @@
                 "lua_name": "HiYOUNGER EP24S",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -1038,6 +1185,7 @@
                 "lua_name": "HiYOUNGER SP24S",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -1049,6 +1197,7 @@
                 "lua_name": "HiYOUNGER 900 TX",
                 "layout_file": "BETAFPV 900 Nano.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "BETAFPV_900_TX"
@@ -1060,6 +1209,7 @@
                 "lua_name": "HiYOUNGER 900RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "BETAFPV_900_RX"
@@ -1074,6 +1224,7 @@
                 "lua_name": "iFlight 900TX",
                 "layout_file": "iFlight 900.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "iFlight_900_TX"
@@ -1083,6 +1234,7 @@
                 "lua_name": "iFlight 900TX",
                 "layout_file": "iFlight 900 V2.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX"
             }
@@ -1093,6 +1245,7 @@
                 "lua_name": "iFlight 900RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "iFlight_900_RX"
@@ -1104,6 +1257,7 @@
                 "lua_name": "iFlight 2400TX",
                 "layout_file": "iFlight 2400.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "iFlight_2400_TX"
@@ -1113,6 +1267,7 @@
                 "lua_name": "iFlight 2400TX",
                 "layout_file": "iFlight 2400 V2.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX"
             }
@@ -1123,6 +1278,7 @@
                 "lua_name": "iFlight 2400RX",
                 "layout_file": "iFlight 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "iFlight_2400_RX"
@@ -1135,6 +1291,7 @@
             "ghost": {
                 "product_name": "Ghost 2.4GHz TX",
                 "upload_methods": ["stlink"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "GHOST_2400_TX",
                 "features": ["buzzer"],
@@ -1147,6 +1304,7 @@
             "ghost_lite": {
                 "product_name": "Ghost Lite 2.4GHz TX",
                 "upload_methods": ["stlink"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "GHOST_2400_TX_LITE",
                 "features": ["buzzer"],
@@ -1161,6 +1319,7 @@
             "atto": {
                 "product_name": "Ghost Atto 2.4GHz TX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "GHOST_ATTO_2400_RX",
                 "stlink": {
@@ -1179,6 +1338,7 @@
                 "lua_name": "JHEMCU RX24T",
                 "layout_file": "Generic 2400 PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "BETAFPV_Nano_2400_RX"
@@ -1188,6 +1348,7 @@
                 "lua_name": "JHEMCU EP24S",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -1197,6 +1358,7 @@
                 "lua_name": "JHEMCU SP24S",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -1206,11 +1368,21 @@
     "jumper": {
         "name": "Jumper",
         "tx_2400": {
+            "t-20": {
+                "product_name": "Jumper AION T-20 2.4GHz TX",
+                "lua_name": "T-20 2G4 TX",
+                "layout_file": "Jumper T-20 2400.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX"
+            },
             "t-pro": {
                 "product_name": "Jumper AION T-Pro 2.4GHz TX",
                 "lua_name": "AION T-Pro TX",
                 "layout_file": "Jumper T-Pro.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
@@ -1220,6 +1392,7 @@
                 "lua_name": "AION T-Lite TX",
                 "layout_file": "Jumper T-Lite.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Lite_TX"
@@ -1228,10 +1401,23 @@
                 "product_name": "Jumper AION Nano 2.4GHz TX",
                 "lua_name": "AION 2G4NANO TX",
                 "layout_file": "Jumper AION Nano.json",
+                "logo_file": "jumper.bin",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Jumper_AION_NANO_2400_TX"
+            }
+        },
+        "tx_900": {
+            "t-20": {
+                "product_name": "Jumper AION T-20 900M TX",
+                "lua_name": "T-20 900 TX",
+                "layout_file": "Jumper T-20 900.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
             }
         },
         "rx_2400": {
@@ -1243,6 +1429,7 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
@@ -1255,14 +1442,17 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "Jumper_AION_Nano_2400_RX"
             }
         },
         "rx_900": {
             "mini": {
                 "product_name": "Jumper 900 Mini RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Jumper_RX_R900MINI",
                 "stlink": {
@@ -1281,6 +1471,7 @@
                 "lua_name": "MATEK R24-D",
                 "layout_file": "Generic 2400 Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "MATEK_2400_RX_R24D"
@@ -1290,6 +1481,7 @@
                 "lua_name": "MATEK R24-S",
                 "layout_file": "Generic 2400 PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "MATEK_2400_RX"
@@ -1299,6 +1491,7 @@
                 "lua_name": "MATEK R24-P",
                 "layout_file": "Generic 2400 PWMP5.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "MATEK_2400_RX_PWM"
@@ -1311,6 +1504,7 @@
             "voyager_stm": {
                 "product_name": "NamimnoRC Voyager 900MHz TX",
                 "upload_methods": ["stlink", "stock"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "NamimnoRC_VOYAGER_900_TX",
                 "features": ["fan"],
@@ -1324,7 +1518,9 @@
                 "product_name": "NamimnoRC Voyager OLED 900MHz TX",
                 "lua_name": "NM Voyager OLED",
                 "layout_file": "Namimno Voyager OLED.json",
+                "logo_file": "namimno.bin",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "NamimnoRC_VOYAGER_900_OLED_TX"
@@ -1334,6 +1530,7 @@
             "voyager_stm": {
                 "product_name": "NamimnoRC Voyager STM 900MHz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "NamimnoRC_VOYAGER_900_RX",
                 "stlink": {
@@ -1347,6 +1544,7 @@
                 "lua_name": "Namimno 900RX",
                 "layout_file": "Namimno VOYAGER 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "NamimnoRC_VOYAGER_900_ESP_RX"
@@ -1356,6 +1554,7 @@
             "flash_stm": {
                 "product_name": "NamimnoRC Flash 2.4GHz TX",
                 "upload_methods": ["stlink", "stock"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "NamimnoRC_FLASH_2400_TX",
                 "features": ["fan"],
@@ -1369,8 +1568,10 @@
                 "product_name": "NamimnoRC Flash OLED 2.4GHz TX",
                 "lua_name": "NM Flash OLED",
                 "layout_file": "Namimno Flash OLED.json",
+                "logo_file": "namimno.bin",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "NamimnoRC_FLASH_2400_OLED_TX"
@@ -1380,6 +1581,7 @@
             "flash_stm": {
                 "product_name": "NamimnoRC Flash STM 2.4GHz RX",
                 "upload_methods": ["stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "NamimnoRC_FLASH_2400_RX",
                 "stlink": {
@@ -1393,6 +1595,7 @@
                 "lua_name": "Namimno 2400RX",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "NamimnoRC_FLASH_2400_ESP_RX"
@@ -1402,6 +1605,7 @@
                 "lua_name": "Namimno 2400RX",
                 "layout_file": "Namimno FLASH 2400 PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "NamimnoRC_FLASH_2400_ESP_RX_PA"
@@ -1416,6 +1620,7 @@
                 "lua_name": "NeutronRC 900",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "NeutronRC_900_RX"
@@ -1430,8 +1635,10 @@
                 "lua_name": "NBD 2400RX",
                 "layout_file": "Generic 2400 Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
     },
@@ -1443,6 +1650,7 @@
                 "lua_name": "QuadKopters 2G4",
                 "layout_file": "QuadKopters JR 2400.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "QuadKopters_JR_2400_TX"
@@ -1452,9 +1660,10 @@
                 "lua_name": "QuadKopters 2G4",
                 "layout_file": "QuadKopters JR 2400.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
-                "prior_target_name": "QuadKopters_SLIM_2400_TX"
+                "prior_target_name": "QuadKopters_JR_2400_TX"
             }
         },
         "rx_2400": {
@@ -1463,6 +1672,7 @@
                 "lua_name": "QuadKopters 2G4",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "QuadKopters_NANO_RX"
@@ -1477,6 +1687,7 @@
                 "lua_name": "RM Zorro",
                 "layout_file": "Radiomaster Zorro.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "RadioMaster_Zorro_2400_TX"
@@ -1486,6 +1697,7 @@
                 "lua_name": "RM TX16S",
                 "layout_file": "Radiomaster TX16S 2400.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "RadioMaster_TX16S_2400_TX"
@@ -1495,6 +1707,7 @@
                 "lua_name": "RM TX12",
                 "layout_file": "Radiomaster Zorro.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "RadioMaster_Zorro_2400_TX"
@@ -1503,17 +1716,22 @@
                 "product_name": "RadioMaster Ranger 2.4GHz TX",
                 "lua_name": "RM Ranger",
                 "layout_file": "Radiomaster Ranger.json",
+                "logo_file": "radiomaster.bin",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_TX"
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "RadioMaster_Ranger_2400_TX"
             },
             "ranger-micro": {
                 "product_name": "RadioMaster Ranger Micro 2.4GHz TX",
                 "lua_name": "RM Ranger Micro",
                 "layout_file": "Radiomaster Ranger Micro.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_TX"
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "RadioMaster_Ranger_Micro_2400_TX"
             },
             "ranger-nano": {
                 "product_name": "RadioMaster Ranger Nano 2.4GHz TX",
@@ -1523,16 +1741,20 @@
                     "power_values": [-18,-15,-12,-8,-5,0]
                 },
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_TX"
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "RadioMaster_Ranger_Nano_2400_TX"
 			},
             "boxer": {
                 "product_name": "RadioMaster Boxer Internal 2.4GHz TX",
                 "lua_name": "RM Boxer",
                 "layout_file": "Radiomaster Boxer.json",
                 "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "Unified_ESP32_2400_TX"
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "RadioMaster_Boxer_2400_TX"
             }
         },
         "rx_2400": {
@@ -1547,6 +1769,7 @@
                     "vbat_scale": 292
                 },
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMP"
@@ -1556,6 +1779,7 @@
                 "lua_name": "RM ER5A/C",
                 "layout_file": "Generic 2400 PWMP5.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMP"
@@ -1569,6 +1793,7 @@
                     "pwm_outputs": [14, 12, 15, 2, 4, 9]
                 },
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -1580,6 +1805,7 @@
                     "power_values": [-2,-1,3]
                 },
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -1591,6 +1817,7 @@
                     "power_values": [-2,-1,3]
                 },
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX",
                 "prior_target_name": "Vario 2400RX"
@@ -1603,6 +1830,7 @@
                     "power_values": [-9,-6,-3,0]
                 },
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -1611,6 +1839,7 @@
                 "lua_name": "RM ER8-G",
                 "layout_file": "Radiomaster 2400 ER8G.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -1619,6 +1848,7 @@
                 "lua_name": "RM ER8-GV",
                 "layout_file": "Radiomaster 2400 ER8G.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
@@ -1627,16 +1857,20 @@
                 "lua_name": "RM RP1",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "HappyModel_EP_2400_RX"
             },
             "rp2": {
                 "product_name": "RadioMaster RP2 2.4GHz RX",
                 "lua_name": "RM RP2",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "HappyModel_EP_2400_RX"
             },
             "rp3": {
                 "product_name": "RadioMaster RP3 Diversity 2.4GHz RX",
@@ -1646,8 +1880,10 @@
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX"
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "MATEK_2400_RX_R24D"
             }
         }
     },
@@ -1657,6 +1893,7 @@
             "fm30": {
                 "product_name": "SIYI FM30 2.4GHz TX",
                 "upload_methods": ["dfu", "stlink"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "FM30_TX",
                 "stlink": {
@@ -1668,6 +1905,7 @@
             "rx_as_tx": {
                 "product_name": "SIYI FM30 Mini 2.4GHz RX as TX",
                 "upload_methods": ["uart", "stlink"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "FM30_RX_MINI_AS_TX",
                 "stlink": {
@@ -1681,6 +1919,7 @@
             "mini": {
                 "product_name": "SIYI FM30 Mini 2.4GHz RX",
                 "upload_methods": ["uart", "stlink", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "FM30_RX_MINI",
                 "stlink": {
@@ -1699,9 +1938,10 @@
                 "lua_name": "Skystars SS24D",
                 "layout_file": "Generic 2400 Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
-                "prior_target_name": "MATEK_2400_RX"
+                "prior_target_name": "MATEK_2400_RX_R24D"
             }
         }
     },
@@ -1713,6 +1953,7 @@
                 "lua_name": "Vantac Lite 2G4",
                 "layout_file": "Vantac Lite.json",
                 "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Vantac_Lite_2400_TX"
@@ -1724,6 +1965,7 @@
                 "lua_name": "Vantac 2400 RX",
                 "layout_file": "Generic 2400 PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "Vantac_2400_RX"

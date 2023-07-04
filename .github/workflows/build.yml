@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -15,11 +15,11 @@ jobs:
 
     - name: Validate hardware target files
       run: |
-        python targets_validator.py
+        python .github/targets_validator.py
 
     - name: Create hardware target zip
       run: |
-        zip -r -9 hardware.zip ./hardware
+        zip -r -9 hardware.zip *
 
     - name: Upload hardware target zip to ExpressLRS artifactory
       env:
