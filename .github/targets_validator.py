@@ -82,7 +82,9 @@ def validate_devices(vendor, type, devname, device):
         error(f'device "{vendor}.{type}.{devname}" must have a "firmware" child element')
     else:
         firmware = device['firmware']
-        if (firmware.endswith('_TX') and 'tx_' not in type):
+        if len(firmwares) != 0 and firmware not in firmwares:
+            error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}"')
+        elif (firmware.endswith('_TX') and 'tx_' not in type):
             error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}", it must be a TX target firmware')
         elif (firmware.endswith('_RX') and 'rx_' not in type):
             error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}", it must be an RX target firmware')
@@ -128,6 +130,17 @@ if __name__ == '__main__':
     targets = {}
     with open('targets.json') as f:
         targets = json.load(f)
+
+        for inifile in glob.iglob('../targets/*.ini'):
+            with open(inifile) as ini:
+                for line in ini:
+                    if line.startswith('[env:'):
+                        try:
+                            firmware_file = line[5:line.index('_via_')]
+                            firmwares.add(firmware_file)
+                        except ValueError:
+                            print(line)
+                            None
 
         for vendor in targets:
             validate_vendor(vendor, targets[vendor])
