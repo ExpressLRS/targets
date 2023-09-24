@@ -393,6 +393,35 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "DIY_BLE_JOYSTICK"
+            },
+            "true_diversity_pwm16_s3": {
+                "product_name": "DIY ESP32-S3 DevKit Gemini 2.4Ghz TX ",
+                "lua_name": "Gemini S3 2G4",
+                "layout_file": "DIY S3 DEVKIT 2400 Gemini.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.4.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
+            }
+        },
+        "rx_2400": {
+            "true_diversity_pwm16_s3": {
+                "product_name": "DIY ESP32-S3 DevKit True Diversity 16xPWM 2.4Ghz RX ",
+                "lua_name": "16PWM TD 2.4RX",
+                "layout_file": "DIY S3 DEVKIT 2400 True Diversity PWM 16.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_RX"
+            },
+            "true_diversity_vtx_pwm11_s3": {
+                "product_name": "DIY ESP32-S3 DevKit True Diversity, VTX, 11xPWM 2.4Ghz RX ",
+                "lua_name": "VTX PWM TD 2.4RX",
+                "layout_file": "DIY S3 DEVKIT 2400 True Diversity VTX PWM 11.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_RX"
             }
         }
     },

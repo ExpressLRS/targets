@@ -95,10 +95,10 @@ def validate_devices(vendor, type, devname, device):
         platform = device['platform']
         if platform == 'stm32':
             validate_stm32(vendor, type, devname, device)
-        elif platform == 'esp32':
-            validate_esp32(vendor, type, devname, device)
         elif platform == 'esp8285':
             validate_esp8285(vendor, type, devname, device)
+        elif platform.startswith('esp32'):
+            validate_esp32(vendor, type, devname, device)
         else:
             error(f'invalid platform "{platform}" in device "{vendor}.{type}.{devname}"')
 
