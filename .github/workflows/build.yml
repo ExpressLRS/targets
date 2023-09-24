@@ -1,7 +1,10 @@
 name: Build ExpressLRS
-on: [push, pull_request]
-jobs:
+on:
+  push:
+    branches:
+      - master
 
+jobs:
   package:
     runs-on: ubuntu-latest
     steps:
