@@ -613,7 +613,7 @@
             },
             "r9m-lite-pro": {
                 "product_name": "FrSky R9M Lite Pro 900MHz TX",
-                "upload_methods": ["stlink"],
+                "upload_methods": ["stlink","stock"],
                 "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_TX_R9M_LITE_PRO",
@@ -1042,6 +1042,15 @@
                 "min_version": "3.3.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_RX"
+            },
+            "epw6": {
+                "product_name": "HappyModel EPW6 PWM RX",
+                "lua_name": "HM EPW6 900RX",
+                "layout_file": "Generic 900 PWMP.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX",
+                "prior_target_name": "DIY_900_RX_PWMP"
             }
         },
         "tx_2400": {
@@ -1094,7 +1103,7 @@
                 "prior_target_name": "HappyModel_PP_2400_RX"
             },
             "ep": {
-                "product_name": "HappyModel EP1/2 2.4GHz RX",
+                "product_name": "HappyModel EP1/EP2 2.4GHz RX",
                 "lua_name": "HM EP 2400",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
@@ -1319,7 +1328,7 @@
         "tx_2400": {
             "ghost": {
                 "product_name": "Ghost 2.4GHz TX",
-                "upload_methods": ["stlink"],
+                "upload_methods": ["stlink", "stock"],
                 "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "GHOST_2400_TX",
@@ -1332,7 +1341,7 @@
             },
             "ghost_lite": {
                 "product_name": "Ghost Lite 2.4GHz TX",
-                "upload_methods": ["stlink"],
+                "upload_methods": ["stlink","stock"],
                 "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "GHOST_2400_TX_LITE",
@@ -1346,7 +1355,7 @@
         },
         "rx_2400": {
             "atto": {
-                "product_name": "Ghost Atto 2.4GHz TX",
+                "product_name": "Ghost Atto 2.4GHz RX",
                 "upload_methods": ["stlink", "betaflight"],
                 "min_version": "3.0.0",
                 "platform": "stm32",
@@ -1712,7 +1721,7 @@
         "name": "RadioMaster",
         "tx_2400": {
             "zorro": {
-                "product_name": "RadioMaster Zorro 2.4GHz TX",
+                "product_name": "RadioMaster Zorro Internal 2.4GHz TX",
                 "lua_name": "RM Zorro",
                 "layout_file": "Radiomaster Zorro.json",
                 "upload_methods": ["uart", "wifi", "etx"],
@@ -1722,7 +1731,7 @@
                 "prior_target_name": "RadioMaster_Zorro_2400_TX"
             },
             "pocket": {
-                "product_name": "RadioMaster Pocket 2.4GHz TX",
+                "product_name": "RadioMaster Pocket Internal 2.4GHz TX",
                 "lua_name": "RM Pocket",
                 "layout_file": "Radiomaster Zorro.json",
                 "upload_methods": ["uart", "wifi", "etx"],
