@@ -1004,6 +1004,7 @@
                 "lua_name": "HM ES900TX",
                 "layout_file": "HappyModel ES900.json",
                 "upload_methods": ["uart", "wifi"],
+                "features": ["fan"],
                 "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
