@@ -1049,6 +1049,7 @@
                 "lua_name": "HM EPW6 900RX",
                 "layout_file": "Generic 900 PWMP.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "DIY_900_RX_PWMP"
