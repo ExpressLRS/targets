@@ -1289,6 +1289,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "iFlight_900_RX"
+            },
+            "nano": {
+                "product_name": "iFlight 900MHz Nano RX",
+                "lua_name": "iFlight 900 Nano",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
             }
         },
         "tx_2400": {
@@ -1322,6 +1331,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "iFlight_2400_RX"
+            },
+            "nano": {
+                "product_name": "iFlight 2.4GHz Nano RX",
+                "lua_name": "iFlight 2G4 Nano",
+                "layout_file": "Generic 2400.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
             }
         }
     },
