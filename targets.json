@@ -173,6 +173,27 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "BETAFPV_2400_TX_LITERADIO3"
+            },
+            "superg": {
+                "product_name": "BETAFPV SuperG 2.4GHz Gemini TX",
+                "lua_name": "BFPV SuperG 2G4",
+                "layout_file": "Generic 2400 Gemini.json",
+                "overlay": {
+                    "serial_rx": 21,
+                    "serial_tx": 21,
+                    "power_min": 1,
+                    "power_high": 6,
+                    "power_max": 6,
+                    "power_values": [-18,-15,-12,-7,-4,2],
+                    "misc_fan_en": 12,
+                    "button": 2,
+                    "button2": 4,
+                    "passthrough_baud": 230400
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX"
             }
         },
         "rx_2400": {
