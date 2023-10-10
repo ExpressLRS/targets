@@ -1439,6 +1439,21 @@
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
             },
+            "t-20-gemini": {
+                "product_name": "Jumper Gemini T-20 2.4GHz TX",
+                "lua_name": "T20 Gemini2G4TX",
+                "layout_file": "Generic 2400 Gemini.json",
+                "overlay": {
+                    "power_high": 6,
+                    "power_max": 6,
+                    "power_values": [-18, -15, -11, -8, -4, 3],
+                    "use_backpack": false
+                },
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX"
+            },
             "t-pro": {
                 "product_name": "Jumper AION T-Pro 2.4GHz TX",
                 "lua_name": "AION T-Pro TX",
