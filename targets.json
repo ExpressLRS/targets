@@ -67,6 +67,53 @@
             }
         }
     },
+    "bayckrc": {
+        "name": "BAYCKRC",
+        "rx_900": {
+            "nano": {
+                "product_name": "BAYCK 900MHz Nano RX",
+                "lua_name": "BAYCK 900 Nano",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX",
+                "prior_target_name": "BAYCK 900MHz Nano RX"
+            },
+            "dual": {
+                "product_name": "BAYCK 900MHz Dual Core RX",
+                "lua_name": "BAYCK 900 Dual",
+                "layout_file": "Generic 900 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX",
+                "prior_target_name": "BAYCK 900MHz Dual Core RX"
+            }
+        },
+        "rx_2400": {
+            "nano": {
+                "product_name": "BAYCK 2.4GHz Nano RX",
+                "lua_name": "BAYCK 2G4 Nano",
+                "layout_file": "Generic 2400 PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "BAYCK 2.4GHz Nano RX"
+            },
+            "dual": {
+                "product_name": "BAYCK 2.4GHz Dual Core RX",
+                "lua_name": "BAYCK 2G4 Dual",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX",
+                "prior_target_name": "BAYCK 2.4GHz Dual Core RX"
+            }
+        }
+    },
     "betafpv": {
         "name": "BETAFPV",
         "tx_900": {
