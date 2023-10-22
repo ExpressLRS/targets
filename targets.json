@@ -261,7 +261,9 @@
                     "radio_dcdc": true,
                     "vbat_offset": 18,
                     "vbat_scale": 1284,
-                    "vbat_atten": 7
+                    "vbat_atten": 7,
+                    "i2c_sda": 22,
+                    "i2c_scl": 19
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
