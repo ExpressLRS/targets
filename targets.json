@@ -2033,6 +2033,20 @@
             }
         }
     },
+    "atomrc": {
+        "name": "atomrc",
+        "rx_2400": {
+            "atomrc": {
+                "product_name": "atomrc 2.4G RX",
+                "lua_name": "atomrc 2400 RX",
+                "layout_file": "Generic 2400 PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            }
+        }
+    },
     "vantac": {
         "name": "Vantac",
         "tx_2400": {
