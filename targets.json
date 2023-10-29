@@ -1496,6 +1496,15 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
+            },
+            "t-pro": {
+                "product_name": "Jumper T-Pro 900M TX",
+                "lua_name": "T-Pro 900 TX",
+                "layout_file": "Jumper T-20 900.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
             }
         },
         "rx_2400": {
@@ -1538,6 +1547,15 @@
                     "offset": "0x8000",
                     "bootloader": "jumper_r900_bootloader.bin"
                 }
+            },
+            "aion": {
+                "product_name": "Jumper AION Mini 900MHz RX",
+                "lua_name": "AION Mini 900RX",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
             }
         }
     },
