@@ -1780,6 +1780,16 @@
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "RadioMaster_Zorro_2400_TX"
             },
+            "mt12": {
+                "product_name": "RadioMaster MT12 Internal 2.4GHz TX",
+                "lua_name": "RM MT12",
+                "layout_file": "Radiomaster Zorro.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "RadioMaster_Zorro_2400_TX"
+            },
             "tx16s": {
                 "product_name": "RadioMaster TX16S Internal 2.4GHz TX",
                 "lua_name": "RM TX16S",
