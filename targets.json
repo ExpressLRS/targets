@@ -1874,6 +1874,20 @@
             }
         },
         "rx_2400": {
+            "er3": {
+                "product_name": "RadioMaster ER3C-i 2.4GHz PWM RX",
+                "lua_name": "RM ER3C-i",
+                "layout_file": "Generic 2400 PWMP5.json",
+                "overlay": {
+                    "pwm_outputs": [0,1,3],
+                    "vbat_offset": -2,
+                    "vbat_scale": 292
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.1.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
             "er4": {
                 "product_name": "RadioMaster ER4 2.4GHz PWM RX",
                 "lua_name": "RM ER4",
@@ -1899,6 +1913,32 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMP"
+            },
+            "er5c-i": {
+                "product_name": "RadioMaster ER5C-i 2.4GHz PWM RX",
+                "lua_name": "RM ER5C-i",
+                "layout_file": "Generic 2400 PWMP5.json",
+                "overlay": {
+                    "vbat_offset": -2,
+                    "vbat_scale": 292
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.1.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "er5-v2": {
+                "product_name": "RadioMaster ER5A/C V2 2.4GHz PWM RX",
+                "lua_name": "RM ER5A/C V2",
+                "layout_file": "Generic 2400 PWMP5.json",
+                "overlay": {
+                    "vbat_offset": -2,
+                    "vbat_scale": 292
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.1.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
             },
             "er6": {
                 "product_name": "RadioMaster ER6 2.4GHz Diversity+6xPWM RX",
