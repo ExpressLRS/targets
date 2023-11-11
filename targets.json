@@ -121,7 +121,9 @@
                     "pwm_outputs":[13,15,2,0,4,9,10,5,18,23,19,22,3,1],
                     "vbat_offset": 18,
                     "vbat_scale": 1284,
-                    "vbat_atten": 7
+                    "vbat_atten": 7,
+                    "i2c_scl": 19,
+                    "i2c_sda": 22
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
@@ -261,7 +263,9 @@
                     "radio_dcdc": true,
                     "vbat_offset": 18,
                     "vbat_scale": 1284,
-                    "vbat_atten": 7
+                    "vbat_atten": 7,
+                    "i2c_scl": 19,
+                    "i2c_sda": 22
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
@@ -1333,6 +1337,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "iFlight_900_RX"
+            },
+            "nano": {
+                "product_name": "iFlight 900MHz Nano RX",
+                "lua_name": "iFlight 900 Nano",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
             }
         },
         "tx_2400": {
@@ -1366,6 +1379,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "iFlight_2400_RX"
+            },
+            "nano": {
+                "product_name": "iFlight 2.4GHz Nano RX",
+                "lua_name": "iFlight 2G4 Nano",
+                "layout_file": "Generic 2400.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
             }
         }
     },
@@ -1519,6 +1541,15 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
+            },
+            "t-pro": {
+                "product_name": "Jumper T-Pro 900M TX",
+                "lua_name": "T-Pro 900 TX",
+                "layout_file": "Jumper T-20 900.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
             }
         },
         "rx_2400": {
@@ -1561,6 +1592,15 @@
                     "offset": "0x8000",
                     "bootloader": "jumper_r900_bootloader.bin"
                 }
+            },
+            "aion": {
+                "product_name": "Jumper AION Mini 900MHz RX",
+                "lua_name": "AION Mini 900RX",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
             }
         }
     },
@@ -1796,6 +1836,16 @@
             "pocket": {
                 "product_name": "RadioMaster Pocket Internal 2.4GHz TX",
                 "lua_name": "RM Pocket",
+                "layout_file": "Radiomaster Zorro.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "RadioMaster_Zorro_2400_TX"
+            },
+            "mt12": {
+                "product_name": "RadioMaster MT12 Internal 2.4GHz TX",
+                "lua_name": "RM MT12",
                 "layout_file": "Radiomaster Zorro.json",
                 "upload_methods": ["uart", "wifi", "etx"],
                 "min_version": "3.0.0",
@@ -2053,6 +2103,20 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "MATEK_2400_RX_R24D"
+            }
+        }
+    },
+    "atomrc": {
+        "name": "atomrc",
+        "rx_2400": {
+            "atomrc": {
+                "product_name": "atomrc 2.4G RX",
+                "lua_name": "atomrc 2400 RX",
+                "layout_file": "Generic 2400 PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
             }
         }
     },
