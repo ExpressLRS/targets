@@ -642,6 +642,7 @@
                 "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_TX_R9M_LITE_PRO",
+		"features": ["unlock-higher-power"],
                 "stlink": {
                     "cpus": ["STM32F303CCT6"],
                     "offset": "0x8000",
