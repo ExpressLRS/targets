@@ -2063,6 +2063,16 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "MATEK_2400_RX_R24D"
+            },
+            "rp4": {
+                "product_name": "RadioMaster RP4-TD True Diversity 2.4GHz RX",
+                "lua_name": "RM RP4-TD 2400",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX",
+                "prior_target_name": "Unified_ESP32_2400_RX"
             }
         }
     },
