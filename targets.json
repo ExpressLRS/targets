@@ -1832,6 +1832,26 @@
                 "firmware": "Unified_ESP32_900_TX"
             }
         },
+        "rx_900": {
+            "br1": {
+                "product_name": "RadioMaster BR1 900Mz RX",
+                "lua_name": "RM BR1",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            },
+            "br3": {
+                "product_name": "RadioMaster BR3 Diversity 900Mz RX",
+                "lua_name": "RM BR3",
+                "layout_file": "Radiomaster BR3.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            }
+        },
         "tx_2400": {
             "zorro": {
                 "product_name": "RadioMaster Zorro Internal 2.4GHz TX",
