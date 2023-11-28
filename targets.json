@@ -1800,6 +1800,38 @@
     },
     "radiomaster": {
         "name": "RadioMaster",
+        "tx_900": {
+            "bandit": {
+                "product_name": "RadioMaster Bandit 900MHz TX",
+                "lua_name": "RM Bandit",
+                "layout_file": "Radiomaster Bandit.json",
+                "logo_file": "radiomaster.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            },
+            "bandit-micro": {
+                "product_name": "RadioMaster Bandit Micro 900MHz TX",
+                "lua_name": "RM Bandit Micro",
+                "layout_file": "Radiomaster Bandit Micro.json",
+                "logo_file": "radiomaster.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            },
+            "bandit-nano": {
+                "product_name": "RadioMaster Bandit Nano 900MHz TX",
+                "lua_name": "RM Bandit Nano",
+                "layout_file": "Radiomaster Bandit Micro.json",
+                "logo_file": "radiomaster.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            }
+        },
         "tx_2400": {
             "zorro": {
                 "product_name": "RadioMaster Zorro Internal 2.4GHz TX",
