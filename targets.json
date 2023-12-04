@@ -1037,6 +1037,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "DIY_900_RX_ESP8285_SX127x"
+            },
+            "dual": {
+                "product_name": "GEPRC True Diversity 900MHz RX",
+                "lua_name": "GEPRC Dual RX",
+                "layout_file": "Generic 900 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
             }
         },
         "rx_2400": {
@@ -1049,6 +1058,18 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
+            },
+            "pa": {
+                "product_name": "GEPRC Nano 2.4GHz PA100 RX",
+                "lua_name": "GEPR Nano PA100",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "power_values": [-7,-6,-4,1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
             },
             "geprc-dual": {
                 "product_name": "GEPRC Dual Diversity 2.4GHz RX",
@@ -1076,6 +1097,18 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
+            },
+            "pro": {
+                "product_name": "Sub250 Nano PRO 2.4G RX",
+                "lua_name": "Su25 Nano PRO",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "power_values": [-7,-6,-4,1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
             }
         }
     },
