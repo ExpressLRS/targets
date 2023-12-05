@@ -1825,6 +1825,9 @@
                 "product_name": "RadioMaster Bandit Nano 900MHz TX",
                 "lua_name": "RM Bandit Nano",
                 "layout_file": "Radiomaster Bandit Micro.json",
+                "overlay": {
+                    "power_values": [168,148,128,90]
+                },
                 "logo_file": "radiomaster.bin",
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.4.0",
