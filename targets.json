@@ -2134,6 +2134,23 @@
             }
         }
     },
+    "speedybee": {
+        "name": "SpeedyBee",
+        "rx_2400": {
+            "ss24d": {
+                "product_name": "SpeedyBee Nano 2.4GHz RX",
+                "lua_name": "SB Nano 2G4 RX",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "power_values": [-8,-4,-1,2]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            }
+        }
+    },
     "atomrc": {
         "name": "atomrc",
         "rx_2400": {
