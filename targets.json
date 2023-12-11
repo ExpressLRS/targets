@@ -2134,6 +2134,19 @@
             }
         }
     },
+    "stellar": {
+        "name": "STELLAR",
+        "rx_900": {
+            "stellar": {
+                "product_name": "STELLAR 900MHz RX",
+                "lua_name": "STELLAR 900RX",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            }
+        }
+    },
     "atomrc": {
         "name": "atomrc",
         "rx_2400": {
