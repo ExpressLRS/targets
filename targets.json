@@ -126,6 +126,16 @@
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "BETAFPV_900_TX"
             },
+            "nanov2": {
+                "product_name": "BETAFPV 900MHz Nano TX V2",
+                "lua_name": "BETAFPV 900Nano",
+                "layout_file": "BETAFPV 900 Nano V2.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX",
+                "prior_target_name": "BETAFPV_900_TX"
+            },
             "micro900": {
                 "product_name": "BETAFPV 900MHz Micro TX",
                 "lua_name": "BETAFPV 900Micro",
@@ -184,6 +194,16 @@
                 "layout_file": "BETAFPV 2400 Nano.json",
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "BETAFPV_2400_TX"
+            },
+            "nanov2": {
+                "product_name": "BETAFPV 2.4GHz Nano TX V2",
+                "lua_name": "BETAFPV 2G4Nano",
+                "layout_file": "BETAFPV 2400 Nano V2.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "BETAFPV_2400_TX"
