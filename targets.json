@@ -79,6 +79,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX"
             },
+            "nano-pro": {
+                "product_name": "BAYCK 900MHz Nano Pro RX",
+                "lua_name": "BK 900 Nano Pro",
+                "layout_file":  "Generic 900 PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.1",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            },
             "dual-core": {
                 "product_name": "BAYCKRC 900MHz Dual Core RX",
                 "lua_name": "BK 900 Dual RX",
