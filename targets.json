@@ -67,11 +67,11 @@
             }
         }
     },
-    "bayck": {
-        "name": "BAYCK RC",
+    "bayckrc": {
+        "name": "BAYCKRC",
         "rx_900": {
             "nano": {
-                "product_name": "BAYCK 900MHz Nano RX",
+                "product_name": "BAYCKRC 900MHz Nano RX",
                 "lua_name": "BK 900 Nano RX",
                 "layout_file":  "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
@@ -80,7 +80,7 @@
                 "firmware": "Unified_ESP8285_900_RX"
             },
             "dual-core": {
-                "product_name": "BAYCK 900MHz Dual Core RX",
+                "product_name": "BAYCKRC 900MHz Dual Core RX",
                 "lua_name": "BK 900 Dual RX",
                 "layout_file": "Generic 900 True Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
@@ -91,7 +91,7 @@
         },
         "rx_2400": {
             "nano": {
-                "product_name": "BAYCK 2.4GHz Nano RX",
+                "product_name": "BAYCKRC 2.4GHz Nano RX",
                 "lua_name": "BK 2G4 Nano RX",
                 "layout_file":  "Generic 2400 PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
@@ -100,7 +100,7 @@
                 "firmware": "Unified_ESP8285_2400_RX"
             },
             "dual-core": {
-                "product_name": "BAYCK 2.4GHz Dual Core RX",
+                "product_name": "BAYCKRC 2.4GHz Dual Core RX",
                 "lua_name": "BK 2G4 Dual RX",
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "overlay": {
