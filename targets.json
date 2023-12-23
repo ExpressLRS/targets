@@ -67,6 +67,52 @@
             }
         }
     },
+    "bayckrc": {
+        "name": "BAYCKRC",
+        "rx_900": {
+            "nano": {
+                "product_name": "BAYCKRC 900MHz Nano RX",
+                "lua_name": "BK 900 Nano RX",
+                "layout_file":  "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.1",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            },
+            "dual-core": {
+                "product_name": "BAYCKRC 900MHz Dual Core RX",
+                "lua_name": "BK 900 Dual RX",
+                "layout_file": "Generic 900 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.1",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
+            }
+        },
+        "rx_2400": {
+            "nano": {
+                "product_name": "BAYCKRC 2.4GHz Nano RX",
+                "lua_name": "BK 2G4 Nano RX",
+                "layout_file":  "Generic 2400 PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.1",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "dual-core": {
+                "product_name": "BAYCKRC 2.4GHz Dual Core RX",
+                "lua_name": "BK 2G4 Dual RX",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "overlay": {
+                    "radio_dcdc": true
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.1",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
+            }
+        }
+    },
     "betafpv": {
         "name": "BETAFPV",
         "tx_900": {
@@ -642,6 +688,7 @@
                 "min_version": "3.0.0",
                 "platform": "stm32",
                 "firmware": "Frsky_TX_R9M_LITE_PRO",
+		"features": ["unlock-higher-power"],
                 "stlink": {
                     "cpus": ["STM32F303CCT6"],
                     "offset": "0x8000",
@@ -1822,6 +1869,61 @@
     },
     "radiomaster": {
         "name": "RadioMaster",
+        "tx_900": {
+            "bandit": {
+                "product_name": "RadioMaster Bandit 900MHz TX",
+                "lua_name": "RM Bandit",
+                "layout_file": "Radiomaster Bandit.json",
+                "logo_file": "radiomaster.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.3.2",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            },
+            "bandit-micro": {
+                "product_name": "RadioMaster Bandit Micro 900MHz TX",
+                "lua_name": "RM Bandit Micro",
+                "layout_file": "Radiomaster Bandit Micro.json",
+                "logo_file": "radiomaster.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.3.2",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            },
+            "bandit-nano": {
+                "product_name": "RadioMaster Bandit Nano 900MHz TX",
+                "lua_name": "RM Bandit Nano",
+                "layout_file": "Radiomaster Bandit Micro.json",
+                "overlay": {
+                    "power_values": [168,148,128,90]
+                },
+                "logo_file": "radiomaster.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.3.2",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            }
+        },
+        "rx_900": {
+            "br1": {
+                "product_name": "RadioMaster BR1 900Mz RX",
+                "lua_name": "RM BR1",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            },
+            "br3": {
+                "product_name": "RadioMaster BR3 Diversity 900Mz RX",
+                "lua_name": "RM BR3",
+                "layout_file": "Radiomaster BR3.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            }
+        },
         "tx_2400": {
             "zorro": {
                 "product_name": "RadioMaster Zorro Internal 2.4GHz TX",
@@ -1919,6 +2021,20 @@
             }
         },
         "rx_2400": {
+            "er3": {
+                "product_name": "RadioMaster ER3C-i 2.4GHz PWM RX",
+                "lua_name": "RM ER3C-i",
+                "layout_file": "Generic 2400 PWMP5.json",
+                "overlay": {
+                    "pwm_outputs": [0,1,3],
+                    "vbat_offset": -2,
+                    "vbat_scale": 292
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.1.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
             "er4": {
                 "product_name": "RadioMaster ER4 2.4GHz PWM RX",
                 "lua_name": "RM ER4",
@@ -1944,6 +2060,32 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMP"
+            },
+            "er5c-i": {
+                "product_name": "RadioMaster ER5C-i 2.4GHz PWM RX",
+                "lua_name": "RM ER5C-i",
+                "layout_file": "Generic 2400 PWMP5.json",
+                "overlay": {
+                    "vbat_offset": -2,
+                    "vbat_scale": 292
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.1.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "er5-v2": {
+                "product_name": "RadioMaster ER5A/C V2 2.4GHz PWM RX",
+                "lua_name": "RM ER5A/C V2",
+                "layout_file": "Generic 2400 PWMP5.json",
+                "overlay": {
+                    "vbat_offset": -2,
+                    "vbat_scale": 292
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.1.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
             },
             "er6": {
                 "product_name": "RadioMaster ER6 2.4GHz Diversity+6xPWM RX",
@@ -2045,6 +2187,16 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "MATEK_2400_RX_R24D"
+            },
+            "rp4": {
+                "product_name": "RadioMaster RP4-TD True Diversity 2.4GHz RX",
+                "lua_name": "RM RP4-TD 2400",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX",
+                "prior_target_name": "Unified_ESP32_2400_RX"
             }
         }
     },
@@ -2106,6 +2258,23 @@
             }
         }
     },
+    "speedybee": {
+        "name": "SpeedyBee",
+        "rx_2400": {
+            "ss24d": {
+                "product_name": "SpeedyBee Nano 2.4GHz RX",
+                "lua_name": "SB Nano 2G4 RX",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "power_values": [-8,-4,-1,2]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            }
+        }
+    },
     "atomrc": {
         "name": "atomrc",
         "rx_2400": {
@@ -2144,6 +2313,21 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "Vantac_2400_RX"
+            }
+        }
+    },
+    "zerodrag": {
+        "name": "ZeroDrag",
+        "rx_2400": {
+            "nexus1": {
+                "product_name": "ZeroDrag NexusONE 2.4GHz RX",
+                "lua_name": "ZD Nexus1 RX V1",
+                "layout_file": "Generic 2400.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.1.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
     }
