@@ -11,7 +11,7 @@
   "radio_dcdc": true,
   "radio_rfo_hf": true,
   "ant_ctrl": 9,
-  "Power_txen": 10,
+  "power_txen": 10,
   "power_lna_gain": 16,
   "power_min": 3,
   "power_high": 5,
