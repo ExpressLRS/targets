@@ -1513,8 +1513,8 @@
                 "lua_name": "T20 Gemini2G4TX",
                 "layout_file": "Generic 2400 Gemini.json",
                 "overlay": {
-                    "power_high": 6,
-                    "power_max": 6,
+                    "power_high": 5,
+                    "power_max": 5,
                     "power_values": [-18, -15, -11, -8, -4, 3],
                     "use_backpack": false
                 },
