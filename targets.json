@@ -1498,6 +1498,38 @@
                 "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "500": {
+                "product_name": "iFlight 2.4GHz 500mW RX",
+                "lua_name": "iF 2G4 500mW RX",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "power_min": 2,
+                    "power_high": 5,
+                    "power_max": 5,
+                    "power_default": 5,
+                    "power_values": [-9, -6, -2, 1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "dual250": {
+                "product_name": "iFlight 2.4GHz 250mW GRX",
+                "lua_name": "iF 2G4 250mW GRX",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "overlay": {
+                    "power_min": 2,
+                    "power_high": 4,
+                    "power_max": 4,
+                    "power_default": 4,
+                    "power_values": [-9, -6, -2]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
             }
         }
     },
