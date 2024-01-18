@@ -82,7 +82,7 @@
             "dual-core": {
                 "product_name": "BAYCKRC 900MHz Dual Core RX",
                 "lua_name": "BK 900 Dual RX",
-                "layout_file": "Generic 900 True Diversity PA.json",
+                "layout_file": "Generic 900 True Diversity.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.1",
                 "platform": "esp32",
@@ -153,7 +153,7 @@
             "superd": {
                 "product_name": "BETAFPV SuperD 900MHz RX",
                 "lua_name": "BFPV SuperD 900",
-                "layout_file": "Generic 900 True Diversity PA.json",
+                "layout_file": "Generic 900 True Diversity.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
                 "platform": "esp32",
@@ -796,9 +796,9 @@
                 "prior_target_name": "DIY_900_RX_PWMP"
             },
             "true_diversity": {
-                "product_name": "Generic ESP32 True Diversity PA 900MHz RX",
+                "product_name": "Generic ESP32 True Diversity 900MHz RX",
                 "lua_name": "Diversity 900RX",
-                "layout_file": "Generic 900 True Diversity PA.json",
+                "layout_file": "Generic 900 True Diversity.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
                 "platform": "esp32",
@@ -1110,7 +1110,7 @@
             "es900_dual": {
                 "product_name": "HappyModel ES900 Dual RX",
                 "lua_name": "HM ES900 Dual",
-                "layout_file": "Generic 900 True Diversity PA.json",
+                "layout_file": "Generic 900 True Diversity.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
                 "platform": "esp32",
