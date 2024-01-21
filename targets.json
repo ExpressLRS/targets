@@ -1002,8 +1002,8 @@
         },
         "tx_dual": {
             "gemini": {
-                "product_name": "Generic LR1121 Gemini 2.4/900 TX",
-                "lua_name": "Gemini 2xFreq TX",
+                "product_name": "Gemini XrossBand 2.4/900 TX",
+                "lua_name": "GemX TX",
                 "layout_file": "Generic LR1121 Gemini.json",
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.4.0",
@@ -1014,8 +1014,8 @@
         },
         "rx_dual": {
             "true_diversity": {
-                "product_name": "Generic LR1121 True Diversity PA 2.4/900 RX",
-                "lua_name": "Dual 2xFreq RX",
+                "product_name": "Gemini XrossBand PA 2.4/900 RX",
+                "lua_name": "GemX RX",
                 "layout_file": "Generic LR1121 True Diversity.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.4.0",
