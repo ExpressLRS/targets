@@ -1,6 +1,6 @@
 {
-    "serial_rx": 1,
-    "serial_tx": 1,
+    "serial_rx": 23,
+    "serial_tx": 23,
 
     "radio_miso": 33,
     "radio_mosi": 32,
@@ -30,11 +30,13 @@
     "ledidx_rgb_boot": [0],
 
     "radio_dcdc": true,
-
-    "use_backpack": false,
+    
+    "use_backpack": true,
     "debug_backpack_baud": 460800,
-    "debug_backpack_rx": 3,
-    "debug_backpack_tx": 1,
+    "debug_backpack_rx": 18,
+    "debug_backpack_tx": 5,
     "backpack_boot": 23,
-    "backpack_en": 19
+    "backpack_en": 19,
+
+    "misc_fan_en": 4
 }
