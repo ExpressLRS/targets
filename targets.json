@@ -999,6 +999,29 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             }
+        },
+        "tx_dual": {
+            "gemini": {
+                "product_name": "Gemini XrossBand 2.4/900 TX",
+                "lua_name": "GemX TX",
+                "layout_file": "Generic LR1121 Gemini.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            }
+
+        },
+        "rx_dual": {
+            "true_diversity": {
+                "product_name": "Gemini XrossBand PA 2.4/900 RX",
+                "lua_name": "GemX RX",
+                "layout_file": "Generic LR1121 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_RX"
+            }
         }
     },
     "geprc": {

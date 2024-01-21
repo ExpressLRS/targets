@@ -115,9 +115,9 @@ def validate_vendor(name, types):
         error(f'vendor "{vendor}" must have a "name" child element')
 
     for type in types:
-        if type not in ['rx_2400', 'rx_900', 'tx_2400', 'tx_900', 'name']:
+        if type not in ['rx_2400', 'rx_900', 'rx_dual', 'tx_2400', 'tx_900', 'tx_dual', 'name']:
             error(f'invalid tag "{type}" in "{vendor}"')
-        if type in  ['rx_2400', 'rx_900', 'tx_2400', 'tx_900']:
+        if type in  ['rx_2400', 'rx_900', 'rx_dual', 'tx_2400', 'tx_900', 'tx_dual']:
             for device in types[type]:
                 validate_devices(name, type, device, types[type][device])
 
