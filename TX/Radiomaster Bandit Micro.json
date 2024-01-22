@@ -11,7 +11,6 @@
   "radio_dcdc": true,
   "radio_rfo_hf": true,
   "power_txen": 33,
-  "power_rxen": 12,
   "power_apc2": 26,
   "power_min": 3,
   "power_high": 6,
