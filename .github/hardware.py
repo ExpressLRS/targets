@@ -143,6 +143,8 @@ def validate(target, layout):
         else:
             had_error |= validate_pin_uniqueness(target, layout, field)
     had_error |= validate_power_config(target, layout)
+    had_error |= validate_backpack(target, layout)
+    had_error |= validate_joystick(target, layout)
     return had_error
 
 
@@ -196,4 +198,36 @@ def validate_power_config(target, layout):
             if 'power_apc2' not in layout:
                 print(f'device "{target}" power_values2 is defined so the power_apc2 pin must also be defined')
                 had_error = True
+    return had_error
+
+
+def validate_backpack(target, layout):
+    had_error = False
+    if 'passthrough_baud' in layout:
+        if layout['serial_rx'] == layout['serial_tx'] and layout['passthrough_baud'] != 230400:
+            print(f'device "{target}" an external module with a backpack should set the baud rate to 230400')
+            had_error = True
+        if layout['serial_rx'] != layout['serial_tx'] and layout['passthrough_baud'] != 460800:
+            print(f'device "{target}" an internal module with a backpack should set the baud rate to 460800')
+            had_error = True
+    return had_error
+
+
+def validate_joystick(target, layout):
+    had_error = False
+    if 'joystick' in layout or 'joystick_values' in layout:
+        if 'joystick' not in layout:
+            print(f'device "{target}" joystick_values is defined so the joystick pin must also be defined')
+            had_error = True
+        elif 'joystick_values' not in layout:
+            print(f'device "{target}" joystick is defined so the joystick_values must also be defined')
+            had_error = True
+        elif len(layout['joystick_values']) != 6:
+            print(f'device "{target}" joystick_values must have 6 values defined')
+            had_error = True
+        else:
+            for value in layout['joystick_values']:
+                if value < 0 or value > 4095:
+                    print(f'device "{target}" joystick_values must be between 0 and 4095 inclusive')
+                    had_error = True
     return had_error
