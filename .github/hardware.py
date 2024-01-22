@@ -121,12 +121,32 @@ hardware_fields = {
 }
 
 
+allowable_duplicates = [
+    ['serial_rx', 'serial_tx'],
+    ['screen_sck', 'i2c_scl'],
+    ['screen_sda', 'screen_mosi', 'i2c_sda']
+]
+
+
 def validate(target, layout):
     had_error = False
-    # Ensure that all fields in the layout are valid fields from the hardware list
+    used_pins = {}
     for field in layout:
+        # Ensure that the layout field is a valid field from the hardware list
         if field not in hardware_fields.keys():
             print(f'device "{target}" has an unknown field name {field}')
             had_error = True
-    #
+        # If the type is PIN then it must be unique
+        elif hardware_fields[field] == FieldType.PIN:
+            pin = layout[field]
+            if pin in used_pins.keys():
+                allowed = False
+                for duplicate in allowable_duplicates:
+                    if field in duplicate and used_pins[pin] in duplicate:
+                        allowed = True
+                if not allowed:
+                    print(f'device "{target}" PIN {pin} "{field}" is already assigned to "{used_pins[pin]}"')
+                    had_error = True
+            else:
+                used_pins[pin] = field
     return had_error
