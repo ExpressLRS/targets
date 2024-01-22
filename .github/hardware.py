@@ -128,7 +128,11 @@ allowable_duplicates = [
 ]
 
 
+used_pins = {}
+
+
 def validate(target, layout):
+    global used_pins
     had_error = False
     used_pins = {}
     for field in layout:
@@ -136,17 +140,50 @@ def validate(target, layout):
         if field not in hardware_fields.keys():
             print(f'device "{target}" has an unknown field name {field}')
             had_error = True
-        # If the type is PIN then it must be unique
-        elif hardware_fields[field] == FieldType.PIN:
-            pin = layout[field]
-            if pin in used_pins.keys():
-                allowed = False
-                for duplicate in allowable_duplicates:
-                    if field in duplicate and used_pins[pin] in duplicate:
-                        allowed = True
-                if not allowed:
-                    print(f'device "{target}" PIN {pin} "{field}" is already assigned to "{used_pins[pin]}"')
-                    had_error = True
-            else:
-                used_pins[pin] = field
+        else:
+            had_error |= validate_pin_uniqueness(target, layout, field)
+    had_error |= validate_power_config(target, layout)
+    return had_error
+
+
+def validate_pin_uniqueness(target, layout, field):
+    had_error = False
+    if hardware_fields[field] == FieldType.PIN:
+        pin = layout[field]
+        if pin in used_pins.keys():
+            allowed = False
+            for duplicate in allowable_duplicates:
+                if field in duplicate and used_pins[pin] in duplicate:
+                    allowed = True
+            if not allowed:
+                print(f'device "{target}" PIN {pin} "{field}" is already assigned to "{used_pins[pin]}"')
+                had_error = True
+        else:
+            used_pins[pin] = field
+    return had_error
+
+
+def validate_power_config(target, layout):
+    had_error = False
+    if 'power_values' in layout:
+        power_values = layout['power_values']
+        power_max = layout['power_max']
+        power_min = layout['power_min']
+        power_default = layout['power_default']
+        power_high = layout['power_high']
+        if power_min > power_max:
+            print(f'device "{target}" power_min must be less than or equal to power_max')
+            had_error = True
+        if power_default < power_min or power_default > power_max:
+            print(f'device "{target}" power_default must lie between power_min and power_max')
+            had_error = True
+        if power_high < power_min or power_high > power_max:
+            print(f'device "{target}" power_high must lie between power_min and power_max')
+            had_error = True
+        if power_max-power_min+1 != len(power_values):
+            print(f'device "{target}" power_values must have the correct number of entries to match all values from power_min to power_max')
+            had_error = True
+        if 'power_values2' in layout and len(layout['power_values2']) != len(power_values):
+            print(f'device "{target}" power_values2 must have the same number of entries as power_values')
+            had_error = True
     return had_error
