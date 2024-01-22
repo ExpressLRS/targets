@@ -182,8 +182,18 @@ def validate_power_config(target, layout):
             had_error = True
         if power_max-power_min+1 != len(power_values):
             print(f'device "{target}" power_values must have the correct number of entries to match all values from power_min to power_max')
+            had_error = power_max-power_min+1 > len(power_values)
+        if layout['power_control'] == 3 and 'power_apc2' not in layout:
+            print(f'device "{target}" defines power_control as DACWRITE and power_apc2 is undefined')
             had_error = True
-        if 'power_values2' in layout and len(layout['power_values2']) != len(power_values):
-            print(f'device "{target}" power_values2 must have the same number of entries as power_values')
-            had_error = True
+        if 'power_values2' in layout:
+            if len(layout['power_values2']) != len(power_values):
+                print(f'device "{target}" power_values2 must have the same number of entries as power_values')
+                had_error = True
+            if layout['power_control'] != 3:
+                print(f'device "{target}" power_values2 is defined so power_control must be set to 3 (DACWRITE)')
+                had_error = True
+            if 'power_apc2' not in layout:
+                print(f'device "{target}" power_values2 is defined so the power_apc2 pin must also be defined')
+                had_error = True
     return had_error
