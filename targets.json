@@ -320,6 +320,20 @@
             }
         }
     },
+	"cyclone": {
+        "name": "Cyclone",
+        "tx_900": {
+            "plain": {
+                "product_name": "Cyclone 900MHz TX",
+                "lua_name": "Cyclone 900",
+                "layout_file": "Cyclone 900.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX",
+            }
+        }
+    },
     "diy": {
         "name": "DIY devices",
         "tx_900": {
