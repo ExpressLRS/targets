@@ -37,6 +37,13 @@
     "debug_backpack_tx": 5,
     "backpack_boot": 23,
     "backpack_en": 19,
+    
+    "screen_type": 1,
+    "screen_sck": 9,
+    "screen_sda": 10,
+
+    "joystick":35,
+    "joystick_values":[3227, 0, 1961, 2668, 1290, 4095],
 
     "misc_fan_en": 4
 }
