@@ -150,6 +150,9 @@ allowable_duplicates = [
     ['screen_sck', 'i2c_scl'],
     ['screen_sda', 'screen_mosi', 'i2c_sda']
 ]
+allowable_pwm_shared = [
+    'serial_rx', 'serial_tx', 'i2c_scl', 'i2c_sda'
+]
 
 used_pins = {}
 
@@ -169,6 +172,7 @@ def validate(target, layout):
     had_error |= validate_power_config(target, layout)
     had_error |= validate_backpack(target, layout)
     had_error |= validate_joystick(target, layout)
+    had_error |= validate_pwm_outputs(target, layout)
     return had_error
 
 
@@ -225,9 +229,9 @@ def validate_power_config(target, layout):
         if power_high < power_min or power_high > power_max:
             print(f'device "{target}" power_high must lie between power_min and power_max')
             had_error = True
-        if power_max-power_min+1 != len(power_values):
+        if power_max - power_min + 1 != len(power_values):
             print(f'device "{target}" power_values must have the correct number of entries to match all values from power_min to power_max')
-            had_error = power_max-power_min+1 > len(power_values)
+            had_error = power_max - power_min + 1 > len(power_values)
         if layout['power_control'] == 3 and 'power_apc2' not in layout:
             print(f'device "{target}" defines power_control as DACWRITE and power_apc2 is undefined')
             had_error = True
@@ -273,4 +277,17 @@ def validate_joystick(target, layout):
                 if value < 0 or value > 4095:
                     print(f'device "{target}" joystick_values must be between 0 and 4095 inclusive')
                     had_error = True
+    return had_error
+
+
+def validate_pwm_outputs(target, layout):
+    had_error = False
+    if 'pwm_outputs' in layout:
+        for field in hardware_fields:
+            if hardware_fields[field] == FieldType.PIN and \
+                    field in layout and \
+                    layout[field] in layout['pwm_outputs'] and \
+                    field not in allowable_pwm_shared:
+                print(f'device "{target}" pwm_output pin {layout[field]} is not allowed to be shared with {field}')
+                had_error = True
     return had_error
