@@ -188,6 +188,7 @@ def validate(target, layout, device):
     had_error |= validate_backpack(target, layout)
     had_error |= validate_joystick(target, layout)
     had_error |= validate_pwm_outputs(target, layout)
+    had_error |= validate_vtx_amp_pwm(target, layout, device['platform'])
     return had_error
 
 
@@ -317,4 +318,12 @@ def validate_pin_function(target, layout, field, platform):
         if hardware_fields[field] == FieldType.INPUT and not (function & 1):
             print(f'device "{target}" pin for {field} must be assigned to a pin that supports INPUT')
             return True
+    return False
+
+
+def validate_vtx_amp_pwm(target, layout, platform):
+    if platform == 'esp32' and 'vtx_amp_pwm' in layout:
+        function = get_pin_function(platform, layout['vtx_amp_pwm'])
+        if function is not None and function & 8 != 8:
+            print(f'device "{target}" "vtx_amp_pwm" is preferred to be a DAC pin if possible, but PWM output is supported')
     return False
