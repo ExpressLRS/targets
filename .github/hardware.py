@@ -7,7 +7,6 @@ class FieldType(Enum):
     BOOL = 2
     FLOAT = 3
     ARRAY = 4
-    COUNT = 5
 
 
 hardware_fields = {
@@ -71,11 +70,8 @@ hardware_fields = {
     "led_rgb": FieldType.PIN,
     "led_rgb_isgrb": FieldType.BOOL,
     "ledidx_rgb_status": FieldType.ARRAY,
-    "ledidx_rgb_status_count": FieldType.COUNT,
     "ledidx_rgb_vtx": FieldType.ARRAY,
-    "ledidx_rgb_vtx_count": FieldType.COUNT,
     "ledidx_rgb_boot": FieldType.ARRAY,
-    "ledidx_rgb_boot_count": FieldType.COUNT,
     "screen_cs": FieldType.PIN,
     "screen_dc": FieldType.PIN,
     "screen_mosi": FieldType.PIN,
@@ -100,11 +96,9 @@ hardware_fields = {
     "misc_fan_pwm": FieldType.PIN,
     "misc_fan_tacho": FieldType.PIN,
     "misc_fan_speeds": FieldType.ARRAY,
-    "misc_fan_speeds_count": FieldType.COUNT,
     "gsensor_stk8xxx": FieldType.BOOL,
     "thermal_lm75a": FieldType.BOOL,
     "pwm_outputs": FieldType.ARRAY,
-    "pwm_outputs_count": FieldType.COUNT,
     "vbat": FieldType.PIN,
     "vbat_offset": FieldType.INT,
     "vbat_scale": FieldType.INT,
@@ -120,13 +114,42 @@ hardware_fields = {
     "vtx_amp_vpd_100mW": FieldType.ARRAY
 }
 
+field_groups = [
+    # if one of the first group then all the first and second groups and
+    # at-least one of the third group must also be defined
+    [["serial_rx", "serial_tx"], [], []],
+    [["radio_miso", "radio_mosi", "radio_sck", "radio_nss"], [], ["radio_rst", "pwm_outputs"]],
+    [["radio_miso", "radio_mosi", "radio_sck", "radio_nss"], [], ["radio_dio0", "radio_dio1"]],
+    [["radio_busy"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss", "radio_dio1"], []],
+    [["radio_busy_2"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss_2", "radio_dio1_2"], []],
+    [["radio_dio0"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss"], ["radio_rst", "pwm_outputs"]],
+    [["radio_dio1"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss"], ["radio_rst", "pwm_outputs"]],
+    [["radio_rst_2"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss", "radio_rst", "radio_nss_2"], []],
+    [["radio_nss_2"], ["radio_miso", "radio_mosi", "radio_sck"], ["radio_dio0_2", "radio_dio1_2"]],
+    [["power_min", "power_high", "power_max", "power_default", "power_control", "power_values"], [], []],
+    [["debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], [], []],
+    [["use_backpack"], ["debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], []],
+    [["backpack_boot", "backpack_en"], ["use_backpack", "debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], []],
+    [["i2c_scl", "i2c_sda"], [], []],
+    [["joystick", "joystick_values"], [], []],
+    [["five_way1", "five_way2", "five_way3"], [], []],
+    [["misc_fan_pwm", "misc_fan_speeds"], [], []],
+    [["vbat", "vbat_offset", "vbat_scale"], [], []],
+    [["power_pdet", "power_pdet_intercept", "power_pdet_slope"], [], []],
+    [["screen_sda"], ["screen_sck", "screen_type"], []],
+    [["screen_mosi"], ["screen_cs", "screen_dc", "screen_rst", "screen_type", "screen_sck"], []],
+    [["vtx_amp_pwm", "vtx_amp_vpd", "vtx_amp_vref", "vtx_nss", "vtx_miso", "vtx_mosi", "vtx_sck", "vtx_amp_vpd_25mW", "vtx_amp_vpd_100mW"], [], []]
+]
+
+mutually_exclusive_groups = [
+    ["ant_ctrl", "ant_ctrl_compl"]
+]
 
 allowable_duplicates = [
     ['serial_rx', 'serial_tx'],
     ['screen_sck', 'i2c_scl'],
     ['screen_sda', 'screen_mosi', 'i2c_sda']
 ]
-
 
 used_pins = {}
 
@@ -142,9 +165,29 @@ def validate(target, layout):
             had_error = True
         else:
             had_error |= validate_pin_uniqueness(target, layout, field)
+        had_error |= validate_grouping(target, layout, field)
     had_error |= validate_power_config(target, layout)
     had_error |= validate_backpack(target, layout)
     had_error |= validate_joystick(target, layout)
+    return had_error
+
+
+def validate_grouping(target, layout, field):
+    had_error = False
+    for group in field_groups:
+        if field in group[0]:
+            for must in group[0] + group[1]:
+                if must not in layout:
+                    print(f'device "{target}" because "{field}" is defined all other related fields must also be defined {must}')
+                    print(f'\t{group[0] + group[1]}')
+                    had_error = True
+            found = True if group[2] == [] else False
+            for one in group[2]:
+                if one in layout:
+                    found = True
+            if not found:
+                print(f'device "{target}" because "{field}" is defined at least one of the following fields must also be {group[2]}')
+                had_error = True
     return had_error
 
 
