@@ -1,115 +1,120 @@
 from enum import Enum
+from pin_functions import get_pin_function
 
 
 class FieldType(Enum):
-    PIN = 0
     INT = 1
     BOOL = 2
     FLOAT = 3
     ARRAY = 4
+    PIN = 100   # marker
+    INPUT = 101
+    OUTPUT = 102
+    BIDIR = 103
+    ADC = 104
 
 
 hardware_fields = {
-    "serial_rx": FieldType.PIN,
-    "serial_tx": FieldType.PIN,
-    "radio_busy": FieldType.PIN,
-    "radio_busy_2": FieldType.PIN,
-    "radio_dio0": FieldType.PIN,
-    "radio_dio0_2": FieldType.PIN,
-    "radio_dio1": FieldType.PIN,
-    "radio_dio1_2": FieldType.PIN,
-    "radio_dio2": FieldType.PIN,
-    "radio_miso": FieldType.PIN,
-    "radio_mosi": FieldType.PIN,
-    "radio_nss": FieldType.PIN,
-    "radio_nss_2": FieldType.PIN,
-    "radio_rst": FieldType.PIN,
-    "radio_rst_2": FieldType.PIN,
-    "radio_sck": FieldType.PIN,
+    "serial_rx": FieldType.INPUT,
+    "serial_tx": FieldType.OUTPUT,
+    "radio_busy": FieldType.INPUT,
+    "radio_busy_2": FieldType.INPUT,
+    "radio_dio0": FieldType.INPUT,
+    "radio_dio0_2": FieldType.INPUT,
+    "radio_dio1": FieldType.INPUT,
+    "radio_dio1_2": FieldType.INPUT,
+    "radio_dio2": FieldType.INPUT,
+    "radio_miso": FieldType.INPUT,
+    "radio_mosi": FieldType.OUTPUT,
+    "radio_nss": FieldType.OUTPUT,
+    "radio_nss_2": FieldType.OUTPUT,
+    "radio_rst": FieldType.OUTPUT,
+    "radio_rst_2": FieldType.OUTPUT,
+    "radio_sck": FieldType.OUTPUT,
     "radio_dcdc": FieldType.BOOL,
     "radio_rfo_hf": FieldType.BOOL,
-    "ant_ctrl": FieldType.PIN,
-    "ant_ctrl_compl": FieldType.PIN,
-    "power_enable": FieldType.PIN,
-    "power_apc1": FieldType.PIN,
-    "power_apc2": FieldType.PIN,
-    "power_rxen": FieldType.PIN,
-    "power_txen": FieldType.PIN,
-    "power_rxen_2": FieldType.PIN,
-    "power_txen_2": FieldType.PIN,
+    "ant_ctrl": FieldType.OUTPUT,
+    "ant_ctrl_compl": FieldType.OUTPUT,
+    "power_enable": FieldType.OUTPUT,
+    "power_apc1": FieldType.OUTPUT,
+    "power_apc2": FieldType.OUTPUT,
+    "power_rxen": FieldType.OUTPUT,
+    "power_txen": FieldType.OUTPUT,
+    "power_rxen_2": FieldType.OUTPUT,
+    "power_txen_2": FieldType.OUTPUT,
     "power_lna_gain": FieldType.INT,
     "power_min": FieldType.INT,
     "power_high": FieldType.INT,
     "power_max": FieldType.INT,
     "power_default": FieldType.INT,
-    "power_pdet": FieldType.PIN,
+    "power_pdet": FieldType.ADC,
     "power_pdet_intercept": FieldType.FLOAT,
     "power_pdet_slope": FieldType.FLOAT,
     "power_control": FieldType.INT,
     "power_values": FieldType.ARRAY,
     "power_values2": FieldType.ARRAY,
     "power_values_dual": FieldType.ARRAY,
-    "joystick": FieldType.PIN,
+    "joystick": FieldType.ADC,
     "joystick_values": FieldType.ARRAY,
-    "five_way1": FieldType.PIN,
-    "five_way2": FieldType.PIN,
-    "five_way3": FieldType.PIN,
-    "button": FieldType.PIN,
+    "five_way1": FieldType.INPUT,
+    "five_way2": FieldType.INPUT,
+    "five_way3": FieldType.INPUT,
+    "button": FieldType.INPUT,
     "button_led_index": FieldType.INT,
-    "button2": FieldType.PIN,
+    "button2": FieldType.INPUT,
     "button2_led_index": FieldType.INT,
-    "led": FieldType.PIN,
-    "led_blue": FieldType.PIN,
+    "led": FieldType.OUTPUT,
+    "led_blue": FieldType.OUTPUT,
     "led_blue_invert": FieldType.BOOL,
-    "led_green": FieldType.PIN,
+    "led_green": FieldType.OUTPUT,
     "led_green_invert": FieldType.BOOL,
-    "led_green_red": FieldType.PIN,
-    "led_red": FieldType.PIN,
+    "led_green_red": FieldType.OUTPUT,
+    "led_red": FieldType.OUTPUT,
     "led_red_invert": FieldType.BOOL,
-    "led_red_green": FieldType.PIN,
-    "led_rgb": FieldType.PIN,
+    "led_red_green": FieldType.OUTPUT,
+    "led_rgb": FieldType.OUTPUT,
     "led_rgb_isgrb": FieldType.BOOL,
     "ledidx_rgb_status": FieldType.ARRAY,
     "ledidx_rgb_vtx": FieldType.ARRAY,
     "ledidx_rgb_boot": FieldType.ARRAY,
-    "screen_cs": FieldType.PIN,
-    "screen_dc": FieldType.PIN,
-    "screen_mosi": FieldType.PIN,
-    "screen_rst": FieldType.PIN,
-    "screen_sck": FieldType.PIN,
-    "screen_sda": FieldType.PIN,
+    "screen_cs": FieldType.OUTPUT,
+    "screen_dc": FieldType.OUTPUT,
+    "screen_mosi": FieldType.OUTPUT,
+    "screen_rst": FieldType.OUTPUT,
+    "screen_sck": FieldType.OUTPUT,
+    "screen_sda": FieldType.OUTPUT,
     "screen_type": FieldType.INT,
     "screen_reversed": FieldType.BOOL,
-    "screen_bl": FieldType.PIN,
+    "screen_bl": FieldType.OUTPUT,
     "use_backpack": FieldType.BOOL,
     "debug_backpack_baud": FieldType.INT,
-    "debug_backpack_rx": FieldType.PIN,
-    "debug_backpack_tx": FieldType.PIN,
-    "backpack_boot": FieldType.PIN,
-    "backpack_en": FieldType.PIN,
+    "debug_backpack_rx": FieldType.INPUT,
+    "debug_backpack_tx": FieldType.OUTPUT,
+    "backpack_boot": FieldType.OUTPUT,
+    "backpack_en": FieldType.OUTPUT,
     "passthrough_baud": FieldType.INT,
-    "i2c_scl": FieldType.PIN,
-    "i2c_sda": FieldType.PIN,
-    "misc_gsensor_int": FieldType.PIN,
-    "misc_buzzer": FieldType.PIN,
-    "misc_fan_en": FieldType.PIN,
-    "misc_fan_pwm": FieldType.PIN,
-    "misc_fan_tacho": FieldType.PIN,
+    "i2c_scl": FieldType.OUTPUT,
+    "i2c_sda": FieldType.BIDIR,
+    "misc_gsensor_int": FieldType.INPUT,
+    "misc_buzzer": FieldType.OUTPUT,
+    "misc_fan_en": FieldType.OUTPUT,
+    "misc_fan_pwm": FieldType.OUTPUT,
+    "misc_fan_tacho": FieldType.INPUT,
     "misc_fan_speeds": FieldType.ARRAY,
     "gsensor_stk8xxx": FieldType.BOOL,
     "thermal_lm75a": FieldType.BOOL,
     "pwm_outputs": FieldType.ARRAY,
-    "vbat": FieldType.PIN,
+    "vbat": FieldType.ADC,
     "vbat_offset": FieldType.INT,
     "vbat_scale": FieldType.INT,
     "vbat_atten": FieldType.INT,
-    "vtx_amp_pwm": FieldType.PIN,
-    "vtx_amp_vpd": FieldType.PIN,
-    "vtx_amp_vref": FieldType.PIN,
-    "vtx_nss": FieldType.PIN,
-    "vtx_miso": FieldType.PIN,
-    "vtx_mosi": FieldType.PIN,
-    "vtx_sck": FieldType.PIN,
+    "vtx_amp_pwm": FieldType.OUTPUT,
+    "vtx_amp_vpd": FieldType.ADC,
+    "vtx_amp_vref": FieldType.OUTPUT,
+    "vtx_nss": FieldType.OUTPUT,
+    "vtx_miso": FieldType.INPUT,
+    "vtx_mosi": FieldType.OUTPUT,
+    "vtx_sck": FieldType.OUTPUT,
     "vtx_amp_vpd_25mW": FieldType.ARRAY,
     "vtx_amp_vpd_100mW": FieldType.ARRAY
 }
@@ -157,18 +162,28 @@ allowable_pwm_shared = [
 used_pins = {}
 
 
-def validate(target, layout):
+def ignore_undef_pins(pair):
+    key, value = pair
+    # FIXME, <0 should really be -1, but I used -pin number to mean inverted for the backlight
+    if hardware_fields[key].value > FieldType.PIN.value and value < 0:
+        return False
+    else:
+        return True
+
+
+def validate(target, layout, device):
     global used_pins
     had_error = False
     used_pins = {}
-    for field in layout:
+    for field in dict(filter(ignore_undef_pins, layout.items())):
         # Ensure that the layout field is a valid field from the hardware list
         if field not in hardware_fields.keys():
             print(f'device "{target}" has an unknown field name {field}')
             had_error = True
         else:
             had_error |= validate_pin_uniqueness(target, layout, field)
-        had_error |= validate_grouping(target, layout, field)
+            had_error |= validate_grouping(target, layout, field)
+            had_error |= validate_pin_function(target, layout, field, device['platform'])
     had_error |= validate_power_config(target, layout)
     had_error |= validate_backpack(target, layout)
     had_error |= validate_joystick(target, layout)
@@ -197,7 +212,7 @@ def validate_grouping(target, layout, field):
 
 def validate_pin_uniqueness(target, layout, field):
     had_error = False
-    if hardware_fields[field] == FieldType.PIN:
+    if hardware_fields[field].value > FieldType.PIN.value:
         pin = layout[field]
         if pin in used_pins.keys():
             allowed = False
@@ -284,10 +299,22 @@ def validate_pwm_outputs(target, layout):
     had_error = False
     if 'pwm_outputs' in layout:
         for field in hardware_fields:
-            if hardware_fields[field] == FieldType.PIN and \
+            if hardware_fields[field].value > FieldType.PIN.value and \
                     field in layout and \
                     layout[field] in layout['pwm_outputs'] and \
                     field not in allowable_pwm_shared:
                 print(f'device "{target}" pwm_output pin {layout[field]} is not allowed to be shared with {field}')
                 had_error = True
     return had_error
+
+
+def validate_pin_function(target, layout, field, platform):
+    if hardware_fields[field].value > FieldType.PIN.value:
+        function = get_pin_function(platform, layout[field])
+        if function is None:
+            print(f'device "{target}" has an invalid pin number for {field}, {layout[field]}')
+            return True
+        if hardware_fields[field] == FieldType.INPUT and not (function & 1):
+            print(f'device "{target}" pin for {field} must be assigned to a pin that supports INPUT')
+            return True
+    return False
