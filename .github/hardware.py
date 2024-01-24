@@ -116,7 +116,9 @@ hardware_fields = {
     "vtx_mosi": FieldType.OUTPUT,
     "vtx_sck": FieldType.OUTPUT,
     "vtx_amp_vpd_25mW": FieldType.ARRAY,
-    "vtx_amp_vpd_100mW": FieldType.ARRAY
+    "vtx_amp_vpd_100mW": FieldType.ARRAY,
+    "vtx_amp_pwm_25mW": FieldType.ARRAY,
+    "vtx_amp_pwm_100mW": FieldType.ARRAY
 }
 
 field_groups = {
@@ -181,7 +183,7 @@ used_pins = {}
 def ignore_undef_pins(pair):
     key, value = pair
     # FIXME, <0 should really be -1, but I used -pin number to mean inverted for the backlight
-    if hardware_fields[key].value > FieldType.PIN.value and value < 0:
+    if key in hardware_fields and hardware_fields[key].value > FieldType.PIN.value and value < 0:
         return False
     else:
         return True
