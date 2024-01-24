@@ -119,32 +119,48 @@ hardware_fields = {
     "vtx_amp_vpd_100mW": FieldType.ARRAY
 }
 
-field_groups = [
-    # if one of the first group then all the first and second groups and
-    # at-least one of the third group must also be defined
-    [["serial_rx", "serial_tx"], [], []],
-    [["radio_miso", "radio_mosi", "radio_sck", "radio_nss"], [], ["radio_rst", "pwm_outputs"]],
-    [["radio_miso", "radio_mosi", "radio_sck", "radio_nss"], [], ["radio_dio0", "radio_dio1"]],
-    [["radio_busy"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss", "radio_dio1"], []],
-    [["radio_busy_2"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss_2", "radio_dio1_2"], []],
-    [["radio_dio0"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss"], ["radio_rst", "pwm_outputs"]],
-    [["radio_dio1"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss"], ["radio_rst", "pwm_outputs"]],
-    [["radio_rst_2"], ["radio_miso", "radio_mosi", "radio_sck", "radio_nss", "radio_rst", "radio_nss_2"], []],
-    [["radio_nss_2"], ["radio_miso", "radio_mosi", "radio_sck"], ["radio_dio0_2", "radio_dio1_2"]],
-    [["power_min", "power_high", "power_max", "power_default", "power_control", "power_values"], [], []],
-    [["debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], [], []],
-    [["use_backpack"], ["debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], []],
-    [["backpack_boot", "backpack_en"], ["use_backpack", "debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], []],
-    [["i2c_scl", "i2c_sda"], [], []],
-    [["joystick", "joystick_values"], [], []],
-    [["five_way1", "five_way2", "five_way3"], [], []],
-    [["misc_fan_pwm", "misc_fan_speeds"], [], []],
-    [["vbat", "vbat_offset", "vbat_scale"], [], []],
-    [["power_pdet", "power_pdet_intercept", "power_pdet_slope"], [], []],
-    [["screen_sda"], ["screen_sck", "screen_type"], []],
-    [["screen_mosi"], ["screen_cs", "screen_dc", "screen_rst", "screen_type", "screen_sck"], []],
-    [["vtx_amp_pwm", "vtx_amp_vpd", "vtx_amp_vref", "vtx_nss", "vtx_miso", "vtx_mosi", "vtx_sck", "vtx_amp_vpd_25mW", "vtx_amp_vpd_100mW"], [], []]
-]
+field_groups = {
+    "all": [
+        # if one of the first group then all the first and second groups and
+        # at-least one of the third group must also be defined
+        [["serial_rx", "serial_tx"], [], []],
+        [["power_min", "power_high", "power_max", "power_default", "power_control", "power_values"], [], []],
+        [["debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], [], []],
+        [["use_backpack"], ["debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], []],
+        [["backpack_boot", "backpack_en"], ["use_backpack", "debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], []],
+        [["i2c_scl", "i2c_sda"], [], []],
+        [["joystick", "joystick_values"], [], []],
+        [["five_way1", "five_way2", "five_way3"], [], []],
+        [["misc_fan_pwm", "misc_fan_speeds"], [], []],
+        [["vbat", "vbat_offset", "vbat_scale"], [], []],
+        [["power_pdet", "power_pdet_intercept", "power_pdet_slope"], [], []],
+        [["screen_sda"], ["screen_sck", "screen_type"], []],
+        [["screen_mosi"], ["screen_cs", "screen_dc", "screen_rst", "screen_type", "screen_sck"], []],
+        [["vtx_amp_pwm", "vtx_amp_vpd", "vtx_amp_vref", "vtx_nss", "vtx_miso", "vtx_mosi", "vtx_sck", "vtx_amp_vpd_25mW", "vtx_amp_vpd_100mW"], [], []]
+    ],
+    "2400": [
+        [["radio_dio1", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], [], ["radio_rst", "pwm_outputs"]],
+        [["radio_busy"], ["radio_dio1", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], ["radio_rst", "pwm_outputs"]],
+        [["radio_rst"], ["radio_dio1", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], []],
+        [["radio_dio1_2", "radio_nss_2"], ["radio_miso", "radio_mosi", "radio_sck"], ["radio_rst_2", "radio_rst", "pwm_outputs"]],
+        [["radio_busy_2"], ["radio_dio1_2", "radio_miso", "radio_mosi", "radio_sck", "radio_nss_2"], ["radio_rst_2", "radio_rst", "pwm_outputs"]],
+        [["radio_rst_2"], ["radio_dio1_2", "radio_miso", "radio_mosi", "radio_sck", "radio_nss_2"], []]
+    ],
+    "900": [
+        [["radio_dio0", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], [], ["radio_rst", "pwm_outputs"]],
+        [["radio_rst"], ["radio_dio0", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], []],
+        [["radio_dio0_2", "radio_nss_2"], ["radio_miso", "radio_mosi", "radio_sck"], ["radio_rst_2", "radio_rst", "pwm_outputs"]],
+        [["radio_rst_2"], ["radio_dio0_2", "radio_miso", "radio_mosi", "radio_sck", "radio_nss_2"], []]
+    ],
+    "dual": [
+        [["radio_dio1", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], [], ["radio_rst", "pwm_outputs"]],
+        [["radio_busy"], ["radio_dio1", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], ["radio_rst", "pwm_outputs"]],
+        [["radio_rst"], ["radio_dio1", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], []],
+        [["radio_dio1_2", "radio_nss_2"], ["radio_miso", "radio_mosi", "radio_sck"], ["radio_rst_2", "radio_rst", "pwm_outputs"]],
+        [["radio_busy_2"], ["radio_dio1_2", "radio_miso", "radio_mosi", "radio_sck", "radio_nss_2"], ["radio_rst_2", "radio_rst", "pwm_outputs"]],
+        [["radio_rst_2"], ["radio_dio1_2", "radio_miso", "radio_mosi", "radio_sck", "radio_nss_2"], []]
+    ]
+}
 
 mutually_exclusive_groups = [
     ["ant_ctrl", "ant_ctrl_compl"]
@@ -171,7 +187,7 @@ def ignore_undef_pins(pair):
         return True
 
 
-def validate(target, layout, device):
+def validate(target, layout, device, type):
     global used_pins
     had_error = False
     used_pins = {}
@@ -182,7 +198,7 @@ def validate(target, layout, device):
             had_error = True
         else:
             had_error |= validate_pin_uniqueness(target, layout, field)
-            had_error |= validate_grouping(target, layout, field)
+            had_error |= validate_grouping(target, layout, field, type)
             had_error |= validate_pin_function(target, layout, field, device['platform'])
     had_error |= validate_power_config(target, layout)
     had_error |= validate_backpack(target, layout)
@@ -192,9 +208,20 @@ def validate(target, layout, device):
     return had_error
 
 
-def validate_grouping(target, layout, field):
+def validate_grouping(target, layout, field, radio):
+    had_error = validate_field_grouping(target, layout, field, 'all')
+    if radio.endswith('_2400'):
+        had_error |= validate_field_grouping(target, layout, field, '2400')
+    elif radio.endswith('_900'):
+        had_error |= validate_field_grouping(target, layout, field, '900')
+    elif radio.endswith('_dual'):
+        had_error |= validate_field_grouping(target, layout, field, 'dual')
+    return had_error
+
+
+def validate_field_grouping(target, layout, field, field_group):
     had_error = False
-    for group in field_groups:
+    for group in field_groups[field_group]:
         if field in group[0]:
             for must in group[0] + group[1]:
                 if must not in layout:
