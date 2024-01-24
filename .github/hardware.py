@@ -182,6 +182,10 @@ used_pins = {}
 
 def ignore_undef_pins(pair):
     key, value = pair
+    # ignore keys that start with a comment character
+    if key[0] in '/#;':
+        return False
+
     # FIXME, <0 should really be -1, but I used -pin number to mean inverted for the backlight
     if key in hardware_fields and hardware_fields[key].value > FieldType.PIN.value and value < 0:
         return False
