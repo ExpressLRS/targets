@@ -704,6 +704,19 @@
     },
     "foxeer": {
         "name": "Foxeer",
+        "tx_2400": {
+            "oled": {
+                "product_name": "Foxeer OLED 2.4GHz TX",
+                "lua_name": "Foxeer 2400TX",
+                "layout_file": "Foxeer 2400.json",
+                "logo_file": "emax.bin",
+                "features": ["fan"],
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
+            }
+        },
         "rx_2400": {
             "pa-rgb": {
                 "product_name": "Foxeer 2.4Ghz RX",
