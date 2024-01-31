@@ -709,7 +709,7 @@
                 "product_name": "Foxeer OLED 2.4GHz TX",
                 "lua_name": "Foxeer 2400TX",
                 "layout_file": "Foxeer 2400.json",
-                "logo_file": "emax.bin",
+                "logo_file": "foxeer.bin",
                 "features": ["fan"],
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.4.0",
