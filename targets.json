@@ -2450,6 +2450,17 @@
                 "firmware": "Unified_ESP32_2400_RX",
                 "prior_target_name": "Unified_ESP32_2400_RX"
             }
+        },
+        "tx_dual": {
+            "nomad": {
+                "product_name": "RadioMaster Nomad 2.4/900 TX",
+                "lua_name": "RM Nomad X-Band",
+                "layout_file": "Radiomaster Nomad.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            }
         }
     },
     "sequre": {
