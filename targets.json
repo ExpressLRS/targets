@@ -1599,6 +1599,19 @@
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
             },
+            "t-14": {
+                "product_name": "Jumper AION T-14 2.4GHz TX",
+                "lua_name": "T-14 2G4 TX",
+                "layout_file": "Jumper T-20 2400.json",
+                "overlay": {
+                    "use_backpack": true,
+                    "misc_fan_en": 33
+                },
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX"
+            },
             "t-20-gemini": {
                 "product_name": "Jumper Gemini T-20 2.4GHz TX",
                 "lua_name": "T20 Gemini2G4TX",
@@ -1660,6 +1673,15 @@
             "t-20-v2": {
                 "product_name": "Jumper AION T-20 900M V2 TX",
                 "lua_name": "T-20 900 V2 TX",
+                "layout_file": "Jumper T-20 900 V2.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            },
+            "t-14": {
+                "product_name": "Jumper AION T-14 900M TX",
+                "lua_name": "T-14 900 TX",
                 "layout_file": "Jumper T-20 900 V2.json",
                 "upload_methods": ["uart", "wifi", "etx"],
                 "min_version": "3.3.0",
