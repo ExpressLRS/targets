@@ -794,6 +794,15 @@
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "Unified_ESP32_900_TX"
             }
+			"dupletxesp": {
+                "product_name": "Generic ESP8285 Full-duplex 900MHz RX as TX",
+                "lua_name": "ELRS 900TX",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_TX",
+            }
         },
         "rx_900": {
             "plain": {
