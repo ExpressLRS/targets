@@ -796,8 +796,8 @@
             },
             "dupletxesp": {
                 "product_name": "Generic ESP8285 Full-duplex 900MHz RX as TX",
-                "lua_name": "ELRS 900TX",
-                "layout_file": "Generic 900.json",
+                "lua_name": "DupleTX 900 ESP",
+                "layout_file": "Generic 900 DupleTX ESP.json",
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.0.0",
                 "platform": "esp8285",
