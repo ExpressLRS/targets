@@ -801,7 +801,7 @@
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_900_TX",
+                "firmware": "Unified_ESP8285_900_TX"
             }
         },
         "rx_900": {
