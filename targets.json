@@ -799,7 +799,7 @@
                 "lua_name": "DupleTX RX",
                 "layout_file": "DIY 900 DupleTX RX.json",
                 "upload_methods": ["uart", "wifi"],
-                "min_version": "3.0.0",
+                "min_version": "3.4.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_TX"
             }
