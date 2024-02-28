@@ -1467,7 +1467,7 @@
                 "firmware": "Unified_ESP8285_900_RX"
             },
             "dual500": {
-                "product_name": "iFlight 900MHz 500mW GRX",
+                "product_name": "iFlight 900MHz 500mW Diversity RX",
                 "lua_name": "iF 900 500mW GRX",
                 "layout_file": "Generic 900 True Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
@@ -1534,7 +1534,7 @@
                 "firmware": "Unified_ESP8285_2400_RX"
             },
             "dual250": {
-                "product_name": "iFlight 2.4GHz 250mW GRX",
+                "product_name": "iFlight 2.4GHz 250mW Diversity RX",
                 "lua_name": "iF 2G4 250mW GRX",
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "overlay": {
