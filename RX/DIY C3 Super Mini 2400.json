@@ -14,13 +14,13 @@
     "power_default": 0,
     "power_control": 0,
     "power_values": [13],
-    "pwm_outputs": [0,9,18,19,20,21],
+    "pwm_outputs": [9,10,18,19,20,21],
     "led": 8,
     "led_red_invert": true,
-    "/led_rgb": 0,
+    "/led_rgb": 8,
     "/led_rgb_isgrb": true,
     "/button": 9,
-    "vbat": 10,
+    "vbat": 0,
     "vbat_offset": 12,
     "vbat_scale": 410
 }
