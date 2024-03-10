@@ -2080,6 +2080,15 @@
                 "min_version": "3.3.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX"
+            },
+            "bandit-nano-RX": {
+                "product_name": "RadioMaster Bandit Nano 900MHz RX",
+                "lua_name": "RM Bandit Nano RX",
+                "layout_file": "Radiomaster Bandit Nano.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.2",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
             }
         },
         "tx_2400": {
