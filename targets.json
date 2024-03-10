@@ -1370,6 +1370,18 @@
                 "prior_target_name": "HGLRC_Hermes_900_RX"
             }
         },
+        "tx_900": {
+            "oled": {
+                "product_name": "HGLRC OLED 900MHz TX",
+                "lua_name": "HGLRC OLED 900",
+                "layout_file": "HGLRC OLED 900.json",
+                "logo_file": "hglrc.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            }
+        },
         "tx_2400": {
             "hermes": {
                 "product_name": "HGLRC Hermes 2.4GHz TX",
