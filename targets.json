@@ -1301,6 +1301,16 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "DIY_2400_RX_PWMPEX"
+            },
+            "aio": {
+                "product_name": "HappyModel AIO 2.4GHz RX+VTX",
+                "lua_name": "HM AIO 2400",
+                "layout_file": "Generic 2400 Whoop Rx and VTx.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX",
+                "prior_target_name": "HappyModel_AIO_2400_RX"
             }
         }
     },
