@@ -877,6 +877,24 @@
             }
         },
         "rx_2400": {
+            "c3-plain": {
+                "product_name": "Generic ESP32C3 2.4Ghz RX",
+                "lua_name": "C3 2400RX",
+                "layout_file": "Generic C3 2400.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
+            },
+            "c3-pwm": {
+                "product_name": "Generic ESP32C3 PWM 2.4Ghz RX",
+                "lua_name": "C3 PWM 2400RX",
+                "layout_file": "Generic C3 2400 PWM.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
+            },
             "pp": {
                 "product_name": "Generic STM32 PP 2.4Ghz RX",
                 "upload_methods": ["stlink", "betaflight"],

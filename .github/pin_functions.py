@@ -98,6 +98,30 @@ mcu_pin_functions = {
         46: INPUT | OUTPUT,
         47: INPUT | OUTPUT,
         48: INPUT | OUTPUT
+    },
+    "esp32-c3": {
+        0: INPUT | OUTPUT | ADC,
+        1: INPUT | OUTPUT | ADC,
+        2: INPUT | OUTPUT | ADC,
+        3: INPUT | OUTPUT | ADC,
+        4: INPUT | OUTPUT | ADC,
+        5: INPUT | OUTPUT | ADC,
+        6: INPUT | OUTPUT,
+        7: INPUT | OUTPUT,
+        8: INPUT | OUTPUT,
+        9: INPUT | OUTPUT,
+        10: INPUT | OUTPUT,
+        # 11: INPUT | OUTPUT, # VDD_SPI (backup power line for in-package flash)
+        # 12: INPUT | OUTPUT, # Used for flash
+        # 13: INPUT | OUTPUT, # Used for flash
+        # 14: INPUT | OUTPUT, # Used for flash
+        # 15: INPUT | OUTPUT, # Used for flash
+        # 16: INPUT | OUTPUT, # Used for flash
+        # 17: INPUT | OUTPUT, # Used for flash
+        18: INPUT | OUTPUT,
+        19: INPUT | OUTPUT,
+        20: INPUT | OUTPUT,
+        21: INPUT | OUTPUT,
     }
 }
 
