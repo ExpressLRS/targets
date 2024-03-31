@@ -1080,7 +1080,7 @@
                 "firmware": "Unified_ESP32C3_LR1121_RX"
             },
             "c3-plain": {
-                "product_name": "Generic ESP32C3 2.4Ghz RX",
+                "product_name": "Generic C3 LR1121 2.4Ghz RX",
                 "lua_name": "C3 LR1121 RX",
                 "layout_file": "Generic C3 LR1121.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
