@@ -2472,6 +2472,20 @@
             }
         }
     },
+    "spracing": {
+        "name": "SPRacing",
+        "rx_2400": {
+            "rxn1": {
+                "product_name": "SPRacing RXN1 Gyro 2.4GHz RX/GYRO/IR (D4)",
+                "lua_name": "SPR_RXN1_D4",
+                "layout_file": "SPRacing RXN1 Gyro 2400 RX GYRO IR D4.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "platform": "esp32",
+                "min_version": "3.3.0",
+                "firmware": "Unified_ESP32_2400_RX"
+            }
+        }
+    },
     "atomrc": {
         "name": "atomrc",
         "rx_2400": {
