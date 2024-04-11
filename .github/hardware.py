@@ -17,6 +17,8 @@ class FieldType(Enum):
 hardware_fields = {
     "serial_rx": FieldType.INPUT,
     "serial_tx": FieldType.OUTPUT,
+    "serial1_rx": FieldType.INPUT,
+    "serial1_tx": FieldType.OUTPUT,
     "radio_busy": FieldType.INPUT,
     "radio_busy_2": FieldType.INPUT,
     "radio_dio0": FieldType.INPUT,
@@ -126,6 +128,7 @@ field_groups = {
         # if one of the first group then all the first and second groups and
         # at-least one of the third group must also be defined
         [["serial_rx", "serial_tx"], [], []],
+        [["serial1_rx", "serial1_tx"], [], []],
         [["power_min", "power_high", "power_max", "power_default", "power_control", "power_values"], [], []],
         [["debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], [], []],
         [["use_backpack"], ["debug_backpack_baud", "debug_backpack_rx", "debug_backpack_tx"], []],
@@ -174,7 +177,7 @@ allowable_duplicates = [
     ['screen_sda', 'screen_mosi', 'i2c_sda']
 ]
 allowable_pwm_shared = [
-    'serial_rx', 'serial_tx', 'i2c_scl', 'i2c_sda'
+    'serial_rx', 'serial_tx', 'serial1_rx', 'serial1_tx', 'i2c_scl', 'i2c_sda'
 ]
 
 used_pins = {}
