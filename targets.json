@@ -2428,6 +2428,20 @@
             }
         }
     },
+    "spracing": {
+        "name": "SPRacing",
+        "rx_2400": {
+            "h7neo": {
+                "product_name": "SPRacingH7NEO 2.4GHz FC True Diversity RX (H7/S3)",
+                "lua_name": "SPR_H7NEO_S3",
+                "layout_file": "SPRacing H7NEO 2400 True Diversity RX.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "platform": "esp32-s3",
+                "min_version": "3.3.0",
+                "firmware": "Unified_ESP32S3_2400_RX"
+            }
+        }
+    },
     "atomrc": {
         "name": "atomrc",
         "rx_2400": {
