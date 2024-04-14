@@ -22,7 +22,16 @@ jobs:
 
     - name: Create hardware target zip
       run: |
+        cp targets.json tmpfile
+        jq 'del(.generic)' tmpfile > targets.json
+        rm tmpfile
         zip -r -9 hardware.zip *
+
+    - name: Update firmware artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: firmware
+        path: hardware.zip
 
     - name: Upload hardware target zip to ExpressLRS artifactory
       env:
