@@ -2387,6 +2387,7 @@
                 "lua_name": "STELLAR 900RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX"
             }
