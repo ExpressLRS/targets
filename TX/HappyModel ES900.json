@@ -2,7 +2,6 @@
     "serial_rx": 2,
     "serial_tx": 2,
     "radio_dio0": 26,
-    "radio_dio1": 25,
     "radio_miso": 19,
     "radio_mosi": 23,
     "radio_nss": 5,

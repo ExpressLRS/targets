@@ -35,7 +35,5 @@
     "debug_backpack_tx": 1,
     "i2c_scl": 32,
     "i2c_sda": 33,
-    "misc_gsensor_int": 37,
-    "gsensor_stk8xxx": true,
     "thermal_lm75a": true
 }

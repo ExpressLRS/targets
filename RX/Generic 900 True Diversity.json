@@ -16,17 +16,12 @@
     "radio_nss_2": 13,
     "radio_rst_2": 21,
 
-    "power_rxen": 10,
-    "power_txen": 14,
-    "power_rxen_2": 9,
-    "power_txen_2": 15,
-
-    "power_min": 3,
-    "power_high": 5,
-    "power_max": 5,
-    "power_default": 5,
+    "power_min": 0,
+    "power_high": 2,
+    "power_max": 2,
+    "power_default": 2,
     "power_control": 0,
-    "power_values": [113, 117, 123],
+    "power_values": [120,124,127],
 
     "led_rgb": 22,
     "led_rgb_isgrb": true,

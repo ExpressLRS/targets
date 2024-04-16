@@ -2,6 +2,7 @@ import os, sys
 import json
 import glob
 import argparse
+import hardware
 
 hadError = False
 warnEnabled = False
@@ -48,9 +49,18 @@ def validate_esp(vendor, type, devname, device):
         error(f'device "{vendor}.{type}.{devname}" must have a "layout_file" child element')
     else:
         dir = ('RX/' if type.startswith('rx') else 'TX/')
-        if not os.path.isfile(dir + device['layout_file']):
-            layout_file = device['layout_file']
+        layout_file = device['layout_file']
+        if not os.path.isfile(dir + layout_file):
             error(f'File specified by layout_file "{layout_file}" in target "{vendor}.{type}.{devname}", does not exist')
+        else:
+            # load file, merge overlay, call validate_hardware
+            with open(dir + layout_file, 'r') as f:
+                global hadError
+                layout = json.load(f)
+                if 'overlay' in device:
+                    layout.update(device['overlay'])
+                hadError |= hardware.validate(f'{vendor}.{type}.{devname}', layout, device, type)
+
     # could validate overlay
     if 'prior_target_name' not in device:
         warn(f'device "{vendor}.{type}.{devname}" should have a "prior_target_name" child element')
@@ -115,9 +125,9 @@ def validate_vendor(name, types):
         error(f'vendor "{vendor}" must have a "name" child element')
 
     for type in types:
-        if type not in ['rx_2400', 'rx_900', 'tx_2400', 'tx_900', 'name']:
+        if type not in ['rx_2400', 'rx_900', 'rx_dual', 'tx_2400', 'tx_900', 'tx_dual', 'name']:
             error(f'invalid tag "{type}" in "{vendor}"')
-        if type in  ['rx_2400', 'rx_900', 'tx_2400', 'tx_900']:
+        if type in  ['rx_2400', 'rx_900', 'rx_dual', 'tx_2400', 'tx_900', 'tx_dual']:
             for device in types[type]:
                 validate_devices(name, type, device, types[type][device])
 
