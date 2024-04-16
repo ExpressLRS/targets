@@ -2434,5 +2434,20 @@
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
+    },
+    "flydragonrc": {
+        "name": "FlyDragonRC",
+        "rx_2400": {
+            "r24d": {
+                "product_name": "FD R24D 2.4GHz RX",
+                "lua_name": "FlyDragon R24D",
+                "layout_file": "Generic 2400 Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+		"min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "FD_2400_RX_R24D"
+            }
+        }
     }
 }
