@@ -20,6 +20,7 @@
     "power_default": 3,
     "power_control": 0,
     "power_values": [-5,-4,-2,-1],
+    "power_lna_gain": 12,
 
     "pwm_outputs": [14,12,15,2,4,9,19,22],
 
