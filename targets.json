@@ -1404,6 +1404,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "HGLRC_Hermes_2400_RX"
+            },
+            "dual": {
+                "product_name": "HGLRC Gemini 2.4GHz RX",
+                "lua_name": "HGL Gemini2.4RX",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
             }
         }
     },
