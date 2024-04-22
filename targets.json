@@ -1409,6 +1409,9 @@
                 "product_name": "HGLRC Gemini 2.4GHz RX",
                 "lua_name": "HGL Gemini2.4RX",
                 "layout_file": "Generic 2400 True Diversity PA.json",
+                "overlay": {
+                    "radio_dcdc": true
+                },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
                 "platform": "esp32",
