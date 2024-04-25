@@ -118,7 +118,7 @@
                 "lua_name": "BK 900/2400 GRx",
                 "layout_file": "Generic LR1121 True Diversity.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
-                "min_version": "3.3.2",
+                "min_version": "3.4.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_RX"
             }
