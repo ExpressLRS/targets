@@ -2348,7 +2348,7 @@
                 "layout_file": "Generic 2400 PA.json",
                 "overlay": {
                     "radio_dcdc": true,
-                    "power_values": [-10,-6,-3,1]
+                    "power_values": [-12,-9,-6,1]
                 },
                 "upload_methods": ["uart", "stlink", "betaflight"],
                 "min_version": "3.3.0",
@@ -2361,7 +2361,7 @@
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "overlay": {
                     "radio_dcdc": true,
-                    "power_values": [-10,-6,-3,1]
+                    "power_values": [-12,-9,-6,1]
                 },
                 "upload_methods": ["uart", "stlink", "betaflight"],
                 "min_version": "3.3.0",
