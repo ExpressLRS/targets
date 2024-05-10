@@ -2350,7 +2350,7 @@
                     "radio_dcdc": true,
                     "power_values": [-12,-9,-6,1]
                 },
-                "upload_methods": ["uart", "stlink", "betaflight"],
+                "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX"
@@ -2363,7 +2363,7 @@
                     "radio_dcdc": true,
                     "power_values": [-12,-9,-6,1]
                 },
-                "upload_methods": ["uart", "stlink", "betaflight"],
+                "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
