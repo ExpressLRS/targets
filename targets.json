@@ -2339,6 +2339,37 @@
             }
         }
     },
+    "sequre": {
+        "name": "SEQURE",
+        "rx_2400": {
+            "single": {
+                "product_name": "SEQURE 2.4GHz Single RX",
+                "lua_name": "SEQURE 2G4 RX",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "radio_dcdc": true,
+                    "power_values": [-12,-9,-6,1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "dual": {
+                "product_name": "SEQURE 2.4GHz Dual RX",
+                "lua_name": "SEQURE 2G4 TDRX",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "overlay": {
+                    "radio_dcdc": true,
+                    "power_values": [-12,-9,-6,1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
+            }
+        }
+    },
     "siyi": {
         "name": "SIYI",
         "tx_2400": {
