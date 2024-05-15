@@ -120,7 +120,15 @@ hardware_fields = {
     "vtx_amp_vpd_25mW": FieldType.ARRAY,
     "vtx_amp_vpd_100mW": FieldType.ARRAY,
     "vtx_amp_pwm_25mW": FieldType.ARRAY,
-    "vtx_amp_pwm_100mW": FieldType.ARRAY
+    "vtx_amp_pwm_100mW": FieldType.ARRAY,
+    "ir_transponder": FieldType.OUTPUT,
+    "gyro_nss": FieldType.OUTPUT,
+    "gyro_miso": FieldType.INPUT,
+    "gyro_mosi": FieldType.OUTPUT,
+    "gyro_sck": FieldType.OUTPUT,
+    "gyro_int": FieldType.INPUT,
+    "adc_a1": FieldType.ADC,
+    "adc_a2": FieldType.ADC
 }
 
 field_groups = {
@@ -140,8 +148,9 @@ field_groups = {
         [["vbat", "vbat_offset", "vbat_scale"], [], []],
         [["power_pdet", "power_pdet_intercept", "power_pdet_slope"], [], []],
         [["screen_sda"], ["screen_sck", "screen_type"], []],
-        [["screen_mosi"], ["screen_cs", "screen_dc", "screen_rst", "screen_type", "screen_sck"], []],
-        [["vtx_amp_pwm", "vtx_amp_vpd", "vtx_amp_vref", "vtx_nss", "vtx_miso", "vtx_mosi", "vtx_sck", "vtx_amp_vpd_25mW", "vtx_amp_vpd_100mW"], [], []]
+        [["screen_cs", "screen_dc", "screen_mosi"], ["screen_type", "screen_sck", "screen_rst"], []],
+        [["vtx_amp_pwm", "vtx_amp_vpd", "vtx_amp_vref", "vtx_nss", "vtx_miso", "vtx_mosi", "vtx_sck", "vtx_amp_vpd_25mW", "vtx_amp_vpd_100mW"], [], []],
+        [["gyro_nss", "gyro_miso", "gyro_mosi", "gyro_sck", "gyro_int"], [], []]
     ],
     "2400": [
         [["radio_dio1", "radio_miso", "radio_mosi", "radio_sck", "radio_nss"], [], ["radio_rst", "pwm_outputs"]],
