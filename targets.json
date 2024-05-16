@@ -1639,6 +1639,19 @@
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
             },
+            "t-15": {
+                "product_name": "Jumper AION T-15 2.4GHz TX",
+                "lua_name": "T-15 2G4 TX",
+                "layout_file": "Jumper T-20 2400.json",
+                "overlay": {
+                    "use_backpack": true,
+                    "misc_fan_en": 33
+                },
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX"
+            },
             "t-14": {
                 "product_name": "Jumper AION T-14 2.4GHz TX",
                 "lua_name": "T-14 2G4 TX",
