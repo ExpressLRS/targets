@@ -1379,6 +1379,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "HGLRC_Hermes_900_RX"
+            },
+            "dual": {
+                "product_name": "HGLRC Gemini 900M RX",
+                "lua_name": "HGL Gemini900RX",
+                "layout_file": "Generic 900 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.1",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
             }
         },
         "tx_900": {
