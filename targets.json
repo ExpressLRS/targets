@@ -2337,8 +2337,7 @@
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX",
-                "prior_target_name": "MATEK_2400_RX_R24D"
+                "firmware": "Unified_ESP8285_2400_RX"
             },
             "rp3-h": {
                 "product_name": "Radiomaster RP3-H Diversity 2.4GHz RX",
@@ -2354,8 +2353,7 @@
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX",
-                "prior_target_name": "MATEK_2400_RX_R24D"
+                "firmware": "Unified_ESP8285_2400_RX"
             },
             "rp4": {
                 "product_name": "RadioMaster RP4-TD True Diversity 2.4GHz RX",
