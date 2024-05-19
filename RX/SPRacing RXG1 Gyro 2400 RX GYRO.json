@@ -62,8 +62,9 @@
     "//": "VBAT",
     "//": "ADC1_CH1 - ADC input via 100k/10k 10:1 voltage divider",
     "vbat": 2,
-    "vbat_offset": 12,
-    "vbat_scale": 410,
+    "vbat_atten": 7,
+    "vbat_offset": -12,
+    "vbat_scale": 902,
 
     "//": "LED",
     "led_rgb": 38,
