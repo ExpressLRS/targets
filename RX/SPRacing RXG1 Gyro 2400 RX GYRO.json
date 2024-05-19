@@ -38,8 +38,8 @@
     "power_txen_2": 45,
 
     "//": "Unused RXEN, pull-ups fitted to both PAs, TXEN HIGH disables RX",
-    "_power_rxen": "N/A",
-    "_power_rxen_2": "N/A",
+    "/power_rxen": "N/A",
+    "/power_rxen_2": "N/A",
 
     "power_lna_gain": 12,
     "power_min": 0,
