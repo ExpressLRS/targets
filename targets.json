@@ -2340,6 +2340,23 @@
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "MATEK_2400_RX_R24D"
             },
+            "rp3-h": {
+                "product_name": "Radiomaster RP3-H Diversity 2.4GHz RX",
+                "lua_name": "RM RP3-H 2400",
+                "layout_file": "Generic 2400 Diversity PA.json",
+                "overlay": {
+                    "radio_dcdc": true,
+                    "power_values": [-10,-6,-3,1],
+                    "vbat": 17,
+                    "vbat_offset": -10,
+                    "vbat_scale": 292
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "MATEK_2400_RX_R24D"
+            },
             "rp4": {
                 "product_name": "RadioMaster RP4-TD True Diversity 2.4GHz RX",
                 "lua_name": "RM RP4-TD 2400",
@@ -2550,7 +2567,7 @@
                 "lua_name": "FlyDragon R24D",
                 "layout_file": "Generic 2400 Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
-		"min_version": "3.0.0",
+		        "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "FD_2400_RX_R24D"
