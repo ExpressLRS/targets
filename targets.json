@@ -2475,6 +2475,15 @@
     "spracing": {
         "name": "SPRacing",
         "rx_2400": {
+            "rxg1": {
+                "product_name": "SPRacing RXG1 Gyro 2.4GHz RX/GYRO (S3)",
+                "lua_name": "SPR_RXG1_S3",
+                "layout_file": "SPRacing RXG1 Gyro 2400 RX GYRO.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "platform": "esp32-s3",
+                "min_version": "3.3.0",
+                "firmware": "Unified_ESP32S3_2400_RX"
+            },
             "rxn1": {
                 "product_name": "SPRacing RXN1 Gyro 2.4GHz RX/GYRO/IR (D4)",
                 "lua_name": "SPR_RXN1_D4",
