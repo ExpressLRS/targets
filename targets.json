@@ -2345,7 +2345,7 @@
                 "layout_file": "Generic 2400 Diversity PA.json",
                 "overlay": {
                     "radio_dcdc": true,
-                    "power_values": [-10,-6,-3,1],
+                    "power_values": [-5,-4,-2,1],
                     "vbat": 17,
                     "vbat_offset": -10,
                     "vbat_scale": 292
