@@ -266,8 +266,8 @@
                     "power_max": 6,
                     "power_values": [-18,-15,-12,-7,-4,2],
                     "misc_fan_en": 12,
-                    "button": 2,
-                    "button2": 4,
+                    "button": 4,
+                    "button2": 2,
                     "passthrough_baud": 230400
                 },
                 "upload_methods": ["uart", "wifi"],
