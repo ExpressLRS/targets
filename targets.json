@@ -1148,7 +1148,7 @@
                 "firmware": "Unified_ESP8285_2400_RX"
             },
             "geprc-dual": {
-                "product_name": "GEPRC Dual Diversity 2.4GHz RX",
+                "product_name": "GEPRC True Diversity 2.4GHz RX",
                 "lua_name": "GEPRC Dual RX",
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "overlay": {
