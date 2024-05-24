@@ -1148,7 +1148,7 @@
                 "firmware": "Unified_ESP8285_2400_RX"
             },
             "geprc-dual": {
-                "product_name": "GEPRC Dual Diversity 2.4GHz RX",
+                "product_name": "GEPRC True Diversity 2.4GHz RX",
                 "lua_name": "GEPRC Dual RX",
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "overlay": {
@@ -1379,6 +1379,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "HGLRC_Hermes_900_RX"
+            },
+            "dual": {
+                "product_name": "HGLRC Gemini 900M RX",
+                "lua_name": "HGL Gemini900RX",
+                "layout_file": "Generic 900 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.1",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
             }
         },
         "tx_900": {
@@ -1638,6 +1647,19 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
+            },
+            "t-15": {
+                "product_name": "Jumper AION T-15 2.4GHz TX",
+                "lua_name": "T-15 2G4 TX",
+                "layout_file": "Jumper T-20 2400.json",
+                "overlay": {
+                    "use_backpack": true,
+                    "misc_fan_en": 33
+                },
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX"
             },
             "t-14": {
                 "product_name": "Jumper AION T-14 2.4GHz TX",
@@ -2324,8 +2346,23 @@
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.0.0",
                 "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_RX",
-                "prior_target_name": "MATEK_2400_RX_R24D"
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "rp3-h": {
+                "product_name": "Radiomaster RP3-H Diversity 2.4GHz RX",
+                "lua_name": "RM RP3-H 2400",
+                "layout_file": "Generic 2400 Diversity PA.json",
+                "overlay": {
+                    "radio_dcdc": true,
+                    "power_values": [-5,-4,-2,1],
+                    "vbat": 17,
+                    "vbat_offset": -10,
+                    "vbat_scale": 292
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
             },
             "rp4": {
                 "product_name": "RadioMaster RP4-TD True Diversity 2.4GHz RX",
@@ -2336,6 +2373,37 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX",
                 "prior_target_name": "Unified_ESP32_2400_RX"
+            }
+        }
+    },
+    "sequre": {
+        "name": "SEQURE",
+        "rx_2400": {
+            "single": {
+                "product_name": "SEQURE 2.4GHz Single RX",
+                "lua_name": "SEQURE 2G4 RX",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "radio_dcdc": true,
+                    "power_values": [-12,-9,-6,1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "dual": {
+                "product_name": "SEQURE 2.4GHz Dual RX",
+                "lua_name": "SEQURE 2G4 TDRX",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "overlay": {
+                    "radio_dcdc": true,
+                    "power_values": [-12,-9,-6,1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
             }
         }
     },
@@ -2439,6 +2507,24 @@
                 "platform": "esp32-s3",
                 "min_version": "3.3.0",
                 "firmware": "Unified_ESP32S3_2400_RX"
+            },
+            "rxg1": {
+                "product_name": "SPRacing RXG1 Gyro 2.4GHz RX/GYRO (S3)",
+                "lua_name": "SPR_RXG1_S3",
+                "layout_file": "SPRacing RXG1 Gyro 2400 RX GYRO.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "platform": "esp32-s3",
+                "min_version": "3.3.0",
+                "firmware": "Unified_ESP32S3_2400_RX"
+            },
+            "rxn1": {
+                "product_name": "SPRacing RXN1 Gyro 2.4GHz RX/GYRO/IR (D4)",
+                "lua_name": "SPR_RXN1_D4",
+                "layout_file": "SPRacing RXN1 Gyro 2400 RX GYRO IR D4.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "platform": "esp32",
+                "min_version": "3.3.0",
+                "firmware": "Unified_ESP32_2400_RX"
             }
         }
     },
@@ -2506,7 +2592,7 @@
                 "lua_name": "FlyDragon R24D",
                 "layout_file": "Generic 2400 Diversity PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
-		"min_version": "3.0.0",
+		        "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "FD_2400_RX_R24D"

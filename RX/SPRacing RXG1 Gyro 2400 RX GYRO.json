@@ -1,0 +1,81 @@
+{
+    "//": "GPIO Matrix Indexes, 0 = GPIO0, *not* 0 = pin 0",
+
+    "//": "BUTTON",
+    "//": "GPIO0 Strapping - Default: Pull-up - Button pressed pulls-down",
+    "button": 0,
+
+    "//": "SERIAL",
+    "serial_tx": 43,
+    "serial_rx": 44,
+
+    "//": "RADIO (2x 2.4Ghz + 2x PA)",
+
+    "//": "Single inductor fitted to first SX1280",
+    "radio_dcdc": true,
+
+    "//": "Radio SPI uses SUBSPI pins",
+    "radio_miso": 13,
+    "radio_mosi": 11,
+    "radio_sck": 12,
+
+    "//": "NRESET is active-low with 50k pull-up in SX1280",
+    "radio_rst": 9,
+    "radio_rst_2": 46,
+
+    "radio_busy": 7,
+    "radio_busy_2": 5,
+    "radio_dio1": 6,
+    "radio_dio1_2": 4,
+
+    "//": "NSS is active-low, SX1280 MISO is high-impedance when NSS is high.",
+    "//": "NSS 1/2 on SUBSPI pins with CS0/CS1 signals (respectively)",
+    "radio_nss": 10,
+    "radio_nss_2": 8,
+
+    "//": "On the RFX2401C RX active is FALSE when TXEN is HIGH/ON",
+    "power_txen": 14,
+    "power_txen_2": 45,
+
+    "//": "Unused RXEN, pull-ups fitted to both PAs, TXEN HIGH disables RX",
+    "/power_rxen": "N/A",
+    "/power_rxen_2": "N/A",
+
+    "power_lna_gain": 12,
+    "power_min": 0,
+    "power_high": 3,
+    "power_max": 3,
+    "power_default": 3,
+    "power_control": 0,
+    "power_values": [-10,-6,-3,1],
+
+    "//": "PWM",
+    "//": "PWM outputs on 4 pins which double as JTAG pins, on S3 JTAG pins are not strapping pins, no buffers needed!",
+    "//": "GPIO3 is pulled high via 10k resistor (located by IO_1 legend), which selects GPIO39-42 as the JTAG signal source",
+    "//": "However the efuses still need to be set to allow using GPIO pads for JTAG, see 8.5 JTAG Signal Source Control",
+    "//": "1 Corner Pad - GPIO39/MTCK - JTAG 1/4",
+    "//": "2 Corner Pad - GPIO42/MTMS - JTAG 2/4",
+    "//": "3 Corner Pad - GPIO40/MTDO - JTAG 3/4",
+    "//": "4 Corner Pad - GPIO41/MTDI - JTAG 4/4",
+    "pwm_outputs":[39,40,41,42,15,16,21,3,44,43,18,17],
+
+    "//": "VBAT",
+    "//": "ADC1_CH1 - ADC input via 100k/10k 10:1 voltage divider",
+    "vbat": 2,
+    "vbat_atten": 7,
+    "vbat_offset": -12,
+    "vbat_scale": 902,
+
+    "//": "LED",
+    "led_rgb": 38,
+    "led_rgb_isgrb": true,
+    "ledidx_rgb_status": [0],
+    "ledidx_rgb_vtx": [1],
+    "ledidx_rgb_boot": [0,1],
+
+    "gyro_nss": 34,
+    "gyro_sck": 36,
+    "gyro_miso": 37,
+    "gyro_mosi": 35,
+    "gyro_int": 33
+}
