@@ -2594,7 +2594,7 @@
         "name": "ThxMrSquid",
         "rx_2400": {
             "squidstick": {
-                "product_name": "Squid Stick dongle",
+                "product_name": "Squid Stick dongle V2",
                 "lua_name": "Squid Stick",
                 "layout_file": "Generic 2400.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
