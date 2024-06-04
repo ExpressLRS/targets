@@ -1122,6 +1122,18 @@
                 "min_version": "3.3.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_RX"
+            },
+            "pa": {
+                "product_name": "GEPRC Nano 900MHz PA500 RX",
+                "lua_name": "GEPR Nano PA500",
+                "layout_file": "Generic 900 PA.json",
+                "overlay": {
+                    "power_values": [112, 115, 124]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
             }
         },
         "rx_2400": {
