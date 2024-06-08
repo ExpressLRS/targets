@@ -2083,7 +2083,7 @@
             },
             "bandit-nano-RX": {
                 "product_name": "RadioMaster Bandit Nano 900MHz RX",
-                "lua_name": "RM Bandit Nano RX",
+                "lua_name": "RM Bandit Nano",
                 "layout_file": "Radiomaster Bandit Nano.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.2",
