@@ -2081,7 +2081,7 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX"
             },
-            "bandit-nano-RX": {
+            "bandit-nano-rx": {
                 "product_name": "RadioMaster Bandit Nano/Micro 900MHz RX",
                 "lua_name": "RM Bandit RX",
                 "layout_file": "Radiomaster Bandit Nano.json",
