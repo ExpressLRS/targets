@@ -2488,6 +2488,17 @@
     },
     "speedybee": {
         "name": "SpeedyBee",
+        "rx_900": {
+            "nano": {
+                "product_name": "SpeedyBee Nano 915MHz RX",
+                "lua_name": "SB Nano 915 RX",
+                "layout_file":  "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            }
+        },
         "rx_2400": {
             "ss24d": {
                 "product_name": "SpeedyBee Nano 2.4GHz RX",
