@@ -352,6 +352,34 @@
             }
         }
     },
+    "brotherhobby": {
+        "name": "BrotherHobby",
+        "rx_900": {
+            "plain": {
+                "product_name": "BrotherHobby 900MHz Nano RX",
+                "lua_name": "BH 900MHz Nano",
+                "layout_file": "Generic 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_900_RX"
+            }
+        },
+        "rx_2400": {
+            "nano": {
+                "product_name": "BrotherHobby 2.4GHz Nano RX",
+                "lua_name": "BH 2.4GHz Nano",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "radio_dcdc": true
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            }
+        }
+    },
     "diy": {
         "name": "DIY devices",
         "tx_900": {
