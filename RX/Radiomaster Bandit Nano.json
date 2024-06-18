@@ -20,5 +20,6 @@
   "power_values": [168,148,128,90],
   "power_values2": [2,6,9,12],
   "led": 15,
+  "misc_fan_en": 2,
   "button": 39
 }
