@@ -1105,8 +1105,16 @@
                 "min_version": "3.4.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
+            },
+            "8285-plain": {
+                "product_name": "Generic ESP8285 Full-duplex LR1121 RX as TX",
+                "lua_name": "LR1121 RX as TX",
+                "layout_file": "Generic 8285 LR1121.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_LR1121_TX"
             }
-
         },
         "rx_dual": {
             "true_diversity": {
