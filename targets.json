@@ -1135,6 +1135,15 @@
                 "min_version": "3.4.0",
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_LR1121_RX"
+            },
+            "8285-plain": {
+                "product_name": "Generic 8285 LR1121 RX",
+                "lua_name": "8285 LR1121 RX",
+                "layout_file": "Generic 8285 LR1121.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_LR1121_RX"
             }
         }
     },
