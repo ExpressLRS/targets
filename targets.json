@@ -668,6 +668,27 @@
             }
         }
     },
+    "fatfish": {
+        "name": "FATFISH",
+        "tx_2400": {
+            "f16": {
+                "product_name": "FATFISH F16 TX",
+                "lua_name": "FATFISH F16",
+                "layout_file": "Radiomaster TX16S 2400.json",
+                "overlay": {
+                    "power_values": [-19,-16,-13,-9,-3],
+					"power_pdet": -1,
+					"power_pdet_slope": -1,
+					"power_control": -1
+                },
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "Unified_ESP32_2400_TX"
+            }
+        }
+    },
     "flywoo": {
         "name": "Flywoo",
         "rx_2400": {
