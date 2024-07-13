@@ -1779,8 +1779,8 @@
                 "prior_target_name": "Jumper_AION_NANO_2400_TX"
             },
             "t12": {
-                "product_name": "Jumper AION T12 2.4GHz TX",
-                "lua_name": "T-12 2G4 TX",
+                "product_name": "Jumper AION T-12 MAX 2.4GHz TX",
+                "lua_name": "T-12 MAX 2G4 TX",
                 "layout_file": "Jumper T-12 2400.json",
                 "upload_methods": ["uart", "wifi", "etx"],
                 "min_version": "3.4.0",
