@@ -677,9 +677,9 @@
                 "layout_file": "Radiomaster TX16S 2400.json",
                 "overlay": {
                     "power_values": [-19,-16,-13,-9,-3],
-					"power_pdet": -1,
-					"power_pdet_slope": -1,
-					"power_control": -1
+                    "power_pdet": -1,
+                    "power_pdet_slope": -1,
+                    "power_control": -1
                 },
                 "upload_methods": ["uart", "wifi", "etx"],
                 "min_version": "3.0.0",
