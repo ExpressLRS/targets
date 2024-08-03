@@ -1937,6 +1937,20 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "Jumper_AION_Nano_2400_RX"
+            },
+            "c3-pwm6": {
+                "product_name": "Jumper AION P6 2.4GHz RX",
+                "lua_name": "AION P6 2G4 RX",
+                "layout_file": "Generic C3 2400 PWM.json",
+                "overlay": {
+                    "vbat_atten": 7,
+                    "vbat_offset": 4,
+                    "vbat_scale": 396
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
             }
         },
         "rx_900": {
