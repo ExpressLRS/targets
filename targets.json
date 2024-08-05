@@ -1425,6 +1425,40 @@
             }
         }
     },
+    "helloradio": {
+        "name": "HelloRadio",
+        "tx_2400": {
+            "v16": {
+                "product_name": "HELLORADIO V16 Internal 2.4GHz TX",
+                "lua_name": "HR V16",
+                "layout_file": "Radiomaster TX16S 2400.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX"
+            }
+        },
+        "rx_2400": {
+            "hr8e": {
+                "product_name": "HelloRadio HR8E 2.4GHz Diversity+8xPWM RX",
+                "lua_name": "HR HR8EG",
+                "layout_file": "HelloRadio HR8E.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
+            },
+            "hr7e": {
+                "product_name": "HelloRadio HR7E 2.4GHz Diversity+7xPWM RX",
+                "lua_name": "HR HR7EG",
+                "layout_file": "HelloRadio HR7E.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
+            }
+        }
+    },
     "hglrc": {
         "name": "HGLRC",
         "rx_900": {
