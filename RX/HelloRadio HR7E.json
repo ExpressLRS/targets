@@ -25,7 +25,7 @@
     "ledidx_rgb_status": [0],
     "ledidx_rgb_boot": [0],
 
-    "pwm_outputs": [14, 12, 13, 15, 4, 9, 10, 1],
+    "pwm_outputs": [14, 12, 13, 15, 4, 9, 10],
 
     "i2c_sda": 22,
     "i2c_scl": 19,
