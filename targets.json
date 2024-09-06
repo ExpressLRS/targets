@@ -730,6 +730,15 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "BETAFPV_900_RX"
+            },
+            "td": {
+                "product_name": "Foxeer 900MHz True Diversity RX",
+                "lua_name": "Foxeer 900 TD",
+                "layout_file": "Generic 900 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
             }
         }
     },
