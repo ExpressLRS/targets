@@ -1236,7 +1236,7 @@
                     "radio_rfsw_ctrl": [15, 0, 8, 4, 4, 14, 0, 13]
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
-                "min_version": "3.4.0",
+                "min_version": "3.5.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_RX"
             }
