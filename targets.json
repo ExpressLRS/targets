@@ -1226,6 +1226,17 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             }
+        },
+        "rx_dual": {
+            "dual": {
+                "product_name": "GEPRC 900/2400 Gemini Xrossband RX",
+                "lua_name": "GEPR GemX RX",
+                "layout_file": "Generic LR1121 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_RX"
+            }
         }
     },
     "sub250": {
