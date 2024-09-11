@@ -1232,6 +1232,9 @@
                 "product_name": "GEPRC 900/2400 Gemini Xrossband RX",
                 "lua_name": "GEPRC GemX RX",
                 "layout_file": "Generic LR1121 True Diversity.json",
+                "overlay": {
+                    "radio_rfsw_ctrl": [15, 0, 8, 4, 4, 14, 0, 13]
+                },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.4.0",
                 "platform": "esp32",
