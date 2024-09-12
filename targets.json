@@ -2487,10 +2487,10 @@
                 "product_name": "RadioMaster RP4-TD True Diversity 2.4GHz RX",
                 "lua_name": "RM RP4-TD 2400",
                 "layout_file": "Generic 2400 True Diversity PA.json",
-		"overlay": {
-			"serial1_rx": 5,
-			"serial1_tx": 18
-		},
+                "overlay": {
+                    "serial1_rx": 5,
+                    "serial1_tx": 18
+                },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.0.0",
                 "platform": "esp32",
