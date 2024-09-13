@@ -2510,10 +2510,10 @@
                 "product_name": "RadioMaster RP4-TD True Diversity 2.4GHz RX",
                 "lua_name": "RM RP4-TD 2400",
                 "layout_file": "Generic 2400 True Diversity PA.json",
-		"overlay": {
-			"serial1_rx": 5,
-			"serial1_tx": 18
-		},
+                "overlay": {
+                    "serial1_rx": 5,
+                    "serial1_tx": 18
+                },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.0.0",
                 "platform": "esp32",
@@ -2530,6 +2530,17 @@
                 "min_version": "3.4.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
+            }
+        },
+        "rx_dual": {
+            "dbr4": {
+                "product_name": "RadioMaster DBR4-TD True Diversity Dual Band RX",
+                "lua_name": "RM DBR4-TD",
+                "layout_file": "Generic LR1121 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_RX"
             }
         }
     },
