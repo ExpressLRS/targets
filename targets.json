@@ -1162,6 +1162,15 @@
                 "min_version": "3.4.0",
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_LR1121_RX"
+            },
+            "c3-pwm": {
+                "product_name": "Generic C3 LR1121 2.4/900 PWM RX",
+                "lua_name": "C3 LR1121 PWM RX",
+                "layout_file": "Generic C3 LR1121 PWM.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
             }
         }
     },
