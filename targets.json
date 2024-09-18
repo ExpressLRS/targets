@@ -127,7 +127,7 @@
                 "lua_name": "B 9002G4 nano RX",
                 "layout_file": "Generic C3 LR1121.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
-                "min_version": "3.4.0",
+                "min_version": "3.5.0",
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_LR1121_RX"
             },
