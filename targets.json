@@ -1861,6 +1861,15 @@
                 "min_version": "3.4.0",
                 "platform": "esp32-s3",
                 "firmware": "Unified_ESP32S3_2400_TX"
+            },
+            "t12-1w": {
+                "product_name": "Jumper AION Bumblebee 2.4GHz TX",
+                "lua_name": "AION Bumblebee",
+                "layout_file": "Jumper T-12 1W 2400.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.5.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
             }
         },
         "tx_900": {
