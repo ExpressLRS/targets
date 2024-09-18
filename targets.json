@@ -74,9 +74,6 @@
                 "product_name": "BAYCKRC 900MHz Nano RX",
                 "lua_name": "BK 900 Nano RX",
                 "layout_file":  "Generic 900.json",
-                "overlay": {
-                    "serial1_tx": 5
-                },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.1",
                 "platform": "esp8285",
