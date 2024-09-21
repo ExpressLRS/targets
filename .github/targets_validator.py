@@ -90,6 +90,10 @@ def validate_esp32(vendor, type, devname, device):
     for method in device['upload_methods']:
         if method not in ['uart', 'etx', 'wifi', 'betaflight']:
             error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"')
+    if (device['platform'] == 'esp32-c3' and '_ESP32C3_' not in device['firmware']) or \
+            (device['platform'] == 'esp32-s3' and '_ESP32S3_' not in device['firmware']) or \
+            (device['platform'] == 'esp32' and '_ESP32_' not in device['firmware']) :
+        error(f'"firmware" and "platform" must match for target "{vendor}.{type}.{devname}"')
     validate_esp(vendor, type, devname, device)
 
 
@@ -97,6 +101,8 @@ def validate_esp8285(vendor, type, devname, device):
     for method in device['upload_methods']:
         if method not in ['uart', 'wifi', 'betaflight']:
             error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"')
+    if 'ESP8285' not in device['firmware']:
+        error(f'"firmware" and "platform" must match for target "{vendor}.{type}.{devname}"')
     validate_esp(vendor, type, devname, device)
 
 def validate_devices(vendor, type, devname, device):
