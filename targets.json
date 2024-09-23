@@ -1303,9 +1303,6 @@
                 "product_name": "HAOYERC 900MHz Nano RX",
                 "lua_name": "HY 900 Nano RX",
                 "layout_file": "Generic 900.json",
-                "overlay": {
-                    "power_values": [8, 12, 15]
-                },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
                 "platform": "esp8285",
