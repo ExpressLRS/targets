@@ -2686,6 +2686,15 @@
                 "min_version": "3.4.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
+            },
+            "gx12": {
+                "product_name": "RadioMaster GX12 2.4/900 TX",
+                "lua_name": "RM GX12 X-Band",
+                "layout_file": "Radiomaster GX12.json",
+                "upload_methods": ["etx", "wifi"],
+                "min_version": "3.5.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
             }
         },
         "rx_dual": {
