@@ -176,6 +176,18 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "BETAFPV_900_TX_MICRO"
+            },
+            "micro900v2": {
+                "product_name": "BETAFPV 900MHz Micro TX V2",
+                "lua_name": "BFPV Micro TX V2",
+                "layout_file": "BETAFPV 900 Micro V2.json",
+                "logo_file": "betafpv.bin",
+                "features": ["fan"],
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX",
+                "prior_target_name": "BETAFPV_900_TX_MICRO_V2"
             }
         },
         "rx_900": {
@@ -1951,6 +1963,20 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX",
                 "prior_target_name": "Jumper_AION_Nano_2400_RX"
+            },
+            "c3_6pwm": {
+                "product_name": "Jumper ESP32C3 PWM6 2.4Ghz RX",
+                "lua_name": "JMPR C3 6PWM",
+                "layout_file": "Generic C3 2400 PWM.json",
+                "overlay": {
+                    "vbat_atten": 7,
+                    "vbat_offset": 4,
+                    "vbat_scale": 396
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
             }
         },
         "rx_900": {
