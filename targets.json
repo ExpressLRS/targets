@@ -176,6 +176,18 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "BETAFPV_900_TX_MICRO"
+            },
+            "micro900v2": {
+                "product_name": "BETAFPV 900MHz Micro TX V2",
+                "lua_name": "BFPV Micro TX V2",
+                "layout_file": "BETAFPV 900 Micro V2.json",
+                "logo_file": "betafpv.bin",
+                "features": ["fan"],
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX",
+                "prior_target_name": "BETAFPV_900_TX_MICRO_V2"
             }
         },
         "rx_900": {
