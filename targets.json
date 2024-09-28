@@ -104,6 +104,7 @@
                 "lua_name": "BK 2G4 Dual RX",
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "overlay": {
+                    "serial1_tx": 5,
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
@@ -1586,6 +1587,7 @@
                 "lua_name": "HGL Gemini2.4RX",
                 "layout_file": "Generic 2400 True Diversity PA.json",
                 "overlay": {
+                    "serial1_tx": 5,
                     "radio_dcdc": true
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
