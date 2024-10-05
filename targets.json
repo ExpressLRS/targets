@@ -2705,8 +2705,8 @@
             }
         }
     },
-    "stellar": {
-        "name": "STELLAR",
+    "stingbee": {
+        "name": "StingBee",
         "rx_900": {
             "stellar": {
                 "product_name": "STELLAR 900MHz RX",
@@ -2716,6 +2716,26 @@
                 "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX"
+            }
+        },
+        "rx_dual": {
+            "c3-trued-gemx": {
+                "product_name": "StingBee TrueD 900/2400 GemX RX",
+                "lua_name": "StingBee TrueD GemX RX",
+                "layout_file": "Generic C3 LR1121 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
+            },
+            "c3-dual": {
+                "product_name": "StingBee Dual 900/2400 RX",
+                "lua_name": "StingBee Dual RX",
+                "layout_file": "Generic C3 LR1121.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
             }
         }
     },
