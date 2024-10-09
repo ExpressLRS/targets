@@ -1864,7 +1864,7 @@
             },
             "t12-1w": {
                 "product_name": "Jumper AION Bumblebee 2.4GHz TX",
-                "lua_name": "AION Bumblebee",
+                "lua_name": "Bumblebee 2G4 TX",
                 "layout_file": "Jumper T-12 1W 2400.json",
                 "upload_methods": ["uart", "wifi", "etx"],
                 "min_version": "3.5.0",
