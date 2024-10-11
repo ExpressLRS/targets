@@ -911,6 +911,15 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_RX"
             },
+            "true_diversity_pa": {
+                "product_name": "Generic ESP32 True Diversity 900MHz 500mW RX",
+                "lua_name": "TD 500mW 900RX",
+                "layout_file": "Generic 900 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
+            },
             "true_diversity_pwm16": {
                 "product_name": "Generic ESP32 True Diversity 16xPWM 900MHz RX ",
                 "lua_name": "16PWM TD 900RX",
@@ -1203,6 +1212,15 @@
                 "layout_file": "Generic 900 True Diversity.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
+            },
+            "dual500": {
+                "product_name": "GEPRC True Diversity 900MHz 500mW RX",
+                "lua_name": "GEPRC TD 500",
+                "layout_file": "Generic 900 True Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.4.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_RX"
             },
