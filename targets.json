@@ -113,6 +113,32 @@
                 "firmware": "Unified_ESP32_2400_RX"
             }
         },
+        "tx_dual": {
+            "nano": {
+                "product_name": "BAYCKRC 900/2400 Dual Band TX",
+                "lua_name": "BK 900/2400 Tx",
+                "layout_file": "BAYCKRC Dual Band.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            },
+            "nano_gemini": {
+                "product_name": "BAYCKRC 900/2400 Dual Band Gemini TX",
+                "lua_name": "BK 900/2400 GTx",
+                "layout_file": "BAYCKRC Dual Band.json",
+                "overlay": {
+                    "radio_busy_2": 39,
+                    "radio_dio1_2": 34,
+                    "radio_nss_2": 15,
+                    "radio_rst_2": 21
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            }
+        },
         "rx_dual": {
             "dual": {
                 "product_name": "BAYCKRC 900/2400 Dual Band Gemini RX",
