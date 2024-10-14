@@ -64,7 +64,21 @@ def validate_esp(vendor, type, devname, device):
     # could validate overlay
     if 'prior_target_name' not in device:
         warn(f'device "{vendor}.{type}.{devname}" should have a "prior_target_name" child element')
-
+    # Validate the platform matches the firmware file
+    if device['platform'] == 'esp32-c3':
+        if device['min_version'] < '3.5':
+            error(f'device "{vendor}.{type}.{devname}" "min_version" must be at least 3.5.0')
+        if '_ESP32C3_' not in device['firmware']:
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
+    if device['platform'] == 'esp32-s3':
+        if '_ESP32S3_' not in device['firmware']:
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
+    if device['platform'] == 'esp32':
+        if '_ESP32_' not in device['firmware']:
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
+    if device['platform'] == 'esp8285':
+        if '_ESP8285_' not in device['firmware']:
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
 
 def validate_esp32(vendor, type, devname, device):
     for method in device['upload_methods']:
@@ -94,9 +108,9 @@ def validate_devices(vendor, type, devname, device):
         firmware = device['firmware']
         if len(firmwares) != 0 and firmware not in firmwares:
             error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}"')
-        elif (firmware.endswith('_TX') and 'tx_' not in type):
+        elif firmware.endswith('_TX') and 'tx_' not in type:
             error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}", it must be a TX target firmware')
-        elif (firmware.endswith('_RX') and 'rx_' not in type):
+        elif firmware.endswith('_RX') and 'rx_' not in type:
             error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}", it must be an RX target firmware')
 
     if 'platform' not in device:
@@ -137,7 +151,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     warnEnabled = args.warn
 
-    targets = {}
     with open('targets.json') as f:
         targets = json.load(f)
 
