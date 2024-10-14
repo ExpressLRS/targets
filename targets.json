@@ -1216,9 +1216,12 @@
                 "firmware": "Unified_ESP32_900_RX"
             },
             "dual500": {
-                "product_name": "GEPRC True Diversity 900MHz 500mW RX",
-                "lua_name": "GEPRC TD 500",
+                "product_name": "GEPRC True Diversity 900MHz PA500 RX",
+                "lua_name": "GEPR Dual500 RX",
                 "layout_file": "Generic 900 True Diversity PA.json",
+                "overlay": {
+                    "power_values": [0, 114, 124]
+                },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.4.0",
                 "platform": "esp32",
