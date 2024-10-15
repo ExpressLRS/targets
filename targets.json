@@ -115,8 +115,8 @@
         },
         "tx_dual": {
             "nano": {
-                "product_name": "BAYCKRC 900/2400 Dual Band TX",
-                "lua_name": "BK 900/2400 Tx",
+                "product_name": "BAYCKRC 900/2400 Dual Band 1W Nano TX",
+                "lua_name": "B 9002G4 Nano TX",
                 "layout_file": "BAYCKRC Dual Band.json",
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.4.0",
@@ -124,8 +124,8 @@
                 "firmware": "Unified_ESP32_LR1121_TX"
             },
             "nano_gemini": {
-                "product_name": "BAYCKRC 900/2400 Dual Band Gemini TX",
-                "lua_name": "BK 900/2400 GTx",
+                "product_name": "BAYCKRC 900/2400 Dual Band 1W Nano Gemini TX",
+                "lua_name": "B 9002G4 NanoGTX",
                 "layout_file": "BAYCKRC Dual Band.json",
                 "overlay": {
                     "radio_busy_2": 39,
