@@ -2904,5 +2904,19 @@
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
+    },
+    "mosquito": {
+        "name": "TheMosquitosGang",
+        "rx_900": {
+            "varnish": {
+                "product_name": "DBR1 Custom Frequencies",
+                "lua_name": "DBR1 Custom Frequencies",
+                "layout_file": "DBR1 900.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_LR1121_RX"
+            }
+        }
     }
 }
