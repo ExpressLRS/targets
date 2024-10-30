@@ -119,7 +119,7 @@
                 "overlay": {
                     "vbat_offset": 0,
                     "vbat_scale": 908,
-                    "vbat_atten": 7                  
+                    "vbat_atten": 7
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
@@ -470,6 +470,17 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "DIY_900_TX_ESP32_SX127x_RFM95"
+            },
+            "E32": {
+                "product_name": "E32 433M30S TX",
+                "lua_name": "E32 433M30S",
+                "layout_file": "DIY 433 E32-400M30S.json",
+                "logo_file": "elrs64.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX",
+                "prior_target_name": "DIY_900_TX_TTGO_V2_SX127x"
             },
             "stm32-sx1272": {
                 "product_name": "DIY STM32 SX1272 TX",

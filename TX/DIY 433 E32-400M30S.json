@@ -1,0 +1,34 @@
+{
+    "serial_rx": 2,
+    "serial_tx": 2,
+
+    "radio_dio0": 26,
+    "radio_dio1": 25,
+
+    "radio_miso": 19,
+    "radio_mosi": 23,
+    "radio_nss": 17,
+    "radio_rst": 14,
+    "radio_sck": 18,
+
+    "power_rxen": 13,
+    "power_txen": 12,
+
+    "power_min": 3,
+    "power_high": 6,
+    "power_max": 6,
+    "power_default": 3,
+
+    "power_lna_gain": 12,
+
+    "power_control": 0,
+    "button": 0,
+    "power_values": [113,117,121,127],
+
+    "screen_sck": 22,
+    "screen_sda": 21,
+    "screen_type": 1,
+
+    "misc_fan_en": 16,
+    "led": 27
+}
