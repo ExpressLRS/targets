@@ -2927,5 +2927,53 @@
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
+    },
+    "wfly": {
+        "name": "WFLY",
+        "tx_2400": {
+            "nano": {
+                "product_name": "WFLY 2.4GHz TX",
+                "lua_name": " WFLY 2.4GHz TX",
+                "layout_file": "WFLY 2.4GHz.json",
+                "logo_file": "wfly.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "WFLY_2400_TX"
+            }
+        },
+        "tx_900": {
+        },
+        "rx_2400": {
+            "nano": {
+                "product_name": "WFLY 2.4GHz RX",
+                "lua_name": "WFLY 2.4GHz RX",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "radio_dcdc": true,
+                    "power_values": [13,13,13,13]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "WFLY_2400_RX"
+            },
+            "pwm7": {
+                "product_name": "WFLY 7xPWM 2.4GHz RX",
+                "lua_name": "WFLY 7xPWM 2.4GHz RX",
+                "layout_file": "Generic 2400 PWMP7.json",
+		"overlay": {
+                    "vbat_scale": 250
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            }
+        },
+        "rx_900": {
+        }
     }
 }
