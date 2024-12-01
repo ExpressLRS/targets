@@ -970,6 +970,19 @@
             }
         }
     },
+    "flysky": {
+        "tx_2400": {
+            "pa01": {
+                "product_name": "FlySky PA01 2.4GHz TX",
+                "lua_name": "FlySky PA01",
+                "layout_file": "Flysky PA01.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.5.6",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
+            }
+        }
+    },
     "flywoo": {
         "name": "Flywoo",
         "rx_2400": {
