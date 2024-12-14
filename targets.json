@@ -483,9 +483,9 @@
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "DIY_900_TX_ESP32_SX127x_RFM95"
             },
-            "E32": {
-                "product_name": "E32 433M30S TX",
-                "lua_name": "E32 433M30S",
+            "E32-400M30S": {
+                "product_name": "DIY E32-400M30S TX",
+                "lua_name": "E32 400M30S",
                 "layout_file": "DIY 433 E32-400M30S.json",
                 "logo_file": "elrs64.bin",
                 "upload_methods": ["uart", "wifi"],
