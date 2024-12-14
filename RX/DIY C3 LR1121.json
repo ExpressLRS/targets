@@ -19,8 +19,7 @@
     "power_values": [12,16,19,22],
     "power_values_dual": [-12,-9,-6,-2],
 
-    "led_rgb": 8,
-    "led_rgb_isgrb": true,
+    "led": 8,
 
     "radio_dcdc": true,
 
