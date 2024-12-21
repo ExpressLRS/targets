@@ -2703,6 +2703,8 @@
                 "lua_name": "RM XR1",
                 "layout_file": "Generic C3 LR1121.json",
                 "overlay": {
+                    "serial1_rx": 18,
+                    "serial1_tx": 19,
                     "power_values_dual": [-10, -6, -3, 2],
                     "radio_rfsw_ctrl": [15, 0, 12, 8, 8, 6, 0, 5]
                 },
