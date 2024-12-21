@@ -278,6 +278,7 @@ def validate_power_config(target, layout):
     had_error = False
     if 'power_values' in layout:
         power_values = layout['power_values']
+        power_values_dual = layout['power_values_dual'] if 'power_values_dual' in layout else None
         power_max = layout['power_max']
         power_min = layout['power_min']
         power_default = layout['power_default']
@@ -291,9 +292,12 @@ def validate_power_config(target, layout):
         if power_high < power_min or power_high > power_max:
             print(f'device "{target}" power_high must lie between power_min and power_max')
             had_error = True
-        if power_max - power_min + 1 != len(power_values):
+        if power_values and power_max - power_min + 1 != len(power_values):
             print(f'device "{target}" power_values must have the correct number of entries to match all values from power_min to power_max')
             had_error = power_max - power_min + 1 > len(power_values)
+        if power_values_dual and power_max - power_min + 1 != len(power_values_dual):
+            print(f'device "{target}" power_values_dual must have the correct number of entries to match all values from power_min to power_max')
+            had_error = power_max - power_min + 1 > len(power_values_dual)
         if layout['power_control'] == 3 and 'power_apc2' not in layout:
             print(f'device "{target}" defines power_control as DACWRITE and power_apc2 is undefined')
             had_error = True
