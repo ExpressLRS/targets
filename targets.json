@@ -429,7 +429,7 @@
     "diy": {
         "name": "DIY devices",
         "tx_dual": {
-            "Aerotech": {
+            "Aerotech_TX": {
                 "product_name": "Aerotech 2.4/400 TX",
                 "lua_name": "Aerotech 2.4/400",
                 "layout_file": "DIY LR1121 433 TX.json",
@@ -517,8 +517,8 @@
             }
         },
         "rx_dual": {
-            "Aerotech": {
-                "product_name": "Aerotech C3 LR1121 2.4/900 RX",
+            "Aerotech_RX": {
+                "product_name": "Aerotech C3 LR1121 2.4/400 RX",
                 "lua_name": "C3 LR1121 RX",
                 "layout_file": "DIY C3 LR1121.json",
                 "upload_methods": ["uart", "wifi"],
