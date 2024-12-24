@@ -127,6 +127,32 @@
                 "firmware": "Unified_ESP32C3_2400_RX"
             }
         },
+        "tx_dual": {
+            "nano": {
+                "product_name": "BAYCKRC 900/2400 Dual Band 1W Nano TX",
+                "lua_name": "B 9002G4 Nano TX",
+                "layout_file": "BAYCKRC Dual Band.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.5.2",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            },
+            "nano_gemini": {
+                "product_name": "BAYCKRC 900/2400 Dual Band 1W Nano Gemini TX",
+                "lua_name": "B 9002G4 NanoGTX",
+                "layout_file": "BAYCKRC Dual Band.json",
+                "overlay": {
+                    "radio_busy_2": 39,
+                    "radio_dio1_2": 34,
+                    "radio_nss_2": 15,
+                    "radio_rst_2": 21
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            }
+        },
         "rx_dual": {
             "dual": {
                 "product_name": "BAYCKRC 900/2400 Dual Band Gemini RX",
@@ -204,6 +230,18 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "BETAFPV_900_TX_MICRO"
+            },
+            "micro900v2": {
+                "product_name": "BETAFPV 900MHz Micro TX V2",
+                "lua_name": "BFPV Micro TX V2",
+                "layout_file": "BETAFPV 900 Micro V2.json",
+                "logo_file": "betafpv.bin",
+                "features": ["fan"],
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX",
+                "prior_target_name": "BETAFPV_900_TX_MICRO_V2"
             }
         },
         "rx_900": {
@@ -1889,6 +1927,20 @@
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
             },
+            "t-pros": {
+                "product_name": "Jumper AION T-ProS 2.4GHz TX",
+                "lua_name": "AION T-ProS TX",
+                "layout_file": "Jumper T-20 2400.json",
+                "overlay": {
+                    "use_backpack": true,
+                    "misc_fan_en": 33
+                },
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "Jumper_AION_2400_T-Pro_TX"
+            },
             "t-15": {
                 "product_name": "Jumper AION T-15 2.4GHz TX",
                 "lua_name": "T-15 2G4 TX",
@@ -1994,6 +2046,15 @@
             "t-20-v2": {
                 "product_name": "Jumper AION T-20 900M V2 TX",
                 "lua_name": "T-20 900 V2 TX",
+                "layout_file": "Jumper T-20 900 V2.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            },
+            "t-pros": {
+                "product_name": "Jumper T-ProS 900M TX",
+                "lua_name": "T-ProS 900 TX",
                 "layout_file": "Jumper T-20 900 V2.json",
                 "upload_methods": ["uart", "wifi", "etx"],
                 "min_version": "3.3.0",
