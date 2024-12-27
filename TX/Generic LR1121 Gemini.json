@@ -30,14 +30,14 @@
     "ledidx_rgb_boot": [0],
 
     "radio_dcdc": true,
-    
+
     "use_backpack": true,
     "debug_backpack_baud": 460800,
     "debug_backpack_rx": 18,
     "debug_backpack_tx": 5,
     "backpack_boot": 23,
     "backpack_en": 19,
-    
+
     "screen_type": 1,
     "screen_sck": 9,
     "screen_sda": 10,
