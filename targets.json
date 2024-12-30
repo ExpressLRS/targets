@@ -2972,7 +2972,7 @@
             "dbes-x14": {
                 "product_name": "HappySky X14 2.4GHz TX",
                 "lua_name": "HappySky 2G4 TX",
-                "layout_file": "DBES HappySky 2400.json",
+                "layout_file": "HappySky 2400.json",
                 "upload_methods": ["uart", "wifi", "etx"],
                 "min_version": "3.4.0",
                 "platform": "esp32-s3",
