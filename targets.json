@@ -2965,5 +2965,31 @@
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
+    },
+    "happysky": {
+        "name": "HappySky",
+        "tx_2400":{
+            "dbes-x14": {
+                "product_name": "HappySky X14 2.4GHz TX",
+                "lua_name": "HappySky 2G4 TX",
+                "layout_file": "DBES HappySky 2400.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.4.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
+            }
+        },
+        "rx_2400": {
+            "h24s": {
+                "product_name": "HappySky 2.4GHz RX",
+                "lua_name": "HappySky 24S",
+                "layout_file": "Generic 2400 Diversity PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "HappySky_2400_RX"
+            }
+        }
     }
 }
