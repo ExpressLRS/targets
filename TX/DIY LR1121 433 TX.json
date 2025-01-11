@@ -9,7 +9,7 @@
     "radio_busy": 32,
     "radio_dio1": 16,
     "radio_nss": 27,
-    "radio_rst": 26,
+    "radio_rst": 14,
 
     "radio_busy_2": 33,
     "radio_dio1_2": 34,
