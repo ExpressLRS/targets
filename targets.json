@@ -2764,6 +2764,17 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             }
+        },
+        "rx_900": {
+            "dual": {
+                "product_name": "SEQURE 900MHz Dual RX",
+                "lua_name": "SEQURE 900 TDRX",
+                "layout_file": "Generic 900 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
+            }
         }
     },
     "siyi": {
