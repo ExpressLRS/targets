@@ -476,6 +476,16 @@
                 "min_version": "3.0.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
+            },
+            "Aerotech_D3_TX": {
+                "product_name": "Aerotech_D3 2.4/400 TX",
+                "lua_name": "Aerotech_D3 2.4/400",
+                "layout_file": "DIY LR1121 433 D4 TX.json",
+                "logo_file": "elrs64.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
             }
         },
         "tx_900": {
