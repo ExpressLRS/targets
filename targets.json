@@ -1579,8 +1579,8 @@
     "hdzero": {
         "name": "HDZero",
         "rx_2400": {
-            "fc-1r0": {
-                "product_name": "HDZero Halo FC 2.4G True Diversity RX",
+            "halo": {
+                "product_name": "HDZero Halo FC 2.4GHz Gemini RX",
                 "lua_name": "HDZero Halo FC",
                 "layout_file": "Generic C3 2400 True Diversity.json",
                 "overlay": {
