@@ -542,6 +542,31 @@
                 "firmware": "Unified_ESP32_900_TX",
                 "prior_target_name": "DIY_900_TX_TTGO_V2_SX127x"
             },
+            "ESP32_S3_ZERO_NiceRF_400M": {
+                "product_name": "DIY ESP32S3-ZERO_400M TX",
+                "lua_name": "ESP32S3 400M",
+                "layout_file": "DIY 433 ESP32-S3 ZERO G_N_433_1W.json",
+                "logo_file": "elrs64.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_ZERO_900_TX",
+                "prior_target_name": "Unified_ESP32S3_ZERO_900_TX"
+            },
+            "ESP32_S3_NiceRF_400M": {
+                "product_name": "DIY ESP32S3_400M TX",
+                "lua_name": "ESP32S3 400M",
+                "layout_file": "DIY 433 ESP32-S3 G_N_433_1W.json",
+                "logo_file": "elrs64.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_900_TX",
+                "prior_target_name": "Unified_ESP32S3_900_TX"
+            },
+
+
+
             "stm32-sx1272": {
                 "product_name": "DIY STM32 SX1272 TX",
                 "upload_methods": ["stlink"],
