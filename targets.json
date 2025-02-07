@@ -2927,6 +2927,23 @@
             }
         }
     },
+    "tunerc": {
+        "name": "TuneRC",
+        "rx_2400": {
+            "tunerc 2.4g nano pa rx": {
+                "product_name": "TuneRC 2.4G nano PA RX",
+                "lua_name": "TuneRC 2G4 nano",
+                "layout_file": "Generic C3 2400 PA.json",
+                "overlay": {
+                    "power_values": [-7, -4, -1, 1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
+            }
+        }
+    },
     "atomrc": {
         "name": "atomrc",
         "rx_2400": {
