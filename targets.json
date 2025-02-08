@@ -562,8 +562,6 @@
                 "firmware": "Unified_ESP32S3_Nano_TX"
             },
 
-
-
             "stm32-sx1272": {
                 "product_name": "DIY STM32 SX1272 TX",
                 "upload_methods": ["stlink"],

@@ -16,6 +16,9 @@
     "power_max": 6,
     "power_default": 3,
 
+    "power_rxen": 10,
+    "power_txen": 6,
+
     "power_lna_gain": 12,
 
     "power_control": 0,
@@ -27,5 +30,8 @@
     "screen_type": 1,
 
     "misc_fan_en": 5,
-    "led": 10
+
+    "led_rgb": 21,
+    "led_rgb_isgrb": true
+
 }
