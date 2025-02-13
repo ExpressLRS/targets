@@ -2928,6 +2928,20 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX"
             }
+        },
+        "rx_dual": {
+            "stingbee-dbtd": {
+                "product_name": "StingBee TrueD 900/2400 GemX RX",
+                "lua_name": "StingBee TrueD G",
+                "layout_file": "Generic C3 LR1121 True Diversity.json",
+                "overlay": {
+                    "power_values": [-16,-11,-7,-2]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
+            }
         }
     },
     "spracing": {
