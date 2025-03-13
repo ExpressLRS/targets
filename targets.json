@@ -1342,6 +1342,18 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_RX"
             },
+            "taker": {
+                "product_name": "GEPRC Taker F411 12A AIO ELRS 2.4G",
+                "lua_name": "GEPR Nano PA100",
+                "layout_file": "Generic 2400 PA.json",
+                "overlay": {
+                    "power_values": [-7,-6,-4,1]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
             "geprc-dual": {
                 "product_name": "GEPRC True Diversity 2.4GHz RX",
                 "lua_name": "GEPRC Dual RX",
