@@ -245,15 +245,15 @@
             }
         },
         "rx_900": {
-            "plain": {
-                "product_name": "BETAFPV 900MHz RX",
-                "lua_name": "BETAFPV 900RX",
+            "nano": {
+                "product_name": "BETAFPV 900MHz Nano RX",
+                "lua_name": "BFPV Nano 900RX",
                 "layout_file": "Generic 900.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.0.0",
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX",
-                "prior_target_name": "BETAFPV_900_RX"
+                "prior_target_name": "BETAFPV_Nano_900_RX"
             },
             "superd": {
                 "product_name": "BETAFPV SuperD 900MHz RX",
