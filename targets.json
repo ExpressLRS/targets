@@ -534,15 +534,6 @@
                     "offset": "0x4000",
                     "bootloader": "sx1272_pcb_bootloader.bin"
                 }
-            },
-            "dupletxesp": {
-                "product_name": "Generic ESP8285 Full-duplex 900MHz RX as TX",
-                "lua_name": "DupleTX RX",
-                "layout_file": "DIY 900 DupleTX RX.json",
-                "upload_methods": ["uart", "wifi"],
-                "min_version": "3.4.0",
-                "platform": "esp8285",
-                "firmware": "Unified_ESP8285_900_TX"
             }
         },
         "rx_900": {
@@ -640,16 +631,6 @@
                 "min_version": "3.4.0",
                 "platform": "esp32-s3",
                 "firmware": "Unified_ESP32S3_2400_TX"
-            },
-            "dupletxesp": {
-                "product_name": "Generic ESP8285 Full-duplex 2.4GHz RX as TX",
-                "lua_name": "DupleTX RX",
-                "layout_file": "DIY 2400 DupleTX ESP.json",
-                "upload_methods": ["uart", "wifi"],
-                "min_version": "3.0.0",
-                "platform": "esp8285",
-                "firmware": "Unified_ESP8285_2400_TX",
-                "prior_target_name": "DIY_2400_TX_DUPLETX_ESP"
             }
         },
         "rx_2400": {
