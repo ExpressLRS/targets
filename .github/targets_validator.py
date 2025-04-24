@@ -13,14 +13,14 @@ firmwares = set()
 def error(msg):
     global hadError
     hadError = True
-    print(msg)
+    print("ERROR: " + msg)
 
 
 def warn(msg):
     if warnEnabled:
         global hadError
         hadError = True
-        print(msg)
+        print("WARNING: " + msg)
 
 
 def validate_stm32(vendor, type, devname, device):
