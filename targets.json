@@ -119,7 +119,7 @@
                 "overlay": {
                     "vbat_offset": 0,
                     "vbat_scale": 908,
-                    "vbat_atten": 7                  
+                    "vbat_atten": 7
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
@@ -3016,7 +3016,7 @@
     "tunerc": {
         "name": "TuneRC",
         "rx_2400": {
-            "tunerc 2.4g nano pa rx": {
+            "tunerc_2400_nano_pa_rx": {
                 "product_name": "TuneRC 2.4G nano PA RX",
                 "lua_name": "TuneRC 2G4 nano",
                 "layout_file": "Generic C3 2400 PA.json",
