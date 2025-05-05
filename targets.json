@@ -1255,6 +1255,17 @@
     },
     "geprc": {
         "name": "GEPRC",
+        "tx_900": {
+            "linkflow": {
+                "product_name": "GEPRC LINKFLOW 900M TX",
+                "lua_name": "LINKFLOW 900 TX",
+                "layout_file": "GEPRC 900 Linkflow.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_TX"
+            }
+        },
         "rx_900": {
             "nano": {
                 "product_name": "GEPRC Nano 900MHz RX",
