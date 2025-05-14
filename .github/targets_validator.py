@@ -3,21 +3,25 @@ import json
 import glob
 import argparse
 import hardware
+import re
 
 hadError = False
 warnEnabled = False
 firmwares = set()
 
+
 def error(msg):
     global hadError
     hadError = True
-    print(msg)
+    print("ERROR: " + msg)
+
 
 def warn(msg):
     if warnEnabled:
         global hadError
         hadError = True
-        print(msg)
+        print("WARNING: " + msg)
+
 
 def validate_stm32(vendor, type, devname, device):
     for method in device['upload_methods']:
@@ -36,6 +40,7 @@ def validate_stm32(vendor, type, devname, device):
         if 'bootloader' not in stlink:
             error(f'The "stlink" attribute for target "{vendor}.{type}.{devname}" must have a valid "bootloader"')
     # could check the existence of the bootloader file
+
 
 def validate_esp(vendor, type, devname, device):
     if 'lua_name' not in device:
@@ -80,11 +85,13 @@ def validate_esp(vendor, type, devname, device):
         if '_ESP8285_' not in device['firmware']:
             error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
 
+
 def validate_esp32(vendor, type, devname, device):
     for method in device['upload_methods']:
         if method not in ['uart', 'etx', 'wifi', 'betaflight']:
             error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"')
     validate_esp(vendor, type, devname, device)
+
 
 def validate_esp8285(vendor, type, devname, device):
     for method in device['upload_methods']:
@@ -93,8 +100,10 @@ def validate_esp8285(vendor, type, devname, device):
     validate_esp(vendor, type, devname, device)
 
 def validate_devices(vendor, type, devname, device):
-    if devname != devname.lower():
-        error(f'device tag "{devname}" should be lowercase')
+    allowed_json_key_characters = re.compile("^[a-z0-9_-]+$")
+    if not allowed_json_key_characters.match(devname):
+        error(f'device tag "{devname}" can only include lowercase a-z, 0-9, and underscores and dashes')
+
     if 'product_name' not in device:
         error(f'device "{vendor}.{type}.{devname}" must have a "product_name" child element')
     if 'upload_methods' not in device:
@@ -132,8 +141,9 @@ def validate_devices(vendor, type, devname, device):
                 error(f'features must contain one or more of [\'buzzer\', \'unlock-higher-power\', \'fan\', \'sbus-uart\'], if present in target "{vendor}.{type}.{devname}"')
 
 def validate_vendor(name, types):
-    if name != name.lower():
-        error(f'vendor tag "{vendor}" should be lowercase')
+    allowed_json_key_characters = re.compile("^[a-z0-9_-]+$")
+    if not allowed_json_key_characters.match(name):
+        error(f'vendor tag "{name}" can only include lowercase a-z, 0-9, and underscores and dashes')
 
     if 'name' not in types:
         error(f'vendor "{vendor}" must have a "name" child element')
@@ -141,9 +151,10 @@ def validate_vendor(name, types):
     for type in types:
         if type not in ['rx_2400', 'rx_900', 'rx_dual', 'tx_2400', 'tx_900', 'tx_dual', 'name']:
             error(f'invalid tag "{type}" in "{vendor}"')
-        if type in  ['rx_2400', 'rx_900', 'rx_dual', 'tx_2400', 'tx_900', 'tx_dual']:
+        if type in ['rx_2400', 'rx_900', 'rx_dual', 'tx_2400', 'tx_900', 'tx_dual']:
             for device in types[type]:
                 validate_devices(name, type, device, types[type][device])
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Configure Binary Firmware")
@@ -175,7 +186,7 @@ if __name__ == '__main__':
                         target = line
                     if line.startswith('board_config'):
                         eq = line.find('=')
-                        board = line[eq+1:].strip()
+                        board = line[eq + 1:].strip()
                         parts = board.split('.')
                         if len(parts) != 3:
                             error(f'{inifile}: board_config must have 3 parts')
