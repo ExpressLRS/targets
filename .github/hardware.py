@@ -213,7 +213,7 @@ def validate(target, layout, device, type):
     for field in dict(filter(ignore_undef_pins, layout.items())):
         # Ensure that the layout field is a valid field from the hardware list
         if field not in hardware_fields.keys():
-            print(f'device "{target}" has an unknown field name {field}')
+            print(f'ERROR: device "{target}" has an unknown field name {field}')
             had_error = True
         else:
             had_error |= validate_pin_uniqueness(target, layout, field)
@@ -244,7 +244,7 @@ def validate_field_grouping(target, layout, field, field_group):
         if field in group[0]:
             for must in group[0] + group[1]:
                 if must not in layout:
-                    print(f'device "{target}" because "{field}" is defined all other related fields must also be defined {must}')
+                    print(f'ERROR: device "{target}" because "{field}" is defined all other related fields must also be defined {must}')
                     print(f'\t{group[0] + group[1]}')
                     had_error = True
             found = True if group[2] == [] else False
@@ -252,7 +252,7 @@ def validate_field_grouping(target, layout, field, field_group):
                 if one in layout:
                     found = True
             if not found:
-                print(f'device "{target}" because "{field}" is defined at least one of the following fields must also be {group[2]}')
+                print(f'ERROR: device "{target}" because "{field}" is defined at least one of the following fields must also be {group[2]}')
                 had_error = True
     return had_error
 
@@ -267,7 +267,7 @@ def validate_pin_uniqueness(target, layout, field):
                 if field in duplicate and used_pins[pin] in duplicate:
                     allowed = True
             if not allowed:
-                print(f'device "{target}" PIN {pin} "{field}" is already assigned to "{used_pins[pin]}"')
+                print(f'ERROR: device "{target}" PIN {pin} "{field}" is already assigned to "{used_pins[pin]}"')
                 had_error = True
         else:
             used_pins[pin] = field
@@ -284,32 +284,32 @@ def validate_power_config(target, layout):
         power_default = layout['power_default']
         power_high = layout['power_high']
         if power_min > power_max:
-            print(f'device "{target}" power_min must be less than or equal to power_max')
+            print(f'ERROR: device "{target}" power_min must be less than or equal to power_max')
             had_error = True
         if power_default < power_min or power_default > power_max:
-            print(f'device "{target}" power_default must lie between power_min and power_max')
+            print(f'ERROR: device "{target}" power_default must lie between power_min and power_max')
             had_error = True
         if power_high < power_min or power_high > power_max:
-            print(f'device "{target}" power_high must lie between power_min and power_max')
+            print(f'ERROR: device "{target}" power_high must lie between power_min and power_max')
             had_error = True
-        if power_values and power_max - power_min + 1 != len(power_values):
-            print(f'device "{target}" power_values must have the correct number of entries to match all values from power_min to power_max')
-            had_error = power_max - power_min + 1 > len(power_values)
-        if power_values_dual and power_max - power_min + 1 != len(power_values_dual):
-            print(f'device "{target}" power_values_dual must have the correct number of entries to match all values from power_min to power_max')
-            had_error = power_max - power_min + 1 > len(power_values_dual)
+        if power_values and power_max - power_min + 1 > len(power_values):
+            print(f'ERROR: device "{target}" power_values must have the correct number of entries to match all values from power_min to power_max')
+            had_error = True
+        if power_values_dual and power_max - power_min + 1 > len(power_values_dual):
+            print(f'ERROR: device "{target}" power_values_dual must have the correct number of entries to match all values from power_min to power_max')
+            had_error = True
         if layout['power_control'] == 3 and 'power_apc2' not in layout:
-            print(f'device "{target}" defines power_control as DACWRITE and power_apc2 is undefined')
+            print(f'ERROR: device "{target}" defines power_control as DACWRITE and power_apc2 is undefined')
             had_error = True
         if 'power_values2' in layout:
             if len(layout['power_values2']) != len(power_values):
-                print(f'device "{target}" power_values2 must have the same number of entries as power_values')
+                print(f'ERROR: device "{target}" power_values2 must have the same number of entries as power_values')
                 had_error = True
             if layout['power_control'] != 3:
-                print(f'device "{target}" power_values2 is defined so power_control must be set to 3 (DACWRITE)')
+                print(f'ERROR: device "{target}" power_values2 is defined so power_control must be set to 3 (DACWRITE)')
                 had_error = True
             if 'power_apc2' not in layout:
-                print(f'device "{target}" power_values2 is defined so the power_apc2 pin must also be defined')
+                print(f'ERROR: device "{target}" power_values2 is defined so the power_apc2 pin must also be defined')
                 had_error = True
     return had_error
 
@@ -318,10 +318,10 @@ def validate_backpack(target, layout):
     had_error = False
     if 'passthrough_baud' in layout:
         if layout['serial_rx'] == layout['serial_tx'] and layout['passthrough_baud'] != 230400:
-            print(f'device "{target}" an external module with a backpack should set the baud rate to 230400')
+            print(f'ERROR: device "{target}" an external module with a backpack should set the baud rate to 230400')
             had_error = True
         if layout['serial_rx'] != layout['serial_tx'] and layout['passthrough_baud'] != 460800:
-            print(f'device "{target}" an internal module with a backpack should set the baud rate to 460800')
+            print(f'ERROR: device "{target}" an internal module with a backpack should set the baud rate to 460800')
             had_error = True
     return had_error
 
@@ -330,18 +330,18 @@ def validate_joystick(target, layout):
     had_error = False
     if 'joystick' in layout or 'joystick_values' in layout:
         if 'joystick' not in layout:
-            print(f'device "{target}" joystick_values is defined so the joystick pin must also be defined')
+            print(f'ERROR: device "{target}" joystick_values is defined so the joystick pin must also be defined')
             had_error = True
         elif 'joystick_values' not in layout:
-            print(f'device "{target}" joystick is defined so the joystick_values must also be defined')
+            print(f'ERROR: device "{target}" joystick is defined so the joystick_values must also be defined')
             had_error = True
         elif len(layout['joystick_values']) != 6:
-            print(f'device "{target}" joystick_values must have 6 values defined')
+            print(f'ERROR: device "{target}" joystick_values must have 6 values defined')
             had_error = True
         else:
             for value in layout['joystick_values']:
                 if value < 0 or value > 4095:
-                    print(f'device "{target}" joystick_values must be between 0 and 4095 inclusive')
+                    print(f'ERROR: device "{target}" joystick_values must be between 0 and 4095 inclusive')
                     had_error = True
     return had_error
 
@@ -354,7 +354,7 @@ def validate_pwm_outputs(target, layout):
                     field in layout and \
                     layout[field] in layout['pwm_outputs'] and \
                     field not in allowable_pwm_shared:
-                print(f'device "{target}" pwm_output pin {layout[field]} is not allowed to be shared with {field}')
+                print(f'ERROR: device "{target}" pwm_output pin {layout[field]} is not allowed to be shared with {field}')
                 had_error = True
     return had_error
 
@@ -363,10 +363,10 @@ def validate_pin_function(target, layout, field, platform):
     if hardware_fields[field].value > FieldType.PIN.value:
         function = get_pin_function(platform, layout[field])
         if function is None:
-            print(f'device "{target}" has an invalid pin number for {field}, {layout[field]}')
+            print(f'ERROR: device "{target}" has an invalid pin number for {field}, {layout[field]}')
             return True
         if hardware_fields[field] == FieldType.INPUT and not (function & 1):
-            print(f'device "{target}" pin for {field} must be assigned to a pin that supports INPUT')
+            print(f'ERROR: device "{target}" pin for {field} must be assigned to a pin that supports INPUT')
             return True
     return False
 
@@ -375,5 +375,5 @@ def validate_vtx_amp_pwm(target, layout, platform):
     if platform == 'esp32' and 'vtx_amp_pwm' in layout:
         function = get_pin_function(platform, layout['vtx_amp_pwm'])
         if function is not None and function & 8 != 8:
-            print(f'device "{target}" "vtx_amp_pwm" is preferred to be a DAC pin if possible, but PWM output is supported')
+            print(f'NOTICE: device "{target}" "vtx_amp_pwm" is preferred to be a DAC pin if possible, but PWM output is supported')
     return False
