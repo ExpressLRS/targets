@@ -1612,6 +1612,15 @@
                 "min_version": "3.5.0",
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_2400_RX"
+            },
+            "aio15": {
+                "product_name": "HDZero 2.4GHz AIO RX",
+                "lua_name": "HDZero AIO RX",
+                "layout_file": "Generic C3 2400.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
             }
         }
     },
