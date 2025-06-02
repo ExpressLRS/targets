@@ -2337,7 +2337,7 @@
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             },
             "c324d": {
-                "product_name": "NewBeeDrone ESP8685 2.4Ghz Diversity RX PA",
+                "product_name": "NewBeeDrone Diversity 2.4Ghz RX V2",
                 "lua_name": "NBD C3 2400RX",
                 "layout_file": "Generic C3 2400 PA.json",
                 "overlay": {
