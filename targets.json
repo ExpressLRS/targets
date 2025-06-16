@@ -481,7 +481,7 @@
     "dakefpv": {
         "name": "DAKEFPV",
         "rx_900": {
-            "900rx": {
+            "plain": {
                 "product_name": "DAKEFPV 900MHz RX",
                 "lua_name": "DAKEFPV 900RX",
                 "layout_file": "Generic C3 LR1121.json",
