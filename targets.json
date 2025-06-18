@@ -2803,7 +2803,7 @@
                 "prior_target_name": "Unified_ESP32_2400_RX"
             },
 	    "xr2": {
-                "product_name": "RadioMaster XR2 2G4 RX",
+                "product_name": "RadioMaster XR2 2.4GHz RX",
                 "lua_name": "RM XR2",
                 "layout_file": "Generic C3 LR1121.json",
                 "overlay": {
