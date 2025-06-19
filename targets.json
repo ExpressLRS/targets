@@ -3167,5 +3167,23 @@
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
+    },
+    "orbit": {
+        "name": "ORBIT",
+        "rx_2400": {
+            "nano": {
+                "product_name": "ORBIT 2.4Ghz Nano RX",
+                "lua_name": "ORBIT 2400 RX",
+                "layout_file": "Generic 2400 PA RGB.json",
+                "overlay": {
+                    "radio_dcdc": true
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX",
+                "prior_target_name": "Orbit_2400_Nano_RX"
+            }
+        }
     }
 }
