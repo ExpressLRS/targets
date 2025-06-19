@@ -112,6 +112,15 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
             },
+            "rrd1": {
+                "product_name": "BAYCKRC RRD1 2.4GHz RX",
+                "lua_name": "BK RRD1 RX",
+                "layout_file": "Generic C3 2400 True Diversity.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
+            },
             "pwmc3": {
                 "product_name": "BAYCKRC C3 2.4Ghz 6PWM 10mw RX",
                 "lua_name": "BK 2G4 6PWM RX",
