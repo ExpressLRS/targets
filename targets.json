@@ -151,6 +151,23 @@
                 "min_version": "3.5.4",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
+            },
+            "micro_gemini": {
+                "product_name": "BAYCKRC 900/2400 Dual Band 1W Micro Gemini TX",
+                "lua_name": "B 9002G4MicroGTX",
+                "layout_file": "BAYCKRC Dual Band.json",
+                "overlay": {
+                    "radio_busy_2": 39,
+                    "radio_dio1_2": 34,
+                    "radio_nss_2": 15,
+                    "radio_rst_2": 21,
+                    "power_values": [-15,-11,-7,-3,1,5],
+                    "power_values_dual": [-15,-11,-7,-4,3,3]
+                },
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.5.4",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
             }
         },
         "rx_dual": {
