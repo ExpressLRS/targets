@@ -3325,7 +3325,7 @@
             "!unsupported": {
                 "product_name": "!unsupported RX",
                 "lua_name": "!null",
-                "layout_file": "Radiomistress !Unsupported.json",
+                "layout_file": "Radiomistress Unsupported.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.4.0",
                 "platform": "esp32-s3",
