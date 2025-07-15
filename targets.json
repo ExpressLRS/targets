@@ -3322,9 +3322,9 @@
     },
         "radiomistress": {
         "name": "radiomistress",
-            "!unsupported": {
+            "true_diversity": {
                 "product_name": "!unsupported RX",
-                "lua_name": "!null",
+                "lua_name": "!unsupRX",
                 "layout_file": "Radiomistress Unsupported.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.4.0",
@@ -3334,5 +3334,3 @@
         }
     }
 }
-
-
