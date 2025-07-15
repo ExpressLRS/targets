@@ -12,33 +12,16 @@
   "radio_dio1_2": 11,
   "radio_nss_2": 15,
   "radio_rst_2": 3,
-  "radio_rfsw_ctrl": [
-    31,
-    0,
-    20,
-    24,
-    24,
-    2,
-    0,
-    1
-  ],
-  "power_min": 0,
-  "power_high": 0,
-  "power_max": 0,
-  "power_default": 0,
+  "radio_rfsw_ctrl": [31,0,20,24,24,2,0,1],
+  "power_min": 1,
+  "power_high": 3,
+  "power_max": 3,
+  "power_default": 1,
   "power_control": 0,
-  "power_values": [
-    12,16,19,22
-  ],
-  "power_values_dual": [
-    -10,-6,-3,1
-  ],
+  "power_values": [ 12,16,19,22 ],
+  "power_values_dual": [ -10,-6,-3,1 ],
   "led_rgb": 16,
   "led_rgb_isgrb": true,
-  "ledidx_rgb_status": [
-    0
-  ],
-  "ledidx_rgb_boot": [
-    0
-  ]
+  "ledidx_rgb_status": [ 0 ],
+  "ledidx_rgb_boot": [ 0 ]
 }
