@@ -33,15 +33,6 @@
   "power_values_dual": [
     -10,-6,-3,1
   ],
-  "joystick": 18,
-  "joystick_values": [
-    1365,
-    3276,
-    2048,
-    2730,
-    0,
-    4095
-  ],
   "led_rgb": 16,
   "led_rgb_isgrb": true,
   "ledidx_rgb_status": [
@@ -49,11 +40,5 @@
   ],
   "ledidx_rgb_boot": [
     0
-  ],
-  "screen_type": 4,
-  "screen_cs": 48,
-  "screen_dc": 12,
-  "screen_mosi": 47,
-  "screen_rst": 8,
-  "screen_sck": 21
+  ]
 }
