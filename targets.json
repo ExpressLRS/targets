@@ -3322,7 +3322,7 @@
     },
         "radiomistress": {
         "name": "radiomistress",
-            "true_diversity": {
+            "rx_dual": {
                 "product_name": "!unsupported RX",
                 "lua_name": "!unsupRX",
                 "layout_file": "Radiomistress Unsupported.json",
