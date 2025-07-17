@@ -539,6 +539,20 @@
             }
         },
         "rx_dual": {
+            "superx-nano": {
+              "product_name": "BETAFPV SuperX Nano RX",
+              "lua_name": "BFPV SuperX Nan",
+              "layout_file": "Generic C3 LR1121 True Diversity.json",
+              "overlay": {
+                "power_values": [13, 17, 20, 23],
+                "power_values_dual": [-9, -5, -1, 4],
+                "radio_rfsw_ctrl": [15, 0, 4, 8, 8, 14, 0, 13]
+              },
+              "upload_methods": ["uart", "wifi", "betaflight"],
+              "min_version": "3.5.0",
+              "platform": "esp32-c3",
+              "firmware": "Unified_ESP32C3_LR1121_RX"
+            },
             "superx-mono": {
                 "product_name": "BETAFPV SuperX Mono RX",
                 "lua_name": "BFPV SuperX Mon",
