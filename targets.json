@@ -3038,6 +3038,20 @@
             }
         }
     },
+    "runcam": {
+        "name": "RunCam",
+        "tx_2400": {
+            "runcam": {
+                "product_name": "RunCam 2.4Ghz TX",
+                "lua_name": "RunCam 2G4",
+                "layout_file": "RunCam 2400 TX.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.5.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
+            }
+        }
+    },
     "sequre": {
         "name": "SEQURE",
         "rx_2400": {
