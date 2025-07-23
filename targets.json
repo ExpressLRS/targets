@@ -631,6 +631,32 @@
             }
         }
     },
+    "bsip": {
+        "name": "BSIP",
+        "rx_dual": {
+            "superx-mono": {
+                "product_name": "BSIP YB-Diversity Dual Band RX",
+                "lua_name": "YB-Diversity",
+                "layout_file": "Generic S3 LR1121 True Diversity.json",
+                "overlay": {
+                    "power_high": 0,
+                    "power_max": 0,
+                    "power_values": [12],
+                    "power_values_dual": [13],
+                    "radio_rfsw_ctrl": [20, 0, 0, 0, 16, 4, 0, 0],
+                    "pwm_outputs": [43,44,17,18,48,47,10,9,34,35,37,38],
+                    "i2c_sda": 34,
+                    "i2c_scl": 35,
+                    "ledidx_rgb_status":[0],
+                    "ledidx_rgb_boot":[0]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_LR1121_RX"
+            }
+        }
+    },
     "dakefpv": {
         "name": "DAKEFPV",
         "rx_dual": {
