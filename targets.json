@@ -3088,7 +3088,7 @@
         "name": "RunCam",
         "tx_2400": {
             "runcam": {
-                "product_name": "RunCam 2.4Ghz TX",
+                "product_name": "RunCam Sirius 2.4GHz TX",
                 "lua_name": "RunCam 2G4",
                 "layout_file": "RunCam 2400.json",
                 "upload_methods": ["uart", "wifi"],
