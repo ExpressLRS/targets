@@ -21,8 +21,8 @@
     "power_max": 3,
     "power_default": 0,
     "power_control": 0,
-    "power_values": [12,16,19,22],
-    "power_values_dual": [-10,-6,-3,1],
+    "power_values": [12, 16, 19, 22],
+    "power_values_dual": [-10, -6, -3, 1],
 
     "radio_dcdc": true,
 
