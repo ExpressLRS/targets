@@ -1,0 +1,50 @@
+{
+    "serial_rx": 13,
+    "serial_tx": 13,
+    
+    "radio_miso": 15,
+    "radio_mosi": 16,
+    "radio_sck": 7,
+    "radio_busy": 4,
+    "radio_dio1": 5,
+    "radio_rst": 6,
+    "radio_nss": 17,
+    
+    "screen_cs": 33,
+    "screen_dc": 34,
+    "screen_mosi": 35,
+    "screen_rst": 36,
+    "screen_sck": 37,
+    "screen_bl": 38,
+    "screen_type": 4,
+    "screen_reversed": 1,
+    
+    "joystick": 11,
+    "joystick_values": [2073, 3276, 2746, 1365, 0, 4095],
+    
+    "power_rxen": 1,
+    "power_txen": 10,
+    "power_lna_gain": 12,
+    "power_min": 1,
+    "power_high": 6,
+    "power_max": 6,
+    "power_default": 2,
+    "power_control": 0,
+    "power_values": [-17, -14, -10, -7, -4, 0],
+    
+    "radio_dcdc": true,
+    
+    "led_rgb": 12,
+    "led_rgb_isgrb": true,
+    
+    "misc_fan_en": 2,
+    
+    "use_backpack": true,
+    "debug_backpack_baud": 460800,
+    "debug_backpack_rx": 21,
+    "debug_backpack_tx": 18,
+    "backpack_boot": 8,
+    "backpack_en": 9,
+    "passthrough_baud": 230400
+  }
+  
