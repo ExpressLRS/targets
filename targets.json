@@ -632,10 +632,10 @@
         }
     },
     "bsip": {
-        "name": "BSIP",
+        "name": "BlackSheep IP",
         "rx_dual": {
             "superx-mono": {
-                "product_name": "BSIP YB-Diversity Dual Band RX",
+                "product_name": "BlackSheep IP YB-Diversity Dual Band RX",
                 "lua_name": "YB-Diversity",
                 "layout_file": "Generic S3 LR1121 True Diversity.json",
                 "overlay": {
