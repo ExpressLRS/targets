@@ -1,0 +1,41 @@
+{
+  "serial_rx": 3,
+  "serial_tx": 1,
+
+  "radio_miso": 33,
+  "radio_mosi": 32,
+  "radio_sck": 25,
+  "radio_busy": 36,
+  "radio_dio1": 37,
+  "radio_nss": 27,
+  "radio_rst": 15,
+
+  "radio_dcdc": true,
+  "radio_rfo_hf": true,
+
+  "power_apc2": 26,
+  "power_min": 0,
+  "power_high": 6,
+  "power_max": 6,
+  "power_default": 3,
+  "power_control": 3,
+  "power_values": [140, 120, 120, 120, 120, 120, 95],
+  "power_values2": [-14, -10, -7, -4, 0, 3, 10],
+  "power_values_dual": [-18, -16, -13, -8, -4, 0, 10],
+  "radio_rfsw_ctrl": [15, 0, 4, 12, 12, 2, 0, 1],
+
+  "led_rgb": 22,
+  "led_rgb_isgrb": true,
+  "ledidx_rgb_status": [0],
+  "ledidx_rgb_boot": [0],
+
+  "use_backpack": true,
+  "debug_backpack_baud": 460800,
+  "debug_backpack_rx": 18,
+  "debug_backpack_tx": 5,
+  "backpack_boot": 23,
+  "backpack_en": 19,
+  "passthrough_baud": 460800,
+
+  "misc_fan_en": 2
+}
