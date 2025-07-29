@@ -3051,6 +3051,15 @@
                 "min_version": "3.5.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
+            },
+            "tx15": {
+                "product_name": "RadioMaster TX15 2.4/900 TX",
+                "lua_name": "RM TX15 DB",
+                "layout_file": "Radiomaster TX15.json",
+                "upload_methods": ["etx", "wifi"],
+                "min_version": "3.5.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
             }
         },
         "rx_dual": {
@@ -3119,7 +3128,7 @@
                 "layout_file": "RunCam 2400.json",
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.5.0",
-                "logo_file": "runcam_tft.bin",                
+                "logo_file": "runcam_tft.bin",
                 "platform": "esp32-s3",
                 "firmware": "Unified_ESP32S3_2400_TX"
             }
