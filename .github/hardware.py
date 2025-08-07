@@ -206,7 +206,7 @@ def ignore_undef_pins(pair):
         return True
 
 
-def validate(target, layout, device, type):
+def validate(target, layout, device):
     global used_pins
     had_error = False
     used_pins = {}
@@ -217,7 +217,7 @@ def validate(target, layout, device, type):
             had_error = True
         else:
             had_error |= validate_pin_uniqueness(target, layout, field)
-            had_error |= validate_grouping(target, layout, field, type)
+            had_error |= validate_grouping(target, layout, field, device['firmware'])
             had_error |= validate_pin_function(target, layout, field, device['platform'])
     had_error |= validate_power_config(target, layout)
     had_error |= validate_backpack(target, layout)
@@ -227,13 +227,13 @@ def validate(target, layout, device, type):
     return had_error
 
 
-def validate_grouping(target, layout, field, radio):
+def validate_grouping(target, layout, field, firmware):
     had_error = validate_field_grouping(target, layout, field, 'all')
-    if radio.endswith('_2400'):
+    if '_2400_' in firmware:
         had_error |= validate_field_grouping(target, layout, field, '2400')
-    elif radio.endswith('_900'):
+    elif '_900_' in firmware:
         had_error |= validate_field_grouping(target, layout, field, '900')
-    elif radio.endswith('_dual'):
+    elif '_LR1121_' in firmware:
         had_error |= validate_field_grouping(target, layout, field, 'dual')
     return had_error
 
