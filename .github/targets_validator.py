@@ -64,7 +64,7 @@ def validate_esp(vendor, type, devname, device):
                 layout = json.load(f)
                 if 'overlay' in device:
                     layout.update(device['overlay'])
-                hadError |= hardware.validate(f'{vendor}.{type}.{devname}', layout, device, type)
+                hadError |= hardware.validate(f'{vendor}.{type}.{devname}', layout, device)
 
     # could validate overlay
     if 'prior_target_name' not in device:
