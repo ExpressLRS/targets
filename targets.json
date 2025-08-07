@@ -3288,8 +3288,7 @@
                     "radio_nss": 0,
                     "power_values_dual": null,
                     "led": 19,
-                    "led_rgb": null,
-                    "led_rgb_isgrb": null
+                    "led_rgb": -1
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
@@ -3406,7 +3405,7 @@
             }
         },
         "rx_900": {
-            "thobb900": {
+            "thobby900": {
                 "product_name": "THOBBY 900MHz RX",
                 "lua_name": "TH 900 RX",
                 "layout_file": "Generic C3 LR1121.json",
@@ -3414,8 +3413,7 @@
                     "radio_nss": 0,
                     "power_values_dual": null,
                     "led": 19,
-                    "led_rgb": null,
-                    "led_rgb_isgrb": null
+                    "led_rgb": -1
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
@@ -3424,7 +3422,7 @@
             }
         },
         "rx_dual": {
-            "thobbdb": {
+            "thobbydb": {
                 "product_name": "THOBBY Dual Band RX",
                 "lua_name": "TH Dual Band",
                 "layout_file": "Generic C3 LR1121.json",
