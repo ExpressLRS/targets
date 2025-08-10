@@ -1870,6 +1870,16 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX"
             },
+            "v16r": {
+                "product_name": "HELLORADIO V16R Internal 2.4GHz TX",
+                "lua_name": "HR V16R 1W",
+                "layout_file": "Radiomaster Boxer.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.5.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX",
+                "prior_target_name": "RadioMaster_Boxer_2400_TX"
+            }
             "v14": {
                 "product_name": "HELLORADIO V14 Internal 2.4GHz TX",
                 "lua_name": "HR V14 2.4G",
