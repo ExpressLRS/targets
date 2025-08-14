@@ -1588,7 +1588,8 @@
                 "lua_name": "GEPR 9002G4 RX",
                 "layout_file": "Generic C3 LR1121.json",
                 "overlay": {
-                    "radio_rfsw_ctrl": [15,0,8,4,4,14,0,13]
+                    "radio_rfsw_ctrl": [15,0,8,4,4,14,0,13],
+                    "power_default": 3
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.2",
