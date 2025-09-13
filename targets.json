@@ -674,8 +674,8 @@
         "name": "DAKEFPV",
         "rx_900": {
             "rx900": {
-                "product_name": "DAKEFPV 900MHz RX",
-                "lua_name": "DAKEFPV 900RX",
+                "product_name": "DAKEFPV Nano 900MHz RX",
+                "lua_name": "DAKE Nano 900",
                 "layout_file": "Generic C3 LR1121.json",
                 "overlay": {
                     "power_values_dual": null
@@ -687,7 +687,7 @@
             },
             "superd": {
                 "product_name": "DAKEFPV SuperD 900MHz RX",
-                "lua_name": "DKFPV SuperD 900",
+                "lua_name": "DAKE SuperD 900",
                 "layout_file": "Generic C3 LR1121 True Diversity.json",
                 "overlay": {
                     "power_values_dual": null
@@ -698,15 +698,15 @@
                 "firmware": "Unified_ESP32C3_LR1121_RX"
             },
             "pro": {
-                "product_name": "DAKEFPV 900MHz 500mW RX",
-                "lua_name": "DKFPV 500 RX",
+                "product_name": "DAKEFPV 500mW 900MHz RX",
+                "lua_name": "DAKE 500mW 900",
                 "layout_file": "Generic C3 LR1121.json",
                 "overlay": {
                     "power_min": 1,
                     "power_high": 5,
                     "power_max": 5,
                     "power_default": 5,
-                    "power_values": [-17,-15,-12,-8,0],
+                    "power_values": [-17,-15,-12,-8,1],
                     "power_values_dual": null,
                     "ant_ctrl": 10,
                     "radio_rfo_hf": true,
@@ -719,9 +719,9 @@
             }
         },
         "rx_2400": {
-            "single": {
-                "product_name": "DAKEFPV Single 2.4GHz RX",
-                "lua_name": "DKFPV S 2G4RX",
+            "nano": {
+                "product_name": "DAKEFPV Nano 2.4GHz RX",
+                "lua_name": "DAKE Nano 2G4",
                 "layout_file": "Generic C3 LR1121.json",
                 "overlay": {
                     "power_values": null,
@@ -734,7 +734,7 @@
             },
             "superd": {
                 "product_name": "DAKEFPV SuperD 2.4GHz RX",
-                "lua_name": "DKFPV SuperD 2G4",
+                "lua_name": "DAKE SuperD 2G4",
                 "layout_file": "Generic C3 LR1121 True Diversity.json",
                 "overlay": {
                     "power_values": null,
@@ -746,8 +746,8 @@
                 "firmware": "Unified_ESP32C3_LR1121_RX"
             },
             "pro": {
-                "product_name": "DAKEFPV 2.4GHz 500mW RX",
-                "lua_name": "DKFPV 2G4RX 500",
+                "product_name": "DAKEFPV 500mW 2.4GHz RX",
+                "lua_name": "DAKE 500mW 2G4",
                 "layout_file": "Generic C3 LR1121.json",
                 "overlay": {
                     "power_min": 1,
