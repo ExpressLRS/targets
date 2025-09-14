@@ -1053,6 +1053,23 @@
             }
         }
     },
+    "flyingrc": {
+        "name": "FlyingRC",
+        "rx_2400": {
+            "true-d": {
+                "product_name": "FlyingRC 2.4GHz True Diversity RX",
+                "lua_name": "FlyingRC 2G4 TD",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "overlay": {
+                    "radio_dcdc": true
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
+            }
+        }
+    },
     "flywoo": {
         "name": "Flywoo",
         "rx_2400": {
