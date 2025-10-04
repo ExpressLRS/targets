@@ -991,7 +991,7 @@
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
                 "platform": "esp32-c3",
-                "firmware": "Unified_ESP32C3_2400_TX"
+                "firmware": "Unified_ESP32C3_2400_RX"
             }
         }
     },
