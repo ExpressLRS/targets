@@ -2717,6 +2717,18 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_900_RX"
             },
+            "br4td": {
+                "product_name": "RadioMaster BR4TD 900MHz RX",
+                "lua_name": "RM BR4TD",
+                "layout_file": "Generic 900 True Diversity PA.json",
+                "overlay": {
+                    "power_values": [0,4,11,122]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.3.2",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_900_RX"
+            },
             "bandit-nano-rx": {
                 "product_name": "RadioMaster Bandit Nano/Micro 900MHz RX",
                 "lua_name": "RM Bandit RX",
