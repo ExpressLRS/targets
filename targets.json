@@ -143,7 +143,8 @@
                     "power_high": 0,
                     "power_max": 0,
                     "power_values": null,
-                    "power_values_dual": [13]
+                    "power_values_dual": [13],
+                    "power_lna_gain": 0
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
@@ -160,6 +161,7 @@
                     "power_default": 0,
                     "power_values": null,
                     "power_values_dual": [13],
+                    "power_lna_gain": 0,
                     "serial1_rx": 18,
                     "serial1_tx": 19
                 },
@@ -656,6 +658,7 @@
                     "power_max": 0,
                     "power_values": [12],
                     "power_values_dual": [13],
+                    "power_lna_gain": 0,
                     "radio_rfsw_ctrl": [20, 0, 0, 0, 16, 4, 0, 0],
                     "pwm_outputs": [43, 44, 17, 18, 48, 47, 10, 9, 34, 35, 37, 38],
                     "i2c_sda": 34,
@@ -3140,6 +3143,7 @@
                     "power_max": 0,
                     "power_values": null,
                     "power_values_dual": [13],
+                    "power_lna_gain": 0,
                     "radio_rfsw_ctrl": null,
                     "led": 8,
                     "led_rgb": -1

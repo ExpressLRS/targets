@@ -31,6 +31,7 @@
     "power_default": 0,
     "power_control": 0,
     "power_values": [13],
+    "power_lna_gain": 0,
 
     "//": "IR Transponder",
     "//": "IR output must be OFF unless transmitting",
