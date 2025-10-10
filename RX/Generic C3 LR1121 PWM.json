@@ -13,6 +13,7 @@
     "power_control": 0,
     "power_values": [12,16,19,22],
     "power_values_dual": [-12,-9,-6,-2],
+    "power_lna_gain": 12,
     "pwm_outputs": [9,10,18,19,20,21],
     "led_rgb": 8,
     "led_rgb_isgrb": true,
