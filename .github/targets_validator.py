@@ -8,6 +8,33 @@ import re
 hadError = False
 warnEnabled = False
 firmwares = set()
+stm32_targets = [
+    'DIY_900_TX_STM32_SX1272',
+    'DIY_900_RX_STM32_SX1272',
+    'Frsky_TX_R9M',
+    'Frsky_TX_R9M_LITE',
+    'Frsky_TX_R9M_LITE_PRO',
+    'Frsky_RX_R9MM_R9MINI',
+    'Frsky_RX_R9SLIM',
+    'Frsky_RX_R9SLIMPLUS',
+    'Frsky_RX_R9SLIMPLUS_OTA',
+    'Frsky_RX_R9MX',
+    'DIY_2400_RX_STM32_CCG_Nano_v0_5',
+    'HappyModel_TX_ES915TX',
+    'HappyModel_RX_ES915RX',
+    'HappyModel_PP_2400_RX',
+    'GHOST_2400_TX',
+    'GHOST_2400_TX_LITE',
+    'GHOST_ATTO_2400_RX',
+    'Jumper_RX_R900MINI',
+    'NamimnoRC_VOYAGER_900_TX',
+    'NamimnoRC_VOYAGER_900_RX',
+    'NamimnoRC_FLASH_2400_TX',
+    'NamimnoRC_FLASH_2400_RX',
+    'FM30_TX',
+    'FM30_RX_MINI_AS_TX',
+    'FM30_RX_MINI'
+]
 
 
 def error(msg):
@@ -121,6 +148,8 @@ def validate_devices(vendor, type, devname, device):
         error(f'device "{vendor}.{type}.{devname}" must have a "firmware" child element')
     else:
         firmware = device['firmware']
+        if firmware in stm32_targets:
+            return
         if len(firmwares) != 0 and firmware not in firmwares:
             error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}"')
         elif firmware.endswith('_TX') and 'tx_' not in type:
