@@ -18,6 +18,7 @@
     "power_default":0,
     "power_control":0,
     "power_values":[13],
+    "power_lna_gain": 0,
 
     "led_rgb":21,
     "led_rgb_isgrb":true,

@@ -219,7 +219,7 @@ def validate(target, layout, device):
             had_error |= validate_pin_uniqueness(target, layout, field)
             had_error |= validate_grouping(target, layout, field, device['firmware'])
             had_error |= validate_pin_function(target, layout, field, device['platform'])
-    had_error |= validate_power_config(target, layout)
+    had_error |= validate_power_config(target, layout, device['firmware'])
     had_error |= validate_backpack(target, layout)
     had_error |= validate_joystick(target, layout)
     had_error |= validate_pwm_outputs(target, layout)
@@ -274,24 +274,43 @@ def validate_pin_uniqueness(target, layout, field):
     return had_error
 
 
-def validate_power_config(target, layout):
+def validate_power_config(target, layout, firmware):
+    # Special case for the DIY BLE Joystick
+    if 'radio_miso' not in layout:
+        return False
+
     had_error = False
+    if 'power_min' not in layout:
+        print(f'ERROR: device "{target}" does not define power_min')
+        had_error = True
+    if 'power_max' not in layout:
+        print(f'ERROR: device "{target}" does not define power_max')
+        had_error = True
+    if 'power_default' not in layout:
+        print(f'ERROR: device "{target}" does not define power_default')
+        had_error = True
+
+    if had_error:
+        return had_error
+
+    power_min = layout['power_min']
+    power_max = layout['power_max']
+    power_default = layout['power_default']
+    power_high = power_max if 'power_high' not in layout else layout['power_high']
+
+    if power_min > power_max:
+        print(f'ERROR: device "{target}" power_min must be less than or equal to power_max')
+        had_error = True
+    if power_default < power_min or power_default > power_max:
+        print(f'ERROR: device "{target}" power_default must lie between power_min and power_max')
+        had_error = True
+    if power_high < power_min or power_high > power_max:
+        print(f'ERROR: device "{target}" power_high must lie between power_min and power_max')
+        had_error = True
+
     if 'power_values' in layout:
         power_values = layout['power_values']
         power_values_dual = layout['power_values_dual'] if 'power_values_dual' in layout else None
-        power_max = layout['power_max']
-        power_min = layout['power_min']
-        power_default = layout['power_default']
-        power_high = layout['power_high']
-        if power_min > power_max:
-            print(f'ERROR: device "{target}" power_min must be less than or equal to power_max')
-            had_error = True
-        if power_default < power_min or power_default > power_max:
-            print(f'ERROR: device "{target}" power_default must lie between power_min and power_max')
-            had_error = True
-        if power_high < power_min or power_high > power_max:
-            print(f'ERROR: device "{target}" power_high must lie between power_min and power_max')
-            had_error = True
         if power_values and power_max - power_min + 1 > len(power_values):
             print(f'ERROR: device "{target}" power_values must have the correct number of entries to match all values from power_min to power_max')
             had_error = True
@@ -311,6 +330,21 @@ def validate_power_config(target, layout):
             if 'power_apc2' not in layout:
                 print(f'ERROR: device "{target}" power_values2 is defined so the power_apc2 pin must also be defined')
                 had_error = True
+    elif 'power_values_dual' in layout:
+        power_values_dual = layout['power_values']
+        if power_values_dual and power_max - power_min + 1 > len(power_values_dual):
+            print(f'ERROR: device "{target}" power_values_dual must have the correct number of entries to match all values from power_min to power_max')
+            had_error = True
+        if layout['power_control'] == 3 and 'power_apc2' not in layout:
+            print(f'ERROR: device "{target}" defines power_control as DACWRITE and power_apc2 is undefined')
+            had_error = True
+
+    # if SX1280 or (LR1121 & power_values_dual) then lna_gain MUST be defined
+    if '_2400_' in firmware or ('_LR1121_' in firmware and 'power_values_dual' in layout and layout['power_values_dual'] is not None):
+        if 'power_lna_gain' not in layout:
+            print(f'ERROR: device "{target}" has 2.4GHz band, but does not define power_lna_gain')
+            had_error = True
+
     return had_error
 
 

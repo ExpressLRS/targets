@@ -22,6 +22,7 @@
   "power_values": [140, 120, 120, 120, 120, 120, 95],
   "power_values2": [-14, -10, -7, -4, 0, 3, 10],
   "power_values_dual": [-18, -16, -13, -8, -4, 0, 10],
+  "power_lna_gain": 15,
   "radio_rfsw_ctrl": [15, 0, 4, 12, 12, 2, 0, 1],
 
   "led_rgb": 22,
