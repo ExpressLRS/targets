@@ -2069,6 +2069,24 @@
             }
         }
     },
+    "holybro": {
+        "name": "Holybro",
+        "rx_dual": {
+            "zephyr": {
+                "product_name": "Holybro Zephyr Dual Band RX",
+                "lua_name": "Holybro Zephyr",
+                "layout_file": "Generic LR1121 True Diversity.json",
+                "overlay": {
+                    "serial1_rx": 5,
+                    "serial1_tx": 18
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_RX"
+            }
+        }
+    },
     "iflight": {
         "name": "iFlight",
         "tx_900": {
