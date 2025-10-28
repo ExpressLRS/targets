@@ -926,6 +926,19 @@
             }
         },
         "rx_2400": {
+            
+
+            "cipherwing_c3_2400": {
+  "product_name": "Cipherwing C3 2400 RX",
+  "lua_name": "Cwing C3 2400",
+  "layout_file": "Cipherwing C3 2400.json",
+  "upload_methods": ["uart", "wifi", "betaflight"],
+  "min_version": "3.5.0",
+  "platform": "esp32-c3",
+  "firmware": "Unified_ESP32C3_2400_RX"
+},
+
+
             "true_diversity_pwm16_s3": {
                 "product_name": "DIY ESP32-S3 DevKit True Diversity 16xPWM 2.4Ghz RX ",
                 "lua_name": "16PWM TD 2.4RX",
