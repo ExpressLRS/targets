@@ -1053,6 +1053,31 @@
             }
         }
     },
+    "flysky": {
+        "name": "FlySky",
+        "tx_2400": {
+            "pa01": {
+                "product_name": "Flysky PA01 2.4GHz TX",
+                "lua_name": "Flysky PA01",
+                "layout_file": "FLYSKY PA01.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.5.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
+            }
+        },
+        "rx_2400": {
+            "pr01": {
+                "product_name": "Flysky PR01 2.4GHz RX",
+                "lua_name": "Flysky PR01",
+                "layout_file": "FLYSKY PR01.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
+            }
+        }
+    },
     "flywoo": {
         "name": "Flywoo",
         "rx_2400": {
