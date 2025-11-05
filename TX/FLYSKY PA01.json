@@ -17,6 +17,7 @@
   "power_default": 3,
   "power_control": 0,
   "power_values": [ -14, -10, -7, -4, 0, 2 ],
+  "power_lna_gain": 15,
   "use_backpack": true,
   "led_red": 3,
   "screen_type": 0,
