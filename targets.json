@@ -2298,7 +2298,7 @@
     },
     "jhemcu": {
         "name": "JHEMCU",
-        "rx_2400" {
+        "rx_2400": {
             "lite": {
                 "product_name": "JHEMCU 2.4GHz Lite RX",
                 "lua_name": "JHEMCU 2G4 Lite",
