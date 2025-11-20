@@ -2321,7 +2321,7 @@
                 "firmware": "Unified_ESP32_2400_RX"
             }
         }
-    }
+    },
     "jumper": {
         "name": "Jumper",
         "tx_2400": {
