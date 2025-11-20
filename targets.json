@@ -2296,6 +2296,32 @@
             }
         }
     },
+    "jhemcu": {
+        "name": "JHEMCU",
+        "rx_2400" {
+            "lite": {
+                "product_name": "JHEMCU 2.4GHz Lite RX",
+                "lua_name": "JHEMCU 2G4 Lite",
+                "layout_file": "Generic 2400.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "dual":{
+                "product_name": "JHEMCU 2.4GHz Dual RX",
+                "lua_name": "JHEMCU 2G4 Dual",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "overlay": {
+                    "power_values": [-8,-4,-1,3]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
+            }
+        }
+    }
     "jumper": {
         "name": "Jumper",
         "tx_2400": {
