@@ -3004,7 +3004,7 @@
             },
             "t8l": {
                 "product_name": "RadioMaster T8L Internal 2.4GHz TX",
-                "lua_name": "NA",
+                "lua_name": "RM T8L",
                 "layout_file": "Radiomaster T8L.json",
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.5.0",
