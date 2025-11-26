@@ -3001,6 +3001,16 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "RadioMaster_Boxer_2400_TX"
+            },
+            "t8l": {
+                "product_name": "RadioMaster T8L Internal 2.4GHz TX",
+                "lua_name": "NA",
+                "layout_file": "Radiomaster T8L.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.5.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_TX",
+                "prior_target_name": "RadioMaster_T8L_2400_TX"
             }
         },
         "rx_2400": {
