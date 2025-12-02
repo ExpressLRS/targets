@@ -1069,6 +1069,31 @@
                 "firmware": "Unified_ESP32_2400_RX"
             }
         }
+    },          
+    "flysky": {
+        "name": "FlySky",
+        "tx_2400": {
+            "pa01": {
+                "product_name": "Flysky PA01 2.4GHz TX",
+                "lua_name": "Flysky PA01",
+                "layout_file": "FLYSKY PA01.json",
+                "upload_methods": ["uart", "wifi", "etx"],
+                "min_version": "3.5.0",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
+            }
+        },
+        "rx_2400": {
+            "pr01": {
+                "product_name": "Flysky PR01 2.4GHz RX",
+                "lua_name": "Flysky PR01",
+                "layout_file": "FLYSKY PR01.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
+            }
+        }
     },
     "flywoo": {
         "name": "Flywoo",
@@ -2086,6 +2111,24 @@
             }
         }
     },
+    "holybro": {
+        "name": "Holybro",
+        "rx_dual": {
+            "zephyr": {
+                "product_name": "Holybro Zephyr Dual Band RX",
+                "lua_name": "Holybro Zephyr",
+                "layout_file": "Generic LR1121 True Diversity.json",
+                "overlay": {
+                    "serial1_rx": 5,
+                    "serial1_tx": 18
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_RX"
+            }
+        }
+    },
     "iflight": {
         "name": "iFlight",
         "tx_900": {
@@ -2267,6 +2310,32 @@
                     "offset": "0x4000",
                     "bootloader": "ghost/ghost_atto_bootloader.bin"
                 }
+            }
+        }
+    },
+    "jhemcu": {
+        "name": "JHEMCU",
+        "rx_2400": {
+            "lite": {
+                "product_name": "JHEMCU 2.4GHz Lite RX",
+                "lua_name": "JHEMCU 2G4 Lite",
+                "layout_file": "Generic 2400.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_RX"
+            },
+            "dual":{
+                "product_name": "JHEMCU 2.4GHz Dual RX",
+                "lua_name": "JHEMCU 2G4 Dual",
+                "layout_file": "Generic 2400 True Diversity PA.json",
+                "overlay": {
+                    "power_values": [-8,-4,-1,3]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_RX"
             }
         }
     },
@@ -2726,6 +2795,20 @@
             }
         }
     },
+    "oxbot": {
+        "name": "Oxbot",
+        "rx_2400": {
+            "aio": {
+                "product_name": "Oxbot AIO 2.4GHz RX",
+                "lua_name": "OXBT AIO 2G4 RX",
+                "layout_file": "Generic C3 2400 PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
+            }
+        }
+    },
     "quadkopters": {
         "name": "QuadKopters",
         "tx_2400": {
@@ -2935,6 +3018,16 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_TX",
                 "prior_target_name": "RadioMaster_Boxer_2400_TX"
+            },
+            "t8l": {
+                "product_name": "RadioMaster T8L Internal 2.4GHz TX",
+                "lua_name": "RM T8L",
+                "layout_file": "Radiomaster T8L.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.5.0",
+                "platform": "esp8285",
+                "firmware": "Unified_ESP8285_2400_TX",
+                "prior_target_name": "RadioMaster_T8L_2400_TX"
             }
         },
         "rx_2400": {
@@ -3363,6 +3456,20 @@
                     "offset": "0x4000",
                     "bootloader": "fm30_mini_bootloader.bin"
                 }
+            }
+        }
+    },
+    "skyguy": {
+        "name": "SkyGuy",
+        "rx_2400": {
+            "nano": {
+                "product_name": "SkyGuy Nano 2.4GHz RX",
+                "lua_name": "SG Nano 2G4 RX",
+                "layout_file": "Generic C3 2400 PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
             }
         }
     },
