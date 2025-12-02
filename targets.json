@@ -779,7 +779,8 @@
                     "power_default": 6,
                     "power_control": 0,
                     "power_values": null,
-                    "power_values_dual": [17, -13, -9, -5, -2, 5]
+                    "power_values_dual": [17, -13, -9, -5, -2, 5],
+                    "power_lna_gain": 16
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
