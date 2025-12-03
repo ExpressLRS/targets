@@ -771,7 +771,7 @@
         },
         "rx_dual": {
             "gemx": {
-                "product_name": "DAKEFPV 100mW C3 GemX RX",
+                "product_name": "DAKEFPV C3 900/2400 Dual Band 100mW Gemini RX",
                 "lua_name": "DAKE C3 GemX",
                 "layout_file": "Generic C3 LR1121 True Diversity.json",
                 "overlay": {
