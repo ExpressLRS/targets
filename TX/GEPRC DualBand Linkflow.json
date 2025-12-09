@@ -17,6 +17,7 @@
   "power_max": 6,
   "power_default": 2,
   "power_control": 3,
+  "power_lna_gain": 0,
   "power_values": [100, 70, 75, 90, 115, 135, 220, 225],
   "power_values2": [-17, 0, 0, 0, 0, 0, 0, 0],
   "power_values_dual": [-18, -16, -13, -8, -4, 0, 5],
