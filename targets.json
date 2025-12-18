@@ -768,6 +768,21 @@
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_LR1121_RX"
             }
+        },
+        "rx_dual": {
+            "gemx": {
+                "product_name": "DAKEFPV C3 900/2400 Dual Band 100mW Gemini RX",
+                "lua_name": "DAKE C3 GemX",
+                "layout_file": "Generic C3 LR1121 True Diversity.json",
+                "overlay": {
+                    "power_values": [14, 18, 20, 22],
+                    "power_values_dual": [-12, -8, -4, 3]
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.6.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
+            }
         }
     },
     "diy": {
