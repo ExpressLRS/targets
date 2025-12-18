@@ -3496,7 +3496,8 @@
                     "power_high": 6,
                     "power_max": 6,
                     "power_default": 5,
-                    "power_values": [-17, -13, -9, -6, -3, 1]
+                    "power_values": [-17, -13, -9, -6, -3, 1],
+                    "power_lna_gain": 15
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
