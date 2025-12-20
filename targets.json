@@ -680,7 +680,7 @@
         "tx_2400": {
             "runcam": {
                 "product_name": "CoreWing Sirius 2.4GHz TX",
-                "lua_name": "CoreWing 2G4",
+                "lua_name": "Sirius TX2G4",
                 "layout_file": "CoreWing 2400.json",
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.5.0",
