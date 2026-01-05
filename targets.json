@@ -675,6 +675,21 @@
             }
         }
     },
+    "corewing": {
+        "name": "CoreWing",
+        "tx_2400": {
+            "sirius": {
+                "product_name": "CoreWing Sirius 2.4GHz TX",
+                "lua_name": "Sirius TX2G4",
+                "layout_file": "CoreWing 2400.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.5.0",
+                "logo_file": "corewing_tft.bin",
+                "platform": "esp32-s3",
+                "firmware": "Unified_ESP32S3_2400_TX"
+            }
+        }
+    },
     "dakefpv": {
         "name": "DAKEFPV",
         "rx_900": {
@@ -3405,21 +3420,6 @@
                 "min_version": "3.5.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_RX"
-            }
-        }
-    },
-    "runcam": {
-        "name": "RunCam",
-        "tx_2400": {
-            "runcam": {
-                "product_name": "RunCam Sirius 2.4GHz TX",
-                "lua_name": "RunCam 2G4",
-                "layout_file": "RunCam 2400.json",
-                "upload_methods": ["uart", "wifi"],
-                "min_version": "3.5.0",
-                "logo_file": "runcam_tft.bin",
-                "platform": "esp32-s3",
-                "firmware": "Unified_ESP32S3_2400_TX"
             }
         }
     },
