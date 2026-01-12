@@ -2006,7 +2006,7 @@
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.0.0",
                 "platform": "esp32",
-                "firmware": "HDZero_Radio_2400_tX"
+                "firmware": "HDZero_Radio_2400_TX"
             }
         }
     },
