@@ -1610,7 +1610,9 @@
                 "lua_name": "GEPRC 900 TX V2",
                 "layout_file": "GEPRC DualBand Linkflow.json",
                 "overlay": {
-                    "power_values_dual": null
+                    "power_values_dual": null,
+                    "power_max": 7,
+                    "power_high": 7
                 },
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.6.0",
