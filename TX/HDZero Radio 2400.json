@@ -19,7 +19,7 @@
     "power_max": 4,
     "power_default": 2,
     "power_control": 0,
-    "power_values": [-10,-6,-4,-1,5],
+    "power_values": [-18,-17,-14,-11,-1],
 
     "led_rgb": 13,
     "led_rgb_isgrb": true,
