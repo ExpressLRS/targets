@@ -39,6 +39,5 @@
     "debug_backpack_rx": 9,
     "debug_backpack_tx": 10,
     "backpack_boot": 15,
-    "backpack_en": 25,
-    "passthrough_baud": 230400
+    "backpack_en": 25
 }
