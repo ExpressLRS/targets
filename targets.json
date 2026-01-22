@@ -3406,7 +3406,22 @@
                 "min_version": "3.5.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
-            }
+            },
+            "tx16mk3": {
+                "product_name": "RadioMaster TX16mk3 TX",
+                "lua_name": "RM TX16 MK3",
+                "layout_file": "Radiomaster GX12.json",
+                "overlay": {
+	                "power_values": [132,120,120,120,120,120,103],
+  	                "power_values2": [-18,-14,-10,-7,-3,0,3],
+  	                "power_values_dual": [-16,-12,-7,-4, 0,4,8],
+                    "radio_rfsw_ctrl": [15,1,4,12,12,2,0,1]
+                },
+                "upload_methods": ["etx", "wifi"],
+                "min_version": "3.6.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            },
         },
         "rx_dual": {
             "dbr4": {
