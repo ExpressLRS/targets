@@ -1606,7 +1606,7 @@
                 "firmware": "Unified_ESP32_900_TX"
             },
             "linkflow-v2": {
-                "product_name": "GEPRC LINKFLOW Dual Band TX V2",
+                "product_name": "GEPRC LINKFLOW 900M TX V2",
                 "lua_name": "GEPRC 900 TX V2",
                 "layout_file": "GEPRC DualBand Linkflow.json",
                 "overlay": {
