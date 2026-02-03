@@ -31,5 +31,6 @@
   "backpack_boot": 15,
   "backpack_en": 25,
   "passthrough_baud": 230400,
-  "misc_fan_en": 32
+  "misc_fan_pwm": 32,
+  "misc_fan_speeds": [47,63,95,127,191,215,255,255]
 }
