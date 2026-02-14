@@ -19,5 +19,5 @@
   "power_control": 0,
   "power_values": [-6, -3, 0, 4],
   "power_lna_gain": 12,
-  "led": 8
+  "led": 0
 }
