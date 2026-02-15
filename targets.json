@@ -3446,9 +3446,9 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
             },
-            "tx16mk3": {
-                "product_name": "RadioMaster TX16mk3 TX",
-                "lua_name": "RM TX16 MK3",
+            "tx16smk3": {
+                "product_name": "RadioMaster TX16S MK3 Internal TX",
+                "lua_name": "RM TX16S MK3",
                 "layout_file": "Radiomaster GX12.json",
                 "overlay": {
 	                "power_values": [132,120,120,120,120,120,103],
