@@ -876,7 +876,7 @@
         }
     },
     "deepspace": {
-        "name": "Deep Space",
+        "name": "DeepSpace",
         "rx_2400": {
             "nano": {
                 "product_name": "DEEPSPACE 2.4GHz Nano 100mw RX",
