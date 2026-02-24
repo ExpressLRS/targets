@@ -737,6 +737,24 @@
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_LR1121_RX"
             },
+            "nanopro": {
+                "product_name": "DAKEFPV 900MHz NANOPRO MAX 500mW RX",
+                "lua_name": "DAKE 900RX",
+                "layout_file": "Generic C3 LR1121.json",
+                "overlay": {
+                    "radio_rfo_hf": true,
+                    "power_high": 0,
+                    "power_max": 5,
+                    "power_default": 3,
+                    "power_values": [-17, -14, -10, -7, -3, 1],
+                    "power_values_dual": null,
+                    "power_lna_gain": 17
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.6.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
+            },
             "max-1w": {
                 "product_name": "DAKEFPV 900MHz MAX 1000mW Diversity RX",
                 "lua_name": "DKFPV 1000 RX",
@@ -803,6 +821,24 @@
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_LR1121_RX"
             },
+            "superd-pro": {
+                "product_name": "DAKEFPV 2G4 SuperD Pro MAX 500mW RX",
+                "lua_name": "DAKE SG24",
+                "layout_file": "Generic C3 LR1121 True Diversity.json",
+                "overlay": {
+                    "power_min": 1,
+                    "power_high": 5,
+                    "power_max": 5,
+                    "power_default": 5,
+                    "power_values": null,
+                    "power_values_dual": [-10, -6, -4, -2, 0],
+                    "power_lna_gain": 16
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
+            },
             "1w": {
                 "product_name": "DAKEFPV 1W 2.4GHz RX",
                 "lua_name": "DAKE 1W 2G4",
@@ -834,6 +870,20 @@
                 },
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.6.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
+            }
+        }
+    },
+    "deepspace": {
+        "name": "Deep Space",
+        "rx_2400": {
+            "nano": {
+                "product_name": "DEEPSPACE 2.4GHz Nano 100mw RX",
+                "lua_name": "DS 2G4 Nano RX",
+                "layout_file": "Generic C3 LR1121.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_LR1121_RX"
             }
@@ -2173,6 +2223,17 @@
                 "min_version": "3.4.0",
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_2400_RX"
+            }
+        },
+        "tx_dual": {
+            "v12": {
+                "product_name": "HelloRadio IntV12 2.4/900 TX",
+                "lua_name": "HR V12 S-Band",
+                "layout_file": "HelloRadio V12.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.6.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
             }
         }
     },
