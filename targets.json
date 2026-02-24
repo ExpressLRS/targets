@@ -736,6 +736,24 @@
                 "min_version": "3.5.0",
                 "platform": "esp32-c3",
                 "firmware": "Unified_ESP32C3_LR1121_RX"
+            },
+            "nanopro": {
+                "product_name": "DAKEFPV 900MHz NANOPRO MAX 500mW RX",
+                "lua_name": "DAKE 900RX",
+                "layout_file": "Generic C3 LR1121.json",
+                "overlay": {
+                    "radio_rfo_hf": true,
+                    "power_high": 0,
+                    "power_max": 5,
+                    "power_default": 3,
+                    "power_values": [-17, -14, -10, -7, -3, 1],
+                    "power_values_dual": null,
+                    "power_lna_gain": 17
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.6.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
             }
         },
         "rx_2400": {
