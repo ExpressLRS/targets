@@ -331,7 +331,7 @@ def validate_power_config(target, layout, firmware):
                 print(f'ERROR: device "{target}" power_values2 is defined so the power_apc2 pin must also be defined')
                 had_error = True
     elif 'power_values_dual' in layout:
-        power_values_dual = layout['power_values']
+        power_values_dual = layout['power_values_dual']
         if power_values_dual and power_max - power_min + 1 > len(power_values_dual):
             print(f'ERROR: device "{target}" power_values_dual must have the correct number of entries to match all values from power_min to power_max')
             had_error = True
