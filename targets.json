@@ -902,7 +902,7 @@
             "nano": {
                 "product_name": "DEEPSPACE 2.4GHz Nano 100mw RX",
                 "lua_name": "DS 2G4 Nano RX",
-                "layout_file": "Generic C3 LR1121.json",
+                "layout_file": "Generic C3 2400 PA.json",
                 "upload_methods": ["uart", "wifi", "betaflight"],
                 "min_version": "3.5.0",
                 "platform": "esp32-c3",
