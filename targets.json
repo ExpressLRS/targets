@@ -4048,5 +4048,19 @@
                 "prior_target_name": "DIY_2400_RX_ESP8285_SX1280"
             }
         }
+    },
+    "orbit": {
+        "name": "ORBIT",
+        "rx_2400": {
+            "nano": {
+                "product_name": "ORBIT 2.4Ghz Nano RX",
+                "lua_name": "ORBIT 2400 RX",
+                "layout_file": "Generic C3 2400 PA.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.5.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_2400_RX"
+            }
+        }
     }
 }
