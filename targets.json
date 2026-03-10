@@ -703,7 +703,7 @@
                     "power_control": 3,
                     "power_values": [245, 245, 245, 245, 245, 245, 245, 245],
                     "power_values2": [-15, -12, -10, -7, -4, 0, 5, 8],
-                    "power_values_dual": null`
+                    "power_values_dual": null
                 },
                 "logo_file": "dakefpv_tft.bin",
                 "upload_methods": ["uart", "wifi"],
