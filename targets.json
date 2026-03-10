@@ -692,6 +692,27 @@
     },
     "dakefpv": {
         "name": "DAKEFPV",
+        "tx_900": {
+            "max": {
+                "product_name": "DAKEFPV 900MHz Micro MAX 2W TX",
+                "lua_name": "DKFPV 900TX 2W",
+                "layout_file": "DAKEFPV MAX.json",
+                "overlay": {
+                    "radio_rfo_hf": true,
+                    "power_apc2": 26,
+                    "power_control": 3,
+                    "power_values": [245, 245, 245, 245, 245, 245, 245, 245],
+                    "power_values2": [-15, -12, -10, -7, -4, 0, 5, 8],
+                    "power_values_dual": null,
+                    "joystick_values": [1977, 3135, 2619, 0, 1322]
+                },
+                "logo_file": "dakefpv_tft.bin",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.6.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            }
+        },
         "rx_900": {
             "rx900": {
                 "product_name": "DAKEFPV Nano 900MHz RX",
