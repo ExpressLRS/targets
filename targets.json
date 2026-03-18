@@ -1209,7 +1209,7 @@
                 "firmware": "Unified_ESP32_2400_RX"
             }
         }
-    },          
+    },
     "flysky": {
         "name": "FlySky",
         "tx_2400": {
@@ -3538,6 +3538,15 @@
             }
         },
         "tx_dual": {
+            "ax12": {
+                "product_name": "RadioMaster AX12 2.4/900 TX",
+                "lua_name": "RM AX12 X-Band",
+                "layout_file": "Radiomaster AX12.json",
+                "upload_methods": ["uart", "wifi"],
+                "min_version": "3.4.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_TX"
+            },
             "nomad": {
                 "product_name": "RadioMaster Nomad 2.4/900 TX",
                 "lua_name": "RM Nomad X-Band",
