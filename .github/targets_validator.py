@@ -8,6 +8,7 @@ import re
 hadError = False
 warnEnabled = False
 firmwares = set()
+ignored_validations = set()
 stm32_targets = [
     'DIY_900_TX_STM32_SX1272',
     'DIY_900_RX_STM32_SX1272',
@@ -37,13 +38,22 @@ stm32_targets = [
 ]
 
 
-def error(msg):
+def set_ignored_validations(device=None):
+    global ignored_validations
+    ignored_validations = set() if device is None else set(device.get('validation_ignores', []))
+
+
+def error(msg, code=None):
+    if code is not None and code in ignored_validations:
+        return
     global hadError
     hadError = True
     print("ERROR: " + msg)
 
 
-def warn(msg):
+def warn(msg, code=None):
+    if code is not None and code in ignored_validations:
+        return
     if warnEnabled:
         global hadError
         hadError = True
@@ -53,37 +63,37 @@ def warn(msg):
 def validate_stm32(vendor, type, devname, device):
     for method in device['upload_methods']:
         if method not in ['stlink', 'dfu', 'uart', 'wifi', 'betaflight', 'stock']:
-            error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"')
+            error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"', 'invalid_upload_method')
     if 'stlink' not in device['upload_methods']:
-        error(f'STM32 based devices must always have "stlink" as an upload_method for target "{vendor}.{type}.{devname}"')
+        error(f'STM32 based devices must always have "stlink" as an upload_method for target "{vendor}.{type}.{devname}"', 'missing_stlink_upload_method')
     if 'stlink' not in device:
-        error(f'STM32 based devices must always have "stlink" attribute for target "{vendor}.{type}.{devname}"')
+        error(f'STM32 based devices must always have "stlink" attribute for target "{vendor}.{type}.{devname}"', 'missing_stlink_attribute')
     else:
         stlink = device['stlink']
         if 'cpus' not in stlink:
-            error(f'The "stlink" attribute for target "{vendor}.{type}.{devname}" must have a list of valid "cpus"')
+            error(f'The "stlink" attribute for target "{vendor}.{type}.{devname}" must have a list of valid "cpus"', 'missing_stlink_cpus')
         if 'offset' not in stlink:
-            error(f'The "stlink" attribute for target "{vendor}.{type}.{devname}" must have a valid "offset"')
+            error(f'The "stlink" attribute for target "{vendor}.{type}.{devname}" must have a valid "offset"', 'missing_stlink_offset')
         if 'bootloader' not in stlink:
-            error(f'The "stlink" attribute for target "{vendor}.{type}.{devname}" must have a valid "bootloader"')
+            error(f'The "stlink" attribute for target "{vendor}.{type}.{devname}" must have a valid "bootloader"', 'missing_stlink_bootloader')
     # could check the existence of the bootloader file
 
 
 def validate_esp(vendor, type, devname, device):
     if 'lua_name' not in device:
-        error(f'device "{vendor}.{type}.{devname}" must have a "lua_name" child element')
+        error(f'device "{vendor}.{type}.{devname}" must have a "lua_name" child element', 'missing_lua_name')
     if len(device['lua_name']) > 16:
-        error(f'device "{vendor}.{type}.{devname}" must have a "lua_name" of 16 characters or less')
+        error(f'device "{vendor}.{type}.{devname}" must have a "lua_name" of 16 characters or less', 'lua_name_too_long')
     # validate layout_file
     if not device['firmware'].startswith('Unified'):
-        error(f'ESP target "{vendor}.{type}.{devname}" must be using a Unified firmware')
+        error(f'ESP target "{vendor}.{type}.{devname}" must be using a Unified firmware', 'non_unified_esp_firmware')
     if 'layout_file' not in device:
-        error(f'device "{vendor}.{type}.{devname}" must have a "layout_file" child element')
+        error(f'device "{vendor}.{type}.{devname}" must have a "layout_file" child element', 'missing_layout_file')
     else:
         dir = ('RX/' if type.startswith('rx') else 'TX/')
         layout_file = device['layout_file']
         if not os.path.isfile(dir + layout_file):
-            error(f'File specified by layout_file "{layout_file}" in target "{vendor}.{type}.{devname}", does not exist')
+            error(f'File specified by layout_file "{layout_file}" in target "{vendor}.{type}.{devname}", does not exist', 'missing_layout_file_on_disk')
         else:
             # load file, merge overlay, call validate_hardware
             with open(dir + layout_file, 'r') as f:
@@ -95,70 +105,72 @@ def validate_esp(vendor, type, devname, device):
 
     # could validate overlay
     if 'prior_target_name' not in device:
-        warn(f'device "{vendor}.{type}.{devname}" should have a "prior_target_name" child element')
+        warn(f'device "{vendor}.{type}.{devname}" should have a "prior_target_name" child element', 'missing_prior_target_name')
     # Validate the platform matches the firmware file
     if device['platform'] == 'esp32-c3':
         if device['min_version'] < '3.5':
-            error(f'device "{vendor}.{type}.{devname}" "min_version" must be at least 3.5.0')
+            error(f'device "{vendor}.{type}.{devname}" "min_version" must be at least 3.5.0', 'min_version_too_low_for_esp32_c3')
         if '_ESP32C3_' not in device['firmware']:
-            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
     if device['platform'] == 'esp32-s3':
         if '_ESP32S3_' not in device['firmware']:
-            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
     if device['platform'] == 'esp32':
         if '_ESP32_' not in device['firmware']:
-            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
     if device['platform'] == 'esp8285':
         if '_ESP8285_' not in device['firmware']:
-            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match')
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
 
 
 def validate_esp32(vendor, type, devname, device):
     for method in device['upload_methods']:
         if method not in ['uart', 'etx', 'wifi', 'betaflight']:
-            error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"')
+            error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"', 'invalid_upload_method')
     if (device['platform'] == 'esp32-c3' and '_ESP32C3_' not in device['firmware']) or \
             (device['platform'] == 'esp32-s3' and '_ESP32S3_' not in device['firmware']) or \
             (device['platform'] == 'esp32' and '_ESP32_' not in device['firmware']) :
-        error(f'"firmware" and "platform" must match for target "{vendor}.{type}.{devname}"')
+        error(f'"firmware" and "platform" must match for target "{vendor}.{type}.{devname}"', 'firmware_platform_mismatch')
     validate_esp(vendor, type, devname, device)
 
 
 def validate_esp8285(vendor, type, devname, device):
     for method in device['upload_methods']:
         if method not in ['uart', 'wifi', 'betaflight']:
-            error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"')
+            error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"', 'invalid_upload_method')
     if 'ESP8285' not in device['firmware']:
-        error(f'"firmware" and "platform" must match for target "{vendor}.{type}.{devname}"')
+        error(f'"firmware" and "platform" must match for target "{vendor}.{type}.{devname}"', 'firmware_platform_mismatch')
     validate_esp(vendor, type, devname, device)
 
 def validate_devices(vendor, type, devname, device):
+    set_ignored_validations(device)
     allowed_json_key_characters = re.compile("^[a-z0-9_-]+$")
     if not allowed_json_key_characters.match(devname):
-        error(f'device tag "{devname}" can only include lowercase a-z, 0-9, and underscores and dashes')
+        error(f'device tag "{devname}" can only include lowercase a-z, 0-9, and underscores and dashes', 'invalid_device_tag')
 
     if 'product_name' not in device:
-        error(f'device "{vendor}.{type}.{devname}" must have a "product_name" child element')
+        error(f'device "{vendor}.{type}.{devname}" must have a "product_name" child element', 'missing_product_name')
     if 'upload_methods' not in device:
-        error(f'device "{vendor}.{type}.{devname}" must have a "upload_methods" child element')
+        error(f'device "{vendor}.{type}.{devname}" must have a "upload_methods" child element', 'missing_upload_methods')
     if 'min_version' not in device:
-        error(f'device "{vendor}.{type}.{devname}" must have a "min_version" child element')
+        error(f'device "{vendor}.{type}.{devname}" must have a "min_version" child element', 'missing_min_version')
 
     if 'firmware' not in device:
-        error(f'device "{vendor}.{type}.{devname}" must have a "firmware" child element')
+        error(f'device "{vendor}.{type}.{devname}" must have a "firmware" child element', 'missing_firmware')
     else:
         firmware = device['firmware']
         if firmware in stm32_targets:
+            set_ignored_validations()
             return
         if len(firmwares) != 0 and firmware not in firmwares:
-            error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}"')
+            error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}"', 'invalid_firmware_file')
         elif firmware.endswith('_TX') and 'tx_' not in type:
-            error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}", it must be a TX target firmware')
+            error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}", it must be a TX target firmware', 'firmware_type_mismatch')
         elif firmware.endswith('_RX') and 'rx_' not in type:
-            error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}", it must be an RX target firmware')
+            error(f'device "{vendor}.{type}.{devname}" has an invalid firmware file "{firmware}", it must be an RX target firmware', 'firmware_type_mismatch')
 
     if 'platform' not in device:
-        error(f'device "{vendor}.{type}.{devname}" must have a "platform" child element')
+        error(f'device "{vendor}.{type}.{devname}" must have a "platform" child element', 'missing_platform')
     else:
         platform = device['platform']
         if platform == 'stm32':
@@ -168,12 +180,13 @@ def validate_devices(vendor, type, devname, device):
         elif platform.startswith('esp32'):
             validate_esp32(vendor, type, devname, device)
         else:
-            error(f'invalid platform "{platform}" in device "{vendor}.{type}.{devname}"')
+            error(f'invalid platform "{platform}" in device "{vendor}.{type}.{devname}"', 'invalid_platform')
 
     if 'features' in device:
         for feature in device['features']:
             if feature not in ['buzzer', 'unlock-higher-power', 'fan', 'sbus-uart']:
-                error(f'features must contain one or more of [\'buzzer\', \'unlock-higher-power\', \'fan\', \'sbus-uart\'], if present in target "{vendor}.{type}.{devname}"')
+                error(f'features must contain one or more of [\'buzzer\', \'unlock-higher-power\', \'fan\', \'sbus-uart\'], if present in target "{vendor}.{type}.{devname}"', 'invalid_feature')
+    set_ignored_validations()
 
 def validate_vendor(name, types):
     allowed_json_key_characters = re.compile("^[a-z0-9_-]+$")
