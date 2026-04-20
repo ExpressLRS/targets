@@ -3562,6 +3562,7 @@
                 "product_name": "RadioMaster AX12 2.4/900 TX",
                 "lua_name": "RM AX12 X-Band",
                 "layout_file": "Radiomaster AX12.json",
+                "validation_ignores": ["backpack_passthrough_baud"],
                 "upload_methods": ["uart", "wifi"],
                 "min_version": "3.4.0",
                 "platform": "esp32",
