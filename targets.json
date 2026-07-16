@@ -3671,6 +3671,15 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_RX"
             },
+            "nomad-rx": {
+                "product_name": "RadioMaster Nomad 2.4/900 RX",
+                "lua_name": "RM Nomad RX",
+                "layout_file": "Radiomaster Nomad.json",
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "4.0.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_LR1121_RX"
+            },
             "xr1": {
                 "product_name": "RadioMaster XR1 Dual Band RX",
                 "lua_name": "RM XR1",
