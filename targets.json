@@ -1813,6 +1813,20 @@
                 "firmware": "Unified_ESP8285_900_RX",
                 "prior_target_name": "DIY_900_RX_ESP8285_SX127x"
             },
+            "nanov3": {
+                "product_name": "GEPRC Nano 900MHz V3 RX",
+                "lua_name": "GEPRC Nano V3 RX",
+                "layout_file": "Generic C3 LR1121.json",
+                "overlay": {
+                    "power_default": 3,
+                    "power_values_dual": null,
+                    "power_lna_gain": 0
+                },
+                "upload_methods": ["uart", "wifi", "betaflight"],
+                "min_version": "3.6.0",
+                "platform": "esp32-c3",
+                "firmware": "Unified_ESP32C3_LR1121_RX"
+            },
             "dual": {
                 "product_name": "GEPRC True Diversity 900MHz RX",
                 "lua_name": "GEPRC Dual RX",
