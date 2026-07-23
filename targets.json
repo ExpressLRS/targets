@@ -2784,7 +2784,7 @@
                 "firmware": "Unified_ESP32_900_TX"
             },
             "t-pros": {
-                "product_name": "Jumper T-ProS 900M TX",
+                "product_name": "Jumper AION T-ProS 900M TX",
                 "lua_name": "T-ProS 900 TX",
                 "layout_file": "Jumper T-20 900 V2.json",
                 "upload_methods": ["uart", "wifi", "etx"],
@@ -2802,7 +2802,7 @@
                 "firmware": "Unified_ESP32_900_TX"
             },
             "t-pro": {
-                "product_name": "Jumper T-Pro 900M TX",
+                "product_name": "Jumper AION T-Pro 900M TX",
                 "lua_name": "T-Pro 900 TX",
                 "layout_file": "Jumper T-20 900.json",
                 "upload_methods": ["uart", "wifi", "etx"],
