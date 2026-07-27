@@ -38,6 +38,7 @@ stm32_targets = [
 ]
 
 
+# Format of each entry is the dotted path into targets.json split into a 3-tuple
 upload_method_exclusions = {
     ('hdzero', 'tx_2400', 'radio'),
     ('radiomaster', 'tx_dual', 'ax12')
