@@ -38,6 +38,12 @@ stm32_targets = [
 ]
 
 
+upload_method_exclusions = {
+    ('hdzero', 'tx_2400', 'radio'),
+    ('radiomaster', 'tx_dual', 'ax12')
+}
+
+
 def set_ignored_validations(device=None):
     global ignored_validations
     ignored_validations = set() if device is None else set(device.get('validation_ignores', []))
@@ -79,6 +85,33 @@ def validate_stm32(vendor, type, devname, device):
     # could check the existence of the bootloader file
 
 
+def validate_firmware_platform(vendor, type, devname, device):
+    if device['platform'] == 'esp32-c3':
+        if device['min_version'] < '3.5':
+            error(f'device "{vendor}.{type}.{devname}" "min_version" must be at least 3.5.0', 'min_version_too_low_for_esp32_c3')
+        if '_ESP32C3_' not in device['firmware']:
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
+    elif device['platform'] == 'esp32-s3':
+        if '_ESP32S3_' not in device['firmware']:
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
+    elif device['platform'] == 'esp32':
+        if '_ESP32_' not in device['firmware']:
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
+    elif device['platform'] == 'esp8285':
+        if '_ESP8285_' not in device['firmware']:
+            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
+
+
+def validate_tx_upload_methods(vendor, type, devname, device, layout):
+    if vendor in ['diy', 'generic'] or (vendor, type, devname) in upload_method_exclusions:
+        return
+    if layout['serial_rx'] == layout['serial_tx']:
+        if 'uart' not in device['upload_methods']:
+            error(f'device "{vendor}.{type}.{devname}" has shared serial_rx/serial_tx, external modules support "uart" uploads', 'missing_uart_upload_method')
+    elif device['platform'].startswith('esp32') and 'etx' not in device['upload_methods']:
+        error(f'device "{vendor}.{type}.{devname}" has separate serial_rx/serial_tx, internal modules support "etx" uploads', 'missing_etx_upload_method')
+
+
 def validate_esp(vendor, type, devname, device):
     if 'lua_name' not in device:
         error(f'device "{vendor}.{type}.{devname}" must have a "lua_name" child element', 'missing_lua_name')
@@ -102,35 +135,21 @@ def validate_esp(vendor, type, devname, device):
                 if 'overlay' in device:
                     layout.update(device['overlay'])
                 hadError |= hardware.validate(f'{vendor}.{type}.{devname}', layout, device)
+                if type.startswith('tx_'):
+                    validate_tx_upload_methods(vendor, type, devname, device, layout)
+
 
     # could validate overlay
     if 'prior_target_name' not in device:
         warn(f'device "{vendor}.{type}.{devname}" should have a "prior_target_name" child element', 'missing_prior_target_name')
-    # Validate the platform matches the firmware file
-    if device['platform'] == 'esp32-c3':
-        if device['min_version'] < '3.5':
-            error(f'device "{vendor}.{type}.{devname}" "min_version" must be at least 3.5.0', 'min_version_too_low_for_esp32_c3')
-        if '_ESP32C3_' not in device['firmware']:
-            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
-    if device['platform'] == 'esp32-s3':
-        if '_ESP32S3_' not in device['firmware']:
-            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
-    if device['platform'] == 'esp32':
-        if '_ESP32_' not in device['firmware']:
-            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
-    if device['platform'] == 'esp8285':
-        if '_ESP8285_' not in device['firmware']:
-            error(f'device "{vendor}.{type}.{devname}" firmware and platform MUST match', 'firmware_platform_mismatch')
+    validate_firmware_platform(vendor, type, devname, device)
 
 
 def validate_esp32(vendor, type, devname, device):
     for method in device['upload_methods']:
         if method not in ['uart', 'etx', 'wifi', 'betaflight']:
             error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"', 'invalid_upload_method')
-    if (device['platform'] == 'esp32-c3' and '_ESP32C3_' not in device['firmware']) or \
-            (device['platform'] == 'esp32-s3' and '_ESP32S3_' not in device['firmware']) or \
-            (device['platform'] == 'esp32' and '_ESP32_' not in device['firmware']) :
-        error(f'"firmware" and "platform" must match for target "{vendor}.{type}.{devname}"', 'firmware_platform_mismatch')
+
     validate_esp(vendor, type, devname, device)
 
 
@@ -138,8 +157,7 @@ def validate_esp8285(vendor, type, devname, device):
     for method in device['upload_methods']:
         if method not in ['uart', 'wifi', 'betaflight']:
             error(f'Invalid upload method "{method}" for target "{vendor}.{type}.{devname}"', 'invalid_upload_method')
-    if 'ESP8285' not in device['firmware']:
-        error(f'"firmware" and "platform" must match for target "{vendor}.{type}.{devname}"', 'firmware_platform_mismatch')
+
     validate_esp(vendor, type, devname, device)
 
 def validate_devices(vendor, type, devname, device):
