@@ -2898,6 +2898,7 @@
                 "platform": "esp32",
                 "firmware": "Unified_ESP32_LR1121_TX"
             }
+        }
     },
     "matek": {
         "name": "Matek Systems",
