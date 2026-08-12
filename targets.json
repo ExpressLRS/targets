@@ -3343,6 +3343,22 @@
                 "platform": "esp8285",
                 "firmware": "Unified_ESP8285_2400_TX",
                 "prior_target_name": "RadioMaster_T8L_2400_TX"
+            },
+            "gx15": {
+                "product_name": "RadioMaster GX15 Gemini Internal 2.4GHz TX",
+                "lua_name": "RM GX15",
+                "layout_file": "Generic 2400 Gemini.json",
+                "overlay": {
+                    "radio_rfo_hf": true,
+                    "power_rxen": 12,
+                    "power_rxen_2": 2,
+                    "power_default": 3,
+                    "power_values": [-18, -16, -13, -10, -5]
+                },
+                "upload_methods": ["etx", "wifi"],
+                "min_version": "3.5.0",
+                "platform": "esp32",
+                "firmware": "Unified_ESP32_2400_TX"
             }
         },
         "rx_2400": {
