@@ -3294,7 +3294,7 @@
                 "prior_target_name": "RadioMaster_Zorro_2400_TX"
             },
             "tx16s": {
-                "product_name": "RadioMaster TX16S Internal 2.4GHz TX",
+                "product_name": "RadioMaster TX16S MK2 Internal 2.4GHz TX",
                 "lua_name": "RM TX16S",
                 "layout_file": "Radiomaster TX16S 2400.json",
                 "upload_methods": ["uart", "wifi", "etx"],
@@ -3304,7 +3304,7 @@
                 "prior_target_name": "RadioMaster_TX16S_2400_TX"
             },
             "tx12": {
-                "product_name": "RadioMaster TX12 Internal 2.4GHz TX",
+                "product_name": "RadioMaster TX12 MK2 Internal 2.4GHz TX",
                 "lua_name": "RM TX12",
                 "layout_file": "Radiomaster Zorro.json",
                 "upload_methods": ["uart", "wifi", "etx"],
