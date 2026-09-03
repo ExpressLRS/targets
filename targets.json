@@ -3992,10 +3992,11 @@
         }
     },
     "stphobby": {
+        "name": "STPHOBBY",
         "rx_2400": {
             "nano": {
                 "product_name": "STPHOBBY Nano 2.4G RX",
-                "lua_name": "STPHOBBY Nano 2G4",
+                "lua_name": "STPH Nano 2G4 RX",
                 "layout_file": "Generic C3 2400 PA.json",
                 "overlay": {
                     "led_rgb": -1,
